@@ -1,0 +1,2 @@
+export { ScratchToReveal } from "./ScratchToReveal";
+

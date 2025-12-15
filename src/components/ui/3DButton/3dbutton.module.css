@@ -1,0 +1,253 @@
+/* Classe commune pour les boutons rectangle */
+.tdbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: fit-content; */
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.625rem;
+  transition: all ease 0.1s;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tdbutton:active {
+  transform: translateY(5px);
+}
+
+/* Classe pour l'état pressed des boutons rectangle */
+.tdbuttonPressed {
+  transform: translateY(5px);
+}
+
+/* Classe commune pour les boutons round */
+.tdbuttonRound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  max-width: 6rem;
+  max-height: 6rem;
+  aspect-ratio: 1/1;
+  padding: .5em;
+  margin: 0.5rem;
+  border-radius: 50%;
+  transition: all ease 0.1s;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 0.875rem;
+  overflow: visible;
+}
+
+.tdbuttonRound img {
+  width: 100px;
+  height: 100px;
+  overflow: visible;
+}
+
+.tdbuttonRound:active {
+  transform: translateY(3px);
+}
+
+/* Classe pour l'état pressed des boutons round */
+.tdbuttonRoundPressed {
+  transform: translateY(3px);
+}
+
+/* Variantes de couleurs pour rectangle */
+
+/* Rectangle - Primary Light (par défaut) */
+.tdbuttonPrimaryLight {
+  border-color: var(--brown-border-mix);
+  background-color: var(--brown-50);
+  color: var(--brown-950);
+  box-shadow: 0px 5px 0px 0px var(--brown-900);
+}
+.tdbuttonPrimaryLight:hover {
+  background-color: var(--brown-100);
+}
+.tdbuttonPrimaryLight:active {
+  border-color: var(--brown-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--brown-900);
+}
+
+/* Rectangle - Primary Light Pressed */
+.tdbuttonPrimaryLightPressed {
+  border-color: var(--brown-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--brown-900);
+}
+
+/* Rectangle - Primary Dark */
+.tdbuttonPrimaryDark {
+  border-color: var(--brown-border-mix);
+  background-color: var(--brown-650);
+  color: var(--brown-50);
+  box-shadow: 0px 5px 0px 0px var(--brown-950);
+}
+.tdbuttonPrimaryDark:hover {
+  background-color: var(--brown-800);
+}
+.tdbuttonPrimaryDark:active {
+  border-color: var(--brown-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--brown-950);
+}
+
+/* Rectangle - Primary Dark Pressed */
+.tdbuttonPrimaryDarkPressed {
+  border-color: var(--brown-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--brown-950);
+}
+
+/* Rectangle - Secondary Light */
+.tdbuttonSecondaryLight {
+  border: solid 2px;
+  border-color: var(--green-border-mix);
+  background-color: var(--green-50);
+  color: var(--green-950);
+  box-shadow: 0px 5px 0px 0px var(--green-900);
+}
+.tdbuttonSecondaryLight:hover {
+  background-color: var(--green-100);
+}
+.tdbuttonSecondaryLight:active {
+  border-color: var(--green-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--green-900);
+}
+
+/* Rectangle - Secondary Light Pressed */
+.tdbuttonSecondaryLightPressed {
+  border-color: var(--green-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--green-900);
+}
+
+/* Rectangle - Secondary Dark */
+.tdbuttonSecondaryDark {
+  border: solid 2px;
+  border-color: var(--green-border-mix);
+  background-color: var(--green-700);
+  color: var(--green-50);
+  box-shadow: 0px 5px 0px 0px var(--green-950);
+}
+.tdbuttonSecondaryDark:hover {
+  background-color: var(--green-800);
+}
+.tdbuttonSecondaryDark:active {
+  border-color: var(--green-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--green-950);
+}
+
+/* Rectangle - Secondary Dark Pressed */
+.tdbuttonSecondaryDarkPressed {
+  border-color: var(--green-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--green-950);
+}
+
+/* Variantes de couleurs pour round */
+
+/* Round - Primary Light */
+.tdbuttonRoundPrimaryLight {
+  border-color: var(--brown-border-mix);
+  background-color: var(--brown-50);
+  color: var(--brown-950);
+  box-shadow: 0px 5px 0px 0px var(--brown-900);
+}
+.tdbuttonRoundPrimaryLight:hover {
+  background-color: var(--brown-100);
+}
+.tdbuttonRoundPrimaryLight:active {
+  border-color: var(--brown-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--brown-900);
+}
+
+/* Round - Primary Light Pressed */
+.tdbuttonRoundPrimaryLightPressed {
+  border-color: var(--brown-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--brown-900);
+}
+
+/* Round - Primary Dark */
+.tdbuttonRoundPrimaryDark {
+  border-color: var(--brown-border-mix);
+  background-color: var(--brown-650);
+  color: var(--brown-50);
+  box-shadow: 0px 5px 0px 0px var(--brown-950);
+}
+.tdbuttonRoundPrimaryDark:hover {
+  background-color: var(--brown-800);
+}
+.tdbuttonRoundPrimaryDark:active {
+  border-color: var(--brown-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--brown-950);
+}
+
+/* Round - Primary Dark Pressed */
+.tdbuttonRoundPrimaryDarkPressed {
+  border-color: var(--brown-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--brown-950);
+}
+
+/* Round - Secondary Light */
+.tdbuttonRoundSecondaryLight {
+  border-color: var(--green-border-mix);
+  background-color: var(--green-50);
+  color: var(--green-950);
+  box-shadow: 0px 5px 0px 0px var(--green-900);
+}
+.tdbuttonRoundSecondaryLight:hover {
+  background-color: var(--green-100);
+}
+.tdbuttonRoundSecondaryLight:active {
+  border-color: var(--green-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--green-900);
+}
+
+/* Round - Secondary Light Pressed */
+.tdbuttonRoundSecondaryLightPressed {
+  border-color: var(--green-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--green-900);
+}
+
+/* Round - Secondary Dark */
+.tdbuttonRoundSecondaryDark {
+  border-color: var(--green-border-mix);
+  background-color: var(--green-900);
+  color: var(--green-50);
+  box-shadow: 0px 5px 0px 0px var(--green-950);
+}
+.tdbuttonRoundSecondaryDark:hover {
+  background-color: var(--green-800);
+}
+.tdbuttonRoundSecondaryDark:active {
+  border-color: var(--green-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--green-950);
+}
+
+/* Round - Secondary Dark Pressed */
+.tdbuttonRoundSecondaryDarkPressed {
+  border-color: var(--green-border-mix2);
+  box-shadow: 0px 0px 0px 0px var(--green-950);
+}
+
+/* Styles pour l'icône */
+.icon {
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.iconAlone {
+  font-size: 1.25rem;
+  margin-right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.tdbuttonRound .icon,
+.tdbuttonRoundPrimaryLight .icon,
+.tdbuttonRoundPrimaryDark .icon,
+.tdbuttonRoundSecondaryLight .icon,
+.tdbuttonRoundSecondaryDark .icon {
+  margin-right: 0;
+  margin-bottom: 0.25rem;
+}

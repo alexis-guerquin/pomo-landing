@@ -1,0 +1,147 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: 1rem 2rem;
+  background-color: var(--theme-surface);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(0px);
+}
+
+.navbar.scrolled {
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 2rem;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-link {
+  background: none;
+  border: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--brown-900);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--brown-900);
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+  width: 80%;
+}
+
+.navbar-link:hover {
+  color: var(--brown-700);
+}
+
+.navbar.scrolled .navbar-link {
+  color: var(--brown-900);
+}
+
+.navbar-cta {
+  background-color: var(--brown-900);
+  color: white;
+  border: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-cta:hover {
+  background-color: var(--brown-800);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar-cta:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar.scrolled {
+    padding: 0.75rem 1rem;
+  }
+
+  .navbar-logo img {
+    height: 32px;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .navbar-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .navbar-cta {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-link {
+    display: none;
+  }
+
+  .navbar-cta {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
