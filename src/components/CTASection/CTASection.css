@@ -1,0 +1,154 @@
+.cta-section {
+  width: 90%;
+  max-width: 1400px;
+  margin: 2em auto;
+  border-radius: 2rem;
+  background-color: var(--brown-800);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4em 2em;
+  overflow: visible;
+}
+
+.cta-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10rem;
+}
+
+.cta-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cta-text button {
+  width: 100%;
+  max-width: 400px;
+}
+
+.cta-title {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.cta-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: var(--green-250);
+  margin: 0;
+}
+
+.cta-image {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+}
+
+.cta-image img {
+  width: 100%;
+  height: auto;
+  scale: 2;
+  filter: drop-shadow(16px 0 0 var(--brown-50));
+}
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  .cta-section {
+    padding: 3em 2em;
+  }
+
+  .cta-content {
+    gap: 2rem;
+  }
+
+  .cta-image img {
+    max-width: 300px;
+    scale: 1;
+  }
+}
+
+/* Tablettes portrait et petits écrans */
+@media (max-width: 768px) {
+  .cta-section {
+    width: 95%;
+    padding: 3rem 1.5rem;
+    min-height: auto;
+    border-radius: 1.5rem;
+  }
+
+  .cta-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .cta-text {
+    align-items: center;
+  }
+
+  .cta-text button {
+    max-width: 100%;
+  }
+
+  .cta-image {
+    max-width: 70%;
+  }
+
+  .cta-image img {
+    max-width: 250px;
+    filter: drop-shadow(-8px 8px 0 var(--brown-50));
+  }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+  .cta-section {
+    width: 95%;
+    padding: 2rem 1rem;
+    margin: 1.5em auto;
+    border-radius: 1rem;
+  }
+
+  .cta-content {
+    gap: 1.5rem;
+  }
+
+  .cta-text {
+    gap: 1rem;
+  }
+
+  .cta-image {
+    max-width: 80%;
+  }
+
+  .cta-image img {
+    max-width: 180px;
+    filter: drop-shadow(-6px 6px 0 var(--brown-50));
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 360px) {
+  .cta-section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .cta-image img {
+    max-width: 150px;
+  }
+}
+  
+  

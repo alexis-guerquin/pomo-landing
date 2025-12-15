@@ -1,0 +1,140 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/static/Nunito-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/static/Nunito-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/static/Nunito-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Base styles === */
+html, body {
+  height: 100%;
+  min-height: 600px;
+  margin: 0;
+  padding: 0;
+  background-color: var(--theme-surface);
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--brown-50);
+}/* === Fonts === */
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6, 
+div, p, span,
+button,
+input::placeholder,
+textarea::placeholder {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* === Scratch Card Section === */
+.scratch-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.scratch-card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.scratch-card-emoji {
+  font-size: 8rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.scratch-card-character {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.scratch-card-hint {
+  transition: all 1s ease-in-out;
+  animation: slideLeftWave 3s ease-in-out infinite;
+}
+
+/* === Animation droite à gauche avec mouvement vertical === */
+@keyframes slideLeftWave {
+  0% {
+    transform: translate(0, 0);
+    transform: rotate(3deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: translate(10px, 0);
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: translate(0, 0);
+    transform: rotate(-3deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .scratch-card-container {
+    display: none;
+  }
+}
+
+.footer-character-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: grid;
+  z-index: 3;
+}
+
+.footer-character {
+  width: 180px;
+  height: auto;
+  z-index: 1;
+  position: relative;
+}
+
+.footer-scroll-top {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}

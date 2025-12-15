@@ -1,0 +1,20 @@
+/* ===== MINI FEATURE SECTION ===== */
+
+.mini-feature-section {
+  width: 100%;
+  position: relative;
+}
+
+.mini-feature-section__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .mini-feature-section__container {
+    max-width: 100%;
+  }
+}
+

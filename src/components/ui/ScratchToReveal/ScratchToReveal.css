@@ -1,0 +1,14 @@
+.scratch-to-reveal {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.scratch-to-reveal__canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
