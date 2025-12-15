@@ -23,12 +23,12 @@ function App() {
   useSmoothScroll();
   
   // Initialiser avec une image aléatoire
-  const [currentCharacter, setCurrentCharacter] = useState<string>(() => {
+  const [currentCharacter] = useState<string>(() => {
     return CHARACTER_IMAGES[Math.floor(Math.random() * CHARACTER_IMAGES.length)];
   });
   
   const [imageDimensions, setImageDimensions] = useState({ width: 300, height: 300 });
-  const [key, setKey] = useState(0);
+  const [key] = useState(0);
   const [showHint, setShowHint] = useState(true);
 
   // Charger les dimensions de l'image actuelle

@@ -53,8 +53,14 @@ export const CharacterReveal = () => {
               minScratchPercentage={40}
               onComplete={handleComplete}
               className="scratch-card"
-              customImage={currentImage}
-            />
+              maskImage={currentImage}
+            >
+              <img 
+                src={currentImage} 
+                alt="Pomocha Character" 
+                className="scratch-card-character"
+              />
+            </ScratchToReveal>
           </div>
 
           <p className="character-reveal-hint">
