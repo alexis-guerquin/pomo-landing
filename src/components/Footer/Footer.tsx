@@ -1,20 +1,60 @@
 import './Footer.css';
 import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const links = [
+const linkCategories = [
   {
     title: 'Fonctionnalités',
-    href: '#features',
+    links: [
+      {
+        title: 'Timer Pomodoro',
+        href: '/features/pomodoro-timer',
+        isRoute: true,
+      },
+      {
+        title: 'Système de récompenses',
+        href: '/features/rewards-system',
+        isRoute: true,
+      },
+      {
+        title: 'Statistiques',
+        href: '/features/statistics',
+        isRoute: true,
+      },
+    ],
+  },
+  {
+    title: 'Cas d\'usage',
+    links: [
+      {
+        title: 'Étudiants',
+        href: '/use-cases/students',
+        isRoute: true,
+      },
+      {
+        title: 'Freelancers',
+        href: '/use-cases/freelancers',
+        isRoute: true,
+      },
+    ],
   },
   {
     title: 'À propos',
-    href: '#about',
+    links: [
+      {
+        title: 'À propos',
+        href: '/about',
+        isRoute: true,
+      },
+    ],
   },
 ];
 
 export default function Footer() {
   const [showContact, setShowContact] = useState(false);
   const [copied, setCopied] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleContactClick = () => {
     setShowContact(!showContact);
@@ -38,26 +78,42 @@ export default function Footer() {
     }
   };
 
-  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute: boolean) => {
     e.preventDefault();
-    const targetId = href.replace('#', '');
-    const targetElement = document.getElementById(targetId);
     
-    if (targetElement) {
-      const offset = 80; // Offset pour la navbar
-      const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - offset;
+    if (isRoute) {
+      // Navigation vers une route
+      navigate(href);
+    } else {
+      // Navigation vers une ancre sur la page d'accueil
+      const targetId = href.replace('#', '');
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      const scrollNow = () => {
+        const targetElement = document.getElementById(targetId);
+        if (!targetElement) return;
 
-      // Ajouter une animation de pulse à l'élément cible
-      targetElement.classList.add('scroll-highlight');
-      setTimeout(() => {
-        targetElement.classList.remove('scroll-highlight');
-      }, 1500);
+        const offset = 80; // Offset pour la navbar
+        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+
+        targetElement.classList.add('scroll-highlight');
+        setTimeout(() => {
+          targetElement.classList.remove('scroll-highlight');
+        }, 1500);
+      };
+
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(scrollNow, 50);
+        return;
+      }
+
+      scrollNow();
     }
   };
 
@@ -68,61 +124,73 @@ export default function Footer() {
     
         
         <div className="footer-links">
-          {links.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              onClick={(e) => handleScrollToSection(e, link.href)}
-              className="footer-link">
-              <span>{link.title}</span>
-            </a>
+          {linkCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex} className="footer-link-column">
+              <h3 className="footer-column-title">{category.title}</h3>
+              <div className="footer-column-links">
+                {category.links.map((link, linkIndex) => (
+                  <a
+                    key={linkIndex}
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href, link.isRoute)}
+                    className="footer-link">
+                    <span>{link.title}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           ))}
-          <button
-            onClick={handleContactClick}
-            className="footer-link footer-link-button">
-            <span>Contact</span>
-          </button>
-          {showContact && (
-            <div className="footer-contact-email">
-              <a 
-                href="mailto:team@pomocha.fr"
-                onClick={copyToClipboard}
-                className="footer-email-link">
-                team@pomocha.fr
-              </a>
-              <button 
-                onClick={copyToClipboard}
-                className="footer-copy-button"
-                aria-label="Copier l'email">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="16" 
-                  height="16" 
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round">
-                  {copied ? (
-                    // Icône de check
-                    <path d="M20 6L9 17l-5-5"/>
-                  ) : (
-                    // Icône de copie
-                    <>
-                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                    </>
-                  )}
-                </svg>
+          <div className="footer-link-column">
+            <h3 className="footer-column-title">Contact</h3>
+            <div className="footer-column-links">
+              <button
+                onClick={handleContactClick}
+                className="footer-link footer-link-button">
+                <span>Contact</span>
               </button>
-              {copied && (
-                <div className="footer-copy-notification">
-                  ✓ Copié !
+              {showContact && (
+                <div className="footer-contact-email">
+                  <a 
+                    href="mailto:team@pomocha.fr"
+                    onClick={copyToClipboard}
+                    className="footer-email-link">
+                    team@pomocha.fr
+                  </a>
+                  <button 
+                    onClick={copyToClipboard}
+                    className="footer-copy-button"
+                    aria-label="Copier l'email">
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round">
+                      {copied ? (
+                        // Icône de check
+                        <path d="M20 6L9 17l-5-5"/>
+                      ) : (
+                        // Icône de copie
+                        <>
+                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                        </>
+                      )}
+                    </svg>
+                  </button>
+                  {copied && (
+                    <div className="footer-copy-notification">
+                      ✓ Copié !
+                    </div>
+                  )}
                 </div>
               )}
             </div>
-          )}
+          </div>
         </div>
 
         <div className="footer-socials">

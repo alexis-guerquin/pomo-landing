@@ -1,0 +1,30 @@
+.statistics-visual {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.statistics-visual__image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Styles adaptatifs pour les images de statistiques */
+@media (min-width: 768px) {
+  .statistics-visual__image {
+    width: 80%;
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .statistics-visual__image {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,29 @@
+.motivation-visual {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.motivation-visual__image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles adaptatifs pour les images */
+@media (min-width: 768px) {
+  .motivation-visual__image {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .motivation-visual__image {
+    max-width: 100%;
+  }
+}

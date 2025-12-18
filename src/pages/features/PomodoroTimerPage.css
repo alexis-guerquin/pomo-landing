@@ -1,0 +1,55 @@
+.pomodoro-visual {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+
+.pomodoro-visual__image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Section avec une seule image - styles adaptatifs */
+@media (min-width: 768px) {
+  .pomodoro-visual--single .pomodoro-visual__image {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .pomodoro-visual--single .pomodoro-visual__image {
+    max-width: 100%;
+  }
+}
+
+/* Section avec plusieurs images - côte à côte sur grand écran, empilées sur mobile */
+@media (min-width: 768px) {
+  .pomodoro-visual:not(.pomodoro-visual--single) {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .pomodoro-visual:not(.pomodoro-visual--single) .pomodoro-visual__image {
+    max-width: 50%;
+    flex: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .pomodoro-visual:not(.pomodoro-visual--single) {
+    flex-direction: column;
+  }
+
+  .pomodoro-visual:not(.pomodoro-visual--single) .pomodoro-visual__image {
+    max-width: 100%;
+  }
+}
