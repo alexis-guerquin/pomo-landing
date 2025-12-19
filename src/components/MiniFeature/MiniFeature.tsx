@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import ThreeDButton from '../ui/3DButton/3dbutton';
 import './MiniFeature.css';
 
@@ -16,6 +17,7 @@ export interface MiniFeatureData {
     link?: string;
     onClick?: () => void;
   };
+  moreInfoLink?: string;
 }
 
 interface MiniFeatureProps {
@@ -179,6 +181,14 @@ const MiniFeature = ({ data, layout = 'vertical', index = 0 }: MiniFeatureProps)
                   </svg>
                 }
               />
+              {data.moreInfoLink && (
+                <Link 
+                  to={data.moreInfoLink} 
+                  className="mini-feature__more-info"
+                >
+                  → Plus d'info de {data.title}
+                </Link>
+              )}
           </motion.div>
           </>
         )}
