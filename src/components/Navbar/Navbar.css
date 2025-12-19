@@ -155,8 +155,9 @@
 
 .navbar-mobile-toggle {
   display: none;
-  background: none;
-  border: 2px solid var(--brown-900);
+  background: var(--brown-50);
+  border: 2px solid;
+  border-color: var(--brown-border-mix);
   color: var(--brown-900);
   font-family: "Nunito", sans-serif;
   font-weight: 700;
