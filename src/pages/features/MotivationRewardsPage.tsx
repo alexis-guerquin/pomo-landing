@@ -11,7 +11,7 @@ export default function MotivationRewardsPage() {
       intro="La partie la plus difficile, ce n'est pas de travailler : c'est d'y revenir tous les jours. Pomocha transforme la concentration en progression concrète grâce à trois piliers : des missions quotidiennes, un système de trophées avec paliers, et des badges qui récompensent votre régularité."
     >
       <section className="page-layout__section">
-        <h2>1) Missions quotidiennes</h2>
+        <h2>1. Missions quotidiennes</h2>
         <p><strong>Un plan simple, chaque matin</strong></p>
         <p>
           Chaque jour, vous recevez 4 missions adaptées à votre rythme. Objectif : vous aider à
@@ -44,7 +44,7 @@ export default function MotivationRewardsPage() {
       </section>
 
       <section className="page-layout__section">
-        <h2>2) Système de trophées</h2>
+        <h2>2. Système de trophées</h2>
         <p><strong>Des indicateurs concrets sur votre travail</strong></p>
         <p>
           Chaque trophée correspond à une action spécifique et possède plusieurs paliers, 
@@ -76,7 +76,7 @@ export default function MotivationRewardsPage() {
       </section>
 
       <section className="page-layout__section">
-        <h2>3) Système de badges</h2>
+        <h2>3. Système de badges</h2>
         <p><strong>Des récompenses qui surprennent et motivent</strong></p>
         <p>
           Vous recevrez des badges selon votre travail et votre régularité. Il existe deux 
@@ -149,6 +149,26 @@ export default function MotivationRewardsPage() {
         </p>
       </section>
 
+      <section className="page-layout__section">
+      <p style={{ marginTop: 24 }}>Articles qui pourraient vous intéresser :</p>
+        <a href="/features/pomodoro-timer" style={{ color: '#7e4e4e' }}>
+        → Comment utiliser Pomocha
+        </a>
+        <br/>
+        <a href="/features/rewards-system" style={{ color: '#7e4e4e' }}>
+        → Comment utiliser le système de récompenses
+        </a>
+        <br/>
+        <a href="/use-cases/students" style={{ color: '#7e4e4e' }}>
+        → Utiliser Pomocha en tant qu'étudiant
+        </a>
+        <br/>
+        <a href="/features/freelancers" style={{ color: '#7e4e4e' }}>
+        → Utiliser Pomocha en tant que freelancer
+        </a>
+        <br/>
+      </section>
+      
       <CTASection />
     </PageLayout>
   );

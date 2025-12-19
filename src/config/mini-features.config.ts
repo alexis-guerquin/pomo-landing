@@ -21,7 +21,8 @@ export const MINI_FEATURES_CONFIG: MiniFeatureData[] = [
     cta: {
       text: "Découvrir l'app",
       link: '#'
-    }
+    },
+    moreInfoLink: '/features/pomodoro-timer'
   },
   {
     id: 'mini-rewards',
@@ -38,7 +39,8 @@ export const MINI_FEATURES_CONFIG: MiniFeatureData[] = [
     cta: {
       text: 'Tester Pomocha',
       link: '#rewards'
-    }
+    },
+    moreInfoLink: '/features/rewards-system'
   },
   {
     id: 'mini-stats',
@@ -55,7 +57,8 @@ export const MINI_FEATURES_CONFIG: MiniFeatureData[] = [
     cta: {
       text: 'Tester Pomocha',
       link: '#stats'
-    }
+    },
+    moreInfoLink: '/features/statistics'
   },
   {
     id: 'mini-more',

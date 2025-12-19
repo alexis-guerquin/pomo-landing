@@ -100,6 +100,24 @@ export default function FocusStatisticsPage() {
         </div>
       </section>
 
+      <section className="page-layout__section">
+      <p style={{ marginTop: 24 }}>Articles qui pourraient vous intéresser :</p>
+        <a href="/features/pomodoro-timer" style={{ color: '#7e4e4e' }}>
+        → Comment utiliser Pomocha
+        </a>
+        <br/>
+        <a href="/features/rewards-system" style={{ color: '#7e4e4e' }}>
+        → Comment utiliser le système de récompenses
+        </a>
+        <a href="/use-cases/students" style={{ color: '#7e4e4e' }}>
+        → Utiliser Pomocha en tant qu'étudiant
+        </a>
+        <br/>
+        <a href="/features/freelancers" style={{ color: '#7e4e4e' }}>
+        → Utiliser Pomocha en tant que freelancer
+        </a>
+      </section>
+
       <CTASection />
     </PageLayout>
   );

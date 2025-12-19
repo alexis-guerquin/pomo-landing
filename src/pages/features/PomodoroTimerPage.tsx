@@ -104,6 +104,17 @@ export default function PomodoroTimerPage() {
         </div>
       </section>
 
+      <section className="page-layout__section">
+      <p style={{ marginTop: 24 }}>Articles qui pourraient vous intéresser :</p>
+        <a href="/features/rewards-system" style={{ color: '#7e4e4e' }}>
+        → Comment utiliser le système de récompenses
+        </a>
+        <br/>
+        <a href="/features/statistics" style={{ color: '#7e4e4e' }}>
+        → Comment utiliser les statistiques
+        </a>
+      </section>
+
       <CTASection />
     </PageLayout>
   );
