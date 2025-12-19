@@ -23,19 +23,15 @@ export default function MotivationRewardsPage() {
 
         <ul className="page-layout__list">
           <li><strong>Mission 1 : Se connecter</strong> — Connectez-vous à l'application pour démarrer votre journée</li>
-          <li><strong>Récompense :</strong> +50 XP, 25 pièces</li>
         </ul>
         <ul className="page-layout__list">
           <li><strong>Mission 2 : Lancer un pomodoro</strong> — Démarrez votre première session de travail</li>
-          <li><strong>Récompense :</strong> +100 XP, 50 pièces</li>
         </ul>
         <ul className="page-layout__list">
           <li><strong>Mission 3 : Lancer un deuxième pomodoro</strong> — Continuez votre élan de productivité</li>
-          <li><strong>Récompense :</strong> +150 XP, 75 pièces</li>
         </ul>
         <ul className="page-layout__list">
           <li><strong>Mission 4 : Cocher une tâche</strong> — Terminez une tâche de votre liste</li>
-          <li><strong>Récompense :</strong> +200 XP, 100 pièces</li>
         </ul>
 
         <div className="motivation-visual">

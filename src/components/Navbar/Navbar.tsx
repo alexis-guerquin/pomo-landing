@@ -124,8 +124,8 @@ const Navbar = () => {
   const navConfig = useMemo(() => {
     const featureLinks = [
       { label: 'Minuteur Pomodoro', to: '/features/pomodoro-timer' },
-      { label: 'Motivation & récompenses', to: '/features/motivation' },
-      { label: 'Statistiques de focus', to: '/features/focus-statistics' },
+      { label: 'Motivation & récompenses', to: '/features/rewards-system' },
+      { label: 'Statistiques de focus', to: '/features/statistics' },
     ] as const;
 
     const useCaseLinks = [
