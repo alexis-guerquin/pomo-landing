@@ -203,7 +203,9 @@ const Navbar = () => {
             color="primary"
             theme="light"
             type="button"
-            onClick={() => goToSection('hero')}
+            onClick={() => {
+              window.location.href = 'https://www.pomocha.io/';
+            }}
           />
 
           <button

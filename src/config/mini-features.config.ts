@@ -20,7 +20,7 @@ export const MINI_FEATURES_CONFIG: MiniFeatureData[] = [
     ],
     cta: {
       text: "Découvrir l'app",
-      link: '#'
+      link: 'https://www.pomocha.io/'
     },
     moreInfoLink: '/features/pomodoro-timer'
   },
@@ -38,7 +38,7 @@ export const MINI_FEATURES_CONFIG: MiniFeatureData[] = [
     ],
     cta: {
       text: 'Tester Pomocha',
-      link: '#rewards'
+      link: 'https://www.pomocha.io/'
     },
     moreInfoLink: '/features/rewards-system'
   },
@@ -56,7 +56,7 @@ export const MINI_FEATURES_CONFIG: MiniFeatureData[] = [
     ],
     cta: {
       text: 'Tester Pomocha',
-      link: '#stats'
+      link: 'https://www.pomocha.io/'
     },
     moreInfoLink: '/features/statistics'
   },
@@ -74,7 +74,7 @@ export const MINI_FEATURES_CONFIG: MiniFeatureData[] = [
     ],
     cta: {
       text: "Tester Pomocha",
-      link: '#download'
+      link: 'https://www.pomocha.io/'
     }
   }
 ];
