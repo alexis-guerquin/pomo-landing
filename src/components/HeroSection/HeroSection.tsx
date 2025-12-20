@@ -30,6 +30,9 @@ const HeroSection = () => {
                 color="primary"
                 theme="light"
                 type="button"
+                onClick={() => {
+                  window.location.href = 'https://www.pomocha.io/';
+                }}
               />
               <p className="available-on">Available on: Browser</p>
             </div>

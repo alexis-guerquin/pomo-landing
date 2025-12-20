@@ -4,8 +4,7 @@ import './CTASection.css';
 
 const CTASection: React.FC = () => {
   const handleCTAClick = () => {
-    // Action à définir (ex: redirection vers page de téléchargement)
-    console.log('CTA clicked!');
+    window.location.href = 'https://www.pomocha.io/';
   };
 
   return (
