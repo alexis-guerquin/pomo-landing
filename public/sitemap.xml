@@ -1,45 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Page d'accueil - Priorité maximale -->
   <url>
     <loc>https://pomocha.fr/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- Section À propos de la page d'accueil -->
+  <url>
+    <loc>https://pomocha.fr/#about</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Section Fonctionnalités de la page d'accueil -->
+  <url>
+    <loc>https://pomocha.fr/#features</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Pages de fonctionnalités - Haute priorité -->
   <url>
     <loc>https://pomocha.fr/features/pomodoro-timer</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
+  
   <url>
     <loc>https://pomocha.fr/features/rewards-system</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
+  
   <url>
     <loc>https://pomocha.fr/features/statistics</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Pages cas d'usage - Priorité élevée -->
+  <url>
+    <loc>https://pomocha.fr/use-cases/students</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://pomocha.fr/use-cases/students</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  
   <url>
     <loc>https://pomocha.fr/use-cases/freelancers</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Page À propos -->
+  <url>
+    <loc>https://pomocha.fr/about</loc>
+    <lastmod>2025-12-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://pomocha.fr/about</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  
 </urlset>

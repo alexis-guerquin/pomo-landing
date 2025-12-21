@@ -6,6 +6,7 @@ import { ScratchToReveal } from '../components/ui/ScratchToReveal';
 import { CTASection } from '../components/CTASection';
 import { Footer } from '../components/Footer';
 import Navbar from '../components/Navbar/Navbar';
+import { LandingPageSEO } from '../components/SEO/LandingPageSEO';
 import { useEffect, useState } from 'react';
 
 const CHARACTER_IMAGES = [
@@ -60,6 +61,7 @@ export default function LandingPage() {
 
   return (
     <div className="app">
+      <LandingPageSEO />
       <div className="footer-character-container">
         <button
           onClick={scrollToTop}
@@ -86,9 +88,14 @@ export default function LandingPage() {
       </div>
 
       <Navbar />
-      <HeroSection />
+      
+      {/* Section Hero - Point d'entrée principal */}
+      <section id="home" aria-label="Accueil">
+        <HeroSection />
+      </section>
 
-      <div id="about" className="scratch-card-container">
+      {/* Section À propos - Découverte de Pomocha */}
+      <section id="about" className="scratch-card-container" aria-label="À propos de Pomocha">
         {showHint && (
           <div className="scratch-card-hint">
             <span>personnage à gratter →</span>
@@ -111,16 +118,20 @@ export default function LandingPage() {
             />
           )}
         </ScratchToReveal>
-      </div>
+      </section>
 
-      <div id="features">
+      {/* Section Fonctionnalités - Toutes les features de Pomocha */}
+      <section id="features" aria-label="Fonctionnalités Pomocha">
         <MiniFeatureSection
           features={MINI_FEATURES_CONFIG}
           layouts={['vertical', 'left', 'right', 'vertical']}
         />
-      </div>
+      </section>
 
-      <CTASection />
+      {/* Section Call-to-Action */}
+      <section id="cta" aria-label="Commencer avec Pomocha">
+        <CTASection />
+      </section>
 
       <Footer />
     </div>
