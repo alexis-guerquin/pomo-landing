@@ -23,7 +23,7 @@ export function LandingPageSEO() {
     twitterCard: 'summary_large_image',
     twitterTitle: 'Pomocha – La meilleure app Pomodoro gamifiée',
     twitterDescription:
-      'Restez concentré avec des sessions Pomodoro, débloquez des badges et suivez votre progression. L'app qui rend le focus addictif.',
+      'Restez concentré avec des sessions Pomodoro, débloquez des badges et suivez votre progression. L\'app qui rend le focus addictif.',
   });
 
   // Données structurées pour les rich snippets Google
