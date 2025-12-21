@@ -30,7 +30,7 @@ export const SEO_CONFIG = {
     'Pomocha',
   ],
 
-  defaultImage: '/og-image.png',
+  defaultImage: '/pomocha-og.png',
   
   social: {
     twitter: '@pomocha', // À remplacer par votre handle Twitter
