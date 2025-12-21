@@ -22,7 +22,7 @@ const CTASection: React.FC = () => {
           />
         </div>
         <div className="cta-image">
-          <img src="/icons/target.svg" alt="Target" />
+          <img src="/icons/target.svg" alt="Target" width="200" height="200" />
         </div>
       </div>
     </section>

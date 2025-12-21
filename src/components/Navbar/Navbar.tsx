@@ -159,7 +159,7 @@ const Navbar = () => {
           }}
           aria-label="Retour à l'accueil"
         >
-          <img src="/character/default.svg" alt="Pomocha Logo" />
+          <img src="/character/default.svg" alt="Pomocha Logo" width="50" height="50" />
         </div>
 
         {/* Menu "pill" au centre */}

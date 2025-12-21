@@ -31,6 +31,8 @@ export default function FocusStatisticsPage() {
             src="/visuals/graph.png" 
             alt="Graphique de temps de travail par projet et par jour de semaine"
             className="statistics-visual__image"
+            width="1920"
+            height="1080"
           />
         </div>
       </section>
@@ -55,6 +57,8 @@ export default function FocusStatisticsPage() {
             src="/visuals/topprojects.png" 
             alt="Classement des projets par temps de travail"
             className="statistics-visual__image"
+            width="1920"
+            height="1080"
           />
         </div>
       </section>
@@ -96,6 +100,8 @@ export default function FocusStatisticsPage() {
             src="/visuals/recaps.png" 
             alt="Exemple de récapitulatif hebdomadaire POMOCHA"
             className="statistics-visual__image"
+            width="1920"
+            height="1080"
           />
         </div>
       </section>

@@ -5,9 +5,15 @@
     <link rel="icon" type="image/svg+xml" href="/public/break-ic.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Preload de l'image LCP pour optimiser le chargement initial -->
+    <link rel="preload" as="image" href="/assets/Home-desktop.png" fetchpriority="high">
+    
     <!-- Preconnect pour optimiser le chargement des polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload des polices critiques -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,1000;1,1000&family=Oswald:wght@700&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,1000;1,1000&family=Oswald:wght@700&display=swap" rel="stylesheet">
     
     <!-- Meta tags SEO de base (seront remplacés par React) -->

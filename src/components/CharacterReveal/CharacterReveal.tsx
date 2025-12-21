@@ -59,6 +59,8 @@ export const CharacterReveal = () => {
                 src={currentImage} 
                 alt="Pomocha Character" 
                 className="scratch-card-character"
+                width="400"
+                height="400"
               />
             </ScratchToReveal>
           </div>

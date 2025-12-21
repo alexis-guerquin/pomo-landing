@@ -69,6 +69,8 @@ export default function PomodoroTimerPage() {
               src="/visuals/expl/home-mobile.png" 
               alt="Interface Pomodoro : timer, statistiques, projets et todolist"
               className="pomodoro-visual__image"
+              width="390"
+              height="844"
             />
           </picture>
         </div>
@@ -95,11 +97,15 @@ export default function PomodoroTimerPage() {
             src="/visuals/sessionend.png" 
             alt="Récapitulatif de fin de session avec XP gagné, badges débloqués et suggestions de pause"
             className="pomodoro-visual__image"
+            width="1920"
+            height="1080"
           />
           <img 
             src="/visuals/break.jpg" 
             alt="suggestions de pause"
             className="pomodoro-visual__image"
+            width="1920"
+            height="1080"
           />
         </div>
       </section>

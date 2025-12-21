@@ -39,6 +39,8 @@ export default function MotivationRewardsPage() {
             src="/visuals/dailymissions.png" 
             alt="Interface des missions quotidiennes avec progression et récompenses"
             className="motivation-visual__image"
+            width="1920"
+            height="1080"
           />
         </div>
       </section>
@@ -71,6 +73,8 @@ export default function MotivationRewardsPage() {
             src="/visuals/trophies.png" 
             alt="Système de trophées avec différents types et paliers"
             className="motivation-visual__image"
+            width="1920"
+            height="1080"
           />
         </div>
       </section>
@@ -131,6 +135,8 @@ export default function MotivationRewardsPage() {
             src="/visuals/badges.png" 
             alt="Système de badges communs et événementiels avec exemples de badges débloqués"
             className="motivation-visual__image"
+            width="1920"
+            height="1080"
           />
         </div>
       </section>

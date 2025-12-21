@@ -84,6 +84,8 @@ export default function LandingPage() {
           src="/character/stretching.svg"
           alt="Personnage Pomocha"
           className="footer-character"
+          width="200"
+          height="200"
         />
       </div>
 
@@ -115,6 +117,8 @@ export default function LandingPage() {
               src={currentCharacter}
               alt="Pomocha Character"
               className="scratch-card-character"
+              width={imageDimensions.width}
+              height={imageDimensions.height}
             />
           )}
         </ScratchToReveal>
