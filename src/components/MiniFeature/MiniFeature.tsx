@@ -70,8 +70,10 @@ const MiniFeature = ({ data, layout = 'vertical', index = 0 }: MiniFeatureProps)
               src={data.visual} 
               alt={data.visualAlt || data.title}
               className="mini-feature__image"
-              width="800"
-              height="600"
+              width="637"
+              height="296"
+              sizes="(max-width: 640px) 400px, (max-width: 1024px) 500px, 637px"
+              srcSet={`${data.visual} 637w, ${data.visual} 500w, ${data.visual} 400w`}
             />
             <div className="mini-feature__visual-glow"></div>
           </div>

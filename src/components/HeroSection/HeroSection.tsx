@@ -60,8 +60,10 @@ const HeroSection = () => {
                       className="laptop-image"
                       fetchPriority="high"
                       loading="eager"
-                      width="1920"
-                      height="1080"
+                      width="665"
+                      height="316"
+                      sizes="(max-width: 1024px) 450px, 665px"
+                      srcSet="/assets/Home-desktop.png 665w, /assets/Home-desktop.png 450w"
                     />
                     </div>
                   </div>
@@ -92,8 +94,10 @@ const HeroSection = () => {
                         alt="Application Pomocha - Vue mobile"
                         className="phone-image"
                         loading="lazy"
-                        width="390"
-                        height="844"
+                        width="266"
+                        height="457"
+                        sizes="(max-width: 480px) 200px, 266px"
+                        srcSet="/assets/Home-mobile.png 266w, /assets/Home-mobile.png 200w"
                       />
                     </div>
                   </div>
