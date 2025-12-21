@@ -38,9 +38,8 @@ export function LandingPageSEO() {
       description:
         'Application de minuteur Pomodoro avec gamification et statistiques pour améliorer la productivité et la concentration',
       sameAs: [
-        // Ajoutez vos réseaux sociaux ici
-        // 'https://twitter.com/pomocha',
-        // 'https://facebook.com/pomocha',
+        'https://x.com/Team_Pomocha',
+        'https://www.reddit.com/r/pomocha/',
       ],
     },
 

@@ -195,7 +195,7 @@ export default function Footer() {
 
         <div className="footer-socials">
           <a
-            href="https://twitter.com"
+            href="https://x.com/Team_Pomocha"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="X/Twitter"
@@ -212,10 +212,10 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.reddit.com/r/pomocha/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
+            aria-label="Reddit"
             className="footer-social-link">
             <svg
               className="footer-social-icon"
@@ -225,61 +225,9 @@ export default function Footer() {
               viewBox="0 0 24 24">
               <path
                 fill="currentColor"
-                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"></path>
+                d="M14.238 15.348c.085.084.085.221 0 .306c-.465.462-1.194.687-2.231.687l-.008-.002l-.008.002c-1.036 0-1.766-.225-2.231-.688a.219.219 0 0 1 0-.305a.219.219 0 0 1 .306 0c.384.383 1.012.555 1.925.555l.008.002l.008-.002c.912 0 1.54-.172 1.925-.555a.219.219 0 0 1 .306 0m-3.44-2.418c0-.507-.414-.919-.922-.919c-.509 0-.923.412-.923.919c0 .506.414.918.923.918c.508.001.922-.411.922-.918m13.202-.93c0 6.627-5.373 12-12 12s-12-5.373-12-12s5.373-12 12-12s12 5.373 12 12m-5-.129c0-.851-.695-1.543-1.55-1.543c-.417 0-.795.167-1.074.435c-1.056-.695-2.485-1.137-4.066-1.194l.865-2.724l2.343.549l-.003.034c0 .696.569 1.262 1.268 1.262c.7 0 1.267-.566 1.267-1.262s-.567-1.262-1.267-1.262c-.537 0-.994.335-1.179.804l-2.525-.592a.22.22 0 0 0-.244.133l-.941 2.965c-1.621.061-3.079.51-4.148 1.218a1.55 1.55 0 0 0-1.078-.447c-.854 0-1.55.691-1.55 1.542c0 .634.375 1.177.919 1.421c-.016.129-.03.258-.03.388c0 2.084 2.425 3.766 5.41 3.766c2.987 0 5.410-1.682 5.410-3.766c0-.139-.014-.277-.037-.412c.546-.235.922-.779.922-1.417M13.305 8.787c0-.437.355-.79.792-.79s.792.353.792.79c0 .436-.355.789-.792.789s-.792-.353-.792-.789m-5.414 6.572c-.509 0-.922-.412-.922-.919c0-.506.414-.918.922-.918s.923.412.923.918c0 .507-.414.919-.923.919"></path>
             </svg>
           </a>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            className="footer-social-link">
-            <svg
-              className="footer-social-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"></path>
-            </svg>
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="footer-social-link">
-            <svg
-              className="footer-social-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"></path>
-            </svg>
-          </a>
-          <a
-            href="https://tiktok.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TikTok"
-            className="footer-social-link">
-            <svg
-              className="footer-social-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M16.6 5.82s.51.5 0 0A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6c0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64c0 3.33 2.76 5.7 5.69 5.7c3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48"></path>
-            </svg>
-          </a>
-
         </div>
 
         <span className="footer-copyright">
