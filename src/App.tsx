@@ -1,6 +1,7 @@
 import './App.css';
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from './components/ScrollToTop';
 
 // Lazy loading des pages pour optimiser le LCP
@@ -49,6 +50,7 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Suspense>
+      <Analytics />
     </>
   );
 }
