@@ -1,8 +1,10 @@
 import React from 'react';
 import ThreeDButton from '../ui/3DButton/3dbutton';
+import { useI18n } from '../../contexts/I18nContext';
 import './CTASection.css';
 
 const CTASection: React.FC = () => {
+  const { t } = useI18n();
   const handleCTAClick = () => {
     window.location.href = 'https://www.pomocha.io/';
   };
@@ -11,10 +13,10 @@ const CTASection: React.FC = () => {
     <section className="cta-section">
       <div className="cta-content">
         <div className="cta-text">
-          <h2 className="cta-title">Alors, t'attends quoi pour te lancer ?</h2>
-          <p className="cta-subtitle">Pomocha t'attend!</p>
+          <h2 className="cta-title">{t.components.cta.title}</h2>
+          <p className="cta-subtitle">{t.components.cta.subtitle}</p>
           <ThreeDButton
-            text="C'est parti !"
+            text={t.components.cta.button}
             onClick={handleCTAClick}
             variant="rectangle"
             color="secondary"

@@ -1,31 +1,24 @@
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
+import { useI18n } from '../../contexts/I18nContext';
 import './FocusStatisticsPage.css';
 
 export default function FocusStatisticsPage() {
+  const { t } = useI18n();
   return (
     <PageLayout
-      htmlTitle="Statistiques de focus – Visualisez votre progression"
-      metaDescription="Des graphiques et des insights pour comprendre vos habitudes : heures productives, séries, progression et tendances. Une productivité pilotée par les données."
-      h1="Voyez votre focus, comprenez vos habitudes"
-      intro="On n'améliore pas ce qu'on ne mesure pas. Le tableau de bord transforme vos sessions Pomodoro en informations actionnables : clair, lisible, et réellement utile au quotidien."
+      htmlTitle={t.pages.focusStatistics.htmlTitle}
+      metaDescription={t.pages.focusStatistics.metaDescription}
+      h1={t.pages.focusStatistics.h1}
+      intro={t.pages.focusStatistics.intro}
     >
       <section className="page-layout__section">
-        <h2>Résumé semaine par semaine</h2>
+        <h2>{t.pages.focusStatistics.sections.weeklySummary.title}</h2>
         <p>
-          <strong>Suivez votre temps avec précision</strong>
+          <strong>{t.pages.focusStatistics.sections.weeklySummary.subtitle}</strong>
         </p>
-        <p>
-          Visualisez votre activité semaine par semaine avec un découpage détaillé par projet. 
-          Ces statistiques vous permettent de tracker votre temps et vos progressions de manière 
-          claire et efficace. Utilisez-les pour optimiser votre productivité et mieux comprendre 
-          vos habitudes de travail.
-        </p>
-        <p>
-          <strong>Idéal pour facturer vos clients</strong> si vous utilisez POMOCHA pour du travail 
-          professionnel. Chaque projet est clairement identifié avec son temps de travail associé, 
-          facilitant la création de factures précises et transparentes.
-        </p>
+        <p>{t.pages.focusStatistics.sections.weeklySummary.content}</p>
+        <p>{t.pages.focusStatistics.sections.weeklySummary.billingNote}</p>
         <div className="statistics-visual">
           <img 
             src="/visuals/graph.png" 
@@ -38,20 +31,12 @@ export default function FocusStatisticsPage() {
       </section>
 
       <section className="page-layout__section">
-        <h2>Top Projets</h2>
+        <h2>{t.pages.focusStatistics.sections.topProjects.title}</h2>
         <p>
-          <strong>Votre avancée projet par projet</strong>
+          <strong>{t.pages.focusStatistics.sections.topProjects.subtitle}</strong>
         </p>
-        <p>
-          La section Top Projets vous donne une vue d'ensemble du temps passé à travailler sur 
-          chacun de vos projets. Visualisez rapidement quels projets occupent le plus de votre 
-          temps et suivez votre progression au fil des semaines.
-        </p>
-        <p>
-          Choisissez la durée qui vous convient : 7 derniers jours, 30 derniers jours, ou toute 
-          autre période. Cette flexibilité vous permet d'analyser vos tendances à court et long 
-          terme, et d'identifier les projets qui méritent plus d'attention.
-        </p>
+        <p>{t.pages.focusStatistics.sections.topProjects.content}</p>
+        <p>{t.pages.focusStatistics.sections.topProjects.flexibility}</p>
         <div className="statistics-visual">
           <img 
             src="/visuals/topprojects.png" 
@@ -64,36 +49,27 @@ export default function FocusStatisticsPage() {
       </section>
 
       <section className="page-layout__section">
-        <h2>Les Recaps : récompensez votre travail</h2>
+        <h2>{t.pages.focusStatistics.sections.recaps.title}</h2>
         <p>
-          <strong>Une des fonctionnalités majeures de POMOCHA</strong>
+          <strong>{t.pages.focusStatistics.sections.recaps.subtitle}</strong>
         </p>
-        <p>
-          Recevez automatiquement un récapitulatif de votre activité pour vous récompenser du temps 
-          passé à travailler aux côtés de POMOCHA. Ces rapports sont disponibles en plusieurs formats :
-        </p>
+        <p>{t.pages.focusStatistics.sections.recaps.content}</p>
         <ul className="page-layout__list">
-          <li><strong>Récapitulatifs hebdomadaires</strong> : un résumé de votre semaine de travail</li>
-          <li><strong>Récapitulatifs mensuels</strong> : un bilan complet de votre mois</li>
-          <li><strong>Récapitulatifs annuels</strong> : une vue d'ensemble de votre année</li>
+          {t.pages.focusStatistics.sections.recaps.formats.map((format, index) => (
+            <li key={index}><strong>{format.name}</strong> : {format.description}</li>
+          ))}
         </ul>
         <p>
-          Chaque récapitulatif contient plusieurs données essentielles :
+          <strong>{t.pages.focusStatistics.sections.recaps.dataTitle}</strong>
         </p>
         <ul className="page-layout__list">
-          <li>Votre <strong>temps total</strong> de travail</li>
-          <li>Votre <strong>meilleur projet</strong> de la période</li>
-          <li>Votre <strong>évolution par rapport au dernier rapport</strong> pour suivre votre progression</li>
-          <li>Et bien d'autres métriques pour célébrer vos accomplissements</li>
+          {t.pages.focusStatistics.sections.recaps.dataItems.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
         </ul>
+        <p>{t.pages.focusStatistics.sections.recaps.history}</p>
         <p>
-          <strong>Accédez à votre historique complet</strong> : tous vos rapports sont archivés et 
-          accessibles dans la page Profil → Recaps. Consultez vos anciens récapitulatifs à tout moment 
-          pour voir votre évolution sur le long terme.
-        </p>
-        <p>
-          <em>Note : Les rapports hebdomadaires et mensuels sont inclus dans l'abonnement payant. 
-          Consultez la page abonnement pour plus de détails.</em>
+          <em>{t.pages.focusStatistics.sections.recaps.note}</em>
         </p>
         <div className="statistics-visual">
           <img 
@@ -107,21 +83,15 @@ export default function FocusStatisticsPage() {
       </section>
 
       <section className="page-layout__section">
-      <p style={{ marginTop: 24 }}>Articles qui pourraient vous intéresser :</p>
-        <a href="/features/pomodoro-timer" style={{ color: '#7e4e4e' }}>
-        → Comment utiliser Pomocha
-        </a>
-        <br/>
-        <a href="/features/rewards-system" style={{ color: '#7e4e4e' }}>
-        → Comment utiliser le système de récompenses
-        </a>
-        <a href="/use-cases/students" style={{ color: '#7e4e4e' }}>
-        → Utiliser Pomocha en tant qu'étudiant
-        </a>
-        <br/>
-        <a href="/features/freelancers" style={{ color: '#7e4e4e' }}>
-        → Utiliser Pomocha en tant que freelancer
-        </a>
+        <p style={{ marginTop: 24 }}>{t.pages.focusStatistics.sections.relatedArticles.title}</p>
+        {t.pages.focusStatistics.sections.relatedArticles.links.map((link, index) => (
+          <span key={index}>
+            <a href={link.href} style={{ color: '#7e4e4e' }}>
+              → {link.text}
+            </a>
+            {index < t.pages.focusStatistics.sections.relatedArticles.links.length - 1 && <br/>}
+          </span>
+        ))}
       </section>
 
       <CTASection />

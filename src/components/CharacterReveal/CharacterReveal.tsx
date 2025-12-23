@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ScratchToReveal } from '../ui/ScratchToReveal';
+import { useI18n } from '../../contexts/I18nContext';
 import './CharacterReveal.css';
 
 const CHARACTER_IMAGES = [
@@ -13,6 +14,7 @@ const CHARACTER_IMAGES = [
 ];
 
 export const CharacterReveal = () => {
+  const { t } = useI18n();
   const [currentImage, setCurrentImage] = useState<string>('');
   const [key, setKey] = useState(0);
 
@@ -39,10 +41,10 @@ export const CharacterReveal = () => {
       <div className="character-reveal-container">
         <div className="character-reveal-content">
           <h2 className="character-reveal-title">
-            Découvrez votre compagnon Pomocha
+            {t.components.characterReveal.title}
           </h2>
           <p className="character-reveal-description">
-            Grattez pour révéler votre personnage du jour !
+            {t.components.characterReveal.description}
           </p>
           
           <div className="scratch-wrapper">
@@ -57,7 +59,7 @@ export const CharacterReveal = () => {
             >
               <img 
                 src={currentImage} 
-                alt="Pomocha Character" 
+                alt={t.components.landingPage.characterAlt} 
                 className="scratch-card-character"
                 width="400"
                 height="400"
@@ -66,7 +68,7 @@ export const CharacterReveal = () => {
           </div>
 
           <p className="character-reveal-hint">
-            ✨ Grattez avec votre souris pour découvrir le personnage caché
+            {t.components.characterReveal.hint}
           </p>
         </div>
       </div>

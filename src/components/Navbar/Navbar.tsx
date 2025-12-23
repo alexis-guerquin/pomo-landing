@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ThreeDButton from '../ui/3DButton/3dbutton';
+import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
+import { useI18n } from '../../contexts/I18nContext';
 import './Navbar.css';
 
 const transition = {
@@ -78,6 +80,7 @@ function MenuItem({
 }
 
 const Navbar = () => {
+  const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [active, setActive] = useState<string | null>(null);
@@ -123,27 +126,27 @@ const Navbar = () => {
 
   const navConfig = useMemo(() => {
     const featureLinks = [
-      { label: 'Minuteur Pomodoro', to: '/features/pomodoro-timer' },
-      { label: 'Motivation & récompenses', to: '/features/rewards-system' },
-      { label: 'Statistiques de focus', to: '/features/statistics' },
+      { label: t.components.navbar.featureLinks.pomodoroTimer, to: '/features/pomodoro-timer' },
+      { label: t.components.navbar.featureLinks.rewardsSystem, to: '/features/rewards-system' },
+      { label: t.components.navbar.featureLinks.statistics, to: '/features/statistics' },
     ] as const;
 
     const useCaseLinks = [
-      { label: 'Étudiants', to: '/use-cases/students' },
-      { label: 'Freelances', to: '/use-cases/freelancers' },
+      { label: t.components.navbar.useCaseLinks.students, to: '/use-cases/students' },
+      { label: t.components.navbar.useCaseLinks.freelancers, to: '/use-cases/freelancers' },
     ] as const;
 
     const mobileItems = [
-      { label: 'Accueil', onClick: () => goToSection('hero') },
-      { label: 'Fonctionnalités (aperçu)', onClick: () => goToSection('features') },
+      { label: t.components.navbar.mobileItems.home, onClick: () => goToSection('hero') },
+      { label: t.components.navbar.mobileItems.featuresPreview, onClick: () => goToSection('features') },
       ...featureLinks.map((l) => ({ label: l.label, onClick: () => goToPath(l.to) })),
       ...useCaseLinks.map((l) => ({ label: l.label, onClick: () => goToPath(l.to) })),
-      { label: 'À propos', onClick: () => goToPath('/about') },
+      { label: t.components.navbar.about, onClick: () => goToPath('/about') },
     ];
 
     return { featureLinks, useCaseLinks, mobileItems };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
+  }, [location.pathname, t]);
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -157,7 +160,7 @@ const Navbar = () => {
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') goToSection('hero');
           }}
-          aria-label="Retour à l'accueil"
+          aria-label={t.components.navbar.backToHome}
         >
           <img src="/character/default.svg" alt="Pomocha Logo" width="50" height="50" />
         </div>
@@ -165,11 +168,11 @@ const Navbar = () => {
         {/* Menu "pill" au centre */}
         <div className="navbar-menu">
           <Menu setActive={setActive}>
-            <button className="nav-pill__link" type="button" onMouseEnter={() => setActive('Accueil')} onClick={() => goToSection('hero')}>
-              Accueil
+            <button className="nav-pill__link" type="button" onMouseEnter={() => setActive(t.components.navbar.home)} onClick={() => goToSection('hero')}>
+              {t.components.navbar.home}
             </button>
 
-            <MenuItem setActive={(item) => setActive(item)} active={active} item="Fonctionnalités">
+            <MenuItem setActive={(item) => setActive(item)} active={active} item={t.components.navbar.features}>
               <div className="nav-dropdown-grid">
                 {navConfig.featureLinks.map((l) => (
                   <HoveredLink key={l.to} to={l.to} onClick={() => setActive(null)}>
@@ -179,7 +182,7 @@ const Navbar = () => {
               </div>
             </MenuItem>
 
-            <MenuItem setActive={(item) => setActive(item)} active={active} item="Cas d’usage">
+            <MenuItem setActive={(item) => setActive(item)} active={active} item={t.components.navbar.useCases}>
               <div className="nav-dropdown-grid">
                 {navConfig.useCaseLinks.map((l) => (
                   <HoveredLink key={l.to} to={l.to} onClick={() => setActive(null)}>
@@ -190,15 +193,16 @@ const Navbar = () => {
             </MenuItem>
 
             <HoveredLink to="/about" onClick={() => setActive(null)}>
-              À propos
+              {t.components.navbar.about}
             </HoveredLink>
           </Menu>
         </div>
 
         {/* Actions à droite */}
         <div className="navbar-actions">
+          <LanguageSwitcher />
           <ThreeDButton
-            text="Tester Pomocha"
+            text={t.components.navbar.cta}
             variant="rectangle"
             color="primary"
             theme="light"
@@ -211,11 +215,11 @@ const Navbar = () => {
           <button
             className="navbar-mobile-toggle"
             type="button"
-            aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-label={mobileMenuOpen ? t.components.navbar.menuToggle.close : t.components.navbar.menuToggle.open}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen((v) => !v)}
           >
-            Menu
+            {t.components.navbar.menu}
           </button>
         </div>
       </div>
