@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ThreeDButton from '../ui/3DButton/3dbutton';
+import { useI18n } from '../../contexts/I18nContext';
 import './MiniFeature.css';
 
 export type MiniFeatureLayout = 'vertical' | 'left' | 'right';
@@ -27,6 +28,19 @@ interface MiniFeatureProps {
 }
 
 const MiniFeature = ({ data, layout = 'vertical', index = 0 }: MiniFeatureProps) => {
+  const { t } = useI18n();
+  
+  // Mapper l'ID de la feature au moreInfo correspondant
+  const getMoreInfoText = () => {
+    const featureMap: Record<string, string> = {
+      'mini-concept': t.miniFeatures.concept.moreInfo,
+      'mini-rewards': t.miniFeatures.rewards.moreInfo,
+      'mini-stats': t.miniFeatures.statistics.moreInfo,
+      'mini-more': t.miniFeatures.more.moreInfo,
+    };
+    return featureMap[data.id] || `→ More info about ${data.title}`;
+  };
+
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -190,7 +204,7 @@ const MiniFeature = ({ data, layout = 'vertical', index = 0 }: MiniFeatureProps)
                   to={data.moreInfoLink} 
                   className="mini-feature__more-info"
                 >
-                  → Plus d'info de {data.title}
+                  {getMoreInfoText()}
                 </Link>
               )}
           </motion.div>

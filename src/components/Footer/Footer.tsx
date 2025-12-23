@@ -1,60 +1,62 @@
 import './Footer.css';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-
-const linkCategories = [
-  {
-    title: 'Fonctionnalités',
-    links: [
-      {
-        title: 'Timer Pomodoro',
-        href: '/features/pomodoro-timer',
-        isRoute: true,
-      },
-      {
-        title: 'Système de récompenses',
-        href: '/features/rewards-system',
-        isRoute: true,
-      },
-      {
-        title: 'Statistiques',
-        href: '/features/statistics',
-        isRoute: true,
-      },
-    ],
-  },
-  {
-    title: 'Cas d\'usage',
-    links: [
-      {
-        title: 'Étudiants',
-        href: '/use-cases/students',
-        isRoute: true,
-      },
-      {
-        title: 'Freelancers',
-        href: '/use-cases/freelancers',
-        isRoute: true,
-      },
-    ],
-  },
-  {
-    title: 'À propos',
-    links: [
-      {
-        title: 'À propos',
-        href: '/about',
-        isRoute: true,
-      },
-    ],
-  },
-];
+import { useI18n } from '../../contexts/I18nContext';
 
 export default function Footer() {
+  const { t } = useI18n();
   const [showContact, setShowContact] = useState(false);
   const [copied, setCopied] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const linkCategories = useMemo(() => [
+    {
+      title: t.components.footer.categories.features,
+      links: [
+        {
+          title: t.components.footer.links.pomodoroTimer,
+          href: '/features/pomodoro-timer',
+          isRoute: true,
+        },
+        {
+          title: t.components.footer.links.rewardsSystem,
+          href: '/features/rewards-system',
+          isRoute: true,
+        },
+        {
+          title: t.components.footer.links.statistics,
+          href: '/features/statistics',
+          isRoute: true,
+        },
+      ],
+    },
+    {
+      title: t.components.footer.categories.useCases,
+      links: [
+        {
+          title: t.components.footer.links.students,
+          href: '/use-cases/students',
+          isRoute: true,
+        },
+        {
+          title: t.components.footer.links.freelancers,
+          href: '/use-cases/freelancers',
+          isRoute: true,
+        },
+      ],
+    },
+    {
+      title: t.components.footer.categories.about,
+      links: [
+        {
+          title: t.components.footer.links.about,
+          href: '/about',
+          isRoute: true,
+        },
+      ],
+    },
+  ], [t]);
 
   const handleContactClick = () => {
     setShowContact(!showContact);
@@ -141,12 +143,12 @@ export default function Footer() {
             </div>
           ))}
           <div className="footer-link-column">
-            <h3 className="footer-column-title">Contact</h3>
+            <h3 className="footer-column-title">{t.components.footer.categories.contact}</h3>
             <div className="footer-column-links">
               <button
                 onClick={handleContactClick}
                 className="footer-link footer-link-button">
-                <span>Contact</span>
+                <span>{t.components.footer.links.contact}</span>
               </button>
               {showContact && (
                 <div className="footer-contact-email">
@@ -159,7 +161,7 @@ export default function Footer() {
                   <button 
                     onClick={copyToClipboard}
                     className="footer-copy-button"
-                    aria-label="Copier l'email">
+                    aria-label={t.components.footer.copyEmail}>
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       width="16" 
@@ -184,7 +186,7 @@ export default function Footer() {
                   </button>
                   {copied && (
                     <div className="footer-copy-notification">
-                      ✓ Copié !
+                      {t.components.footer.copied}
                     </div>
                   )}
                 </div>
@@ -231,7 +233,7 @@ export default function Footer() {
         </div>
 
         <span className="footer-copyright">
-          © {new Date().getFullYear()} Pomocha. Tous droits réservés.
+          © {new Date().getFullYear()} Pomocha. {t.components.footer.copyright}
         </span>
       </div>
     </footer>

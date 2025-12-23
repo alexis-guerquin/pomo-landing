@@ -1,8 +1,10 @@
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import ThreeDButton from "../ui/3DButton/3dbutton";
+import { useI18n } from "../../contexts/I18nContext";
 import "./HeroSection.css";
 
 const HeroSection = () => {
+  const { t } = useI18n();
   return (
     <LazyMotion features={domAnimation} strict>
       <section className="hero-section" id="hero">
@@ -16,17 +18,20 @@ const HeroSection = () => {
               transition={{ duration: 0.8 }}
             >
               <p className="hero-tagline">
-                Pour les personnes qui travaillent dur mais qui se sentent
-                coincées.
+                {t.components.hero.tagline}
               </p>
               <h6 className="hero-title">
-                l'application qui vous poussera vers
-                <br /> vos objectifs
+                {t.components.hero.title.split('\n').map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < t.components.hero.title.split('\n').length - 1 && <br />}
+                  </span>
+                ))}
               </h6>
-              <h5 className="hero-description">Gamifie ton temps de travail</h5>
+              <h5 className="hero-description">{t.components.hero.description}</h5>
               <div className="hero-cta">
                 <ThreeDButton
-                  text="Tester Pomocha"
+                  text={t.components.hero.cta}
                   variant="rectangle"
                   color="primary"
                   theme="light"
@@ -35,7 +40,7 @@ const HeroSection = () => {
                     window.location.href = 'https://www.pomocha.io/';
                   }}
                 />
-                <p className="available-on">Available on: Browser</p>
+                <p className="available-on">{t.components.hero.availableOn}</p>
               </div>
             </m.div>{" "}
           </div>

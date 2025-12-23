@@ -1,0 +1,53 @@
+.language-switcher {
+  background: transparent;
+  border: 2px solid var(--brown-border-mix, rgba(126, 78, 78, 0.2));
+  color: var(--brown-900, #111);
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-md, 8px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 48px;
+  height: 38px;
+}
+
+.language-switcher:hover {
+  background: rgba(126, 78, 78, 0.1);
+  border-color: var(--brown-border-mix, rgba(126, 78, 78, 0.4));
+  transform: translateY(-1px);
+}
+
+.language-switcher:active {
+  transform: translateY(0);
+}
+
+.language-switcher__icon {
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.language-switcher:hover .language-switcher__icon {
+  opacity: 1;
+}
+
+.language-switcher__text {
+  user-select: none;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.75rem;
+    height: 36px;
+    min-width: 44px;
+  }
+}
+

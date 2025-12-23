@@ -1,12 +1,14 @@
 import { usePageMeta } from '../../hooks/usePageMeta';
 import { useStructuredData } from '../../hooks/useStructuredData';
 import type { StructuredData } from '../../hooks/useStructuredData';
-import { SEO_CONFIG, PAGE_SEO } from '../../config/seo.config';
+import { SEO_CONFIG } from '../../config/seo.config';
+import { useI18n } from '../../contexts/I18nContext';
 
 const BASE_URL = SEO_CONFIG.baseUrl;
 
 export function LandingPageSEO() {
-  const homeSEO = PAGE_SEO.home;
+  const { t } = useI18n();
+  const homeSEO = t.seo.pages.home;
 
   // Meta tags optimisés pour Google
   usePageMeta({
@@ -14,16 +16,14 @@ export function LandingPageSEO() {
     description: homeSEO.description,
     keywords: homeSEO.keywords.join(', '),
     canonicalUrl: BASE_URL,
-    ogTitle: 'Pomocha – App Pomodoro gamifiée pour rester focus et productif',
-    ogDescription:
-      'Minuteur Pomodoro avec système de récompenses, missions quotidiennes et statistiques détaillées. Transformez votre concentration en progression mesurable.',
+    ogTitle: homeSEO.title,
+    ogDescription: homeSEO.description,
     ogImage: `${BASE_URL}${SEO_CONFIG.defaultImage}`,
     ogUrl: BASE_URL,
     ogType: 'website',
     twitterCard: 'summary_large_image',
-    twitterTitle: 'Pomocha – La meilleure app Pomodoro gamifiée',
-    twitterDescription:
-      'Restez concentré avec des sessions Pomodoro, débloquez des badges et suivez votre progression. L\'app qui rend le focus addictif.',
+    twitterTitle: homeSEO.title,
+    twitterDescription: homeSEO.description,
   });
 
   // Données structurées pour les rich snippets Google
@@ -35,8 +35,7 @@ export function LandingPageSEO() {
       name: 'Pomocha',
       url: BASE_URL,
       logo: `${BASE_URL}/logo.png`,
-      description:
-        'Application de minuteur Pomodoro avec gamification et statistiques pour améliorer la productivité et la concentration',
+      description: t.seo.organizationDescription,
       sameAs: [
         'https://x.com/Team_Pomocha',
         'https://www.reddit.com/r/pomocha/',
@@ -49,8 +48,7 @@ export function LandingPageSEO() {
       '@type': 'WebSite',
       name: 'Pomocha',
       url: BASE_URL,
-      description:
-        'Application Pomodoro avec récompenses et statistiques pour transformer votre concentration en progression',
+      description: t.seo.defaultDescription,
       potentialAction: {
         '@type': 'SearchAction',
         target: `${BASE_URL}/search?q={search_term_string}`,
@@ -76,10 +74,9 @@ export function LandingPageSEO() {
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
-      name: 'Pomocha – App Pomodoro avec récompenses et statistiques',
+      name: homeSEO.title,
       url: BASE_URL,
-      description:
-        'Transformez votre concentration en progression avec Pomocha : minuteur Pomodoro, missions quotidiennes, badges, trophées et statistiques de focus.',
+      description: homeSEO.description,
       isPartOf: {
         '@type': 'WebSite',
         url: BASE_URL,
@@ -91,49 +88,49 @@ export function LandingPageSEO() {
           {
             '@type': 'ListItem',
             position: 1,
-            name: 'Accueil',
+            name: t.components.landingPage.breadcrumbs.home,
             item: BASE_URL,
           },
           {
             '@type': 'ListItem',
             position: 2,
-            name: 'À propos',
+            name: t.components.landingPage.breadcrumbs.about,
             item: `${BASE_URL}#about`,
           },
           {
             '@type': 'ListItem',
             position: 3,
-            name: 'Fonctionnalités',
+            name: t.components.landingPage.breadcrumbs.features,
             item: `${BASE_URL}#features`,
           },
           {
             '@type': 'ListItem',
             position: 4,
-            name: 'Minuteur Pomodoro',
+            name: t.components.landingPage.breadcrumbs.pomodoroTimer,
             item: `${BASE_URL}/features/pomodoro-timer`,
           },
           {
             '@type': 'ListItem',
             position: 5,
-            name: 'Récompenses & Motivation',
+            name: t.components.landingPage.breadcrumbs.rewards,
             item: `${BASE_URL}/features/rewards-system`,
           },
           {
             '@type': 'ListItem',
             position: 6,
-            name: 'Statistiques de Focus',
+            name: t.components.landingPage.breadcrumbs.statistics,
             item: `${BASE_URL}/features/statistics`,
           },
           {
             '@type': 'ListItem',
             position: 7,
-            name: 'Pour les étudiants',
+            name: t.components.landingPage.breadcrumbs.students,
             item: `${BASE_URL}/use-cases/students`,
           },
           {
             '@type': 'ListItem',
             position: 8,
-            name: 'Pour les freelances',
+            name: t.components.landingPage.breadcrumbs.freelancers,
             item: `${BASE_URL}/use-cases/freelancers`,
           },
         ],

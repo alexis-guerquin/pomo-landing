@@ -1,38 +1,30 @@
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
+import { useI18n } from '../../contexts/I18nContext';
 import './MotivationRewardsPage.css';
 
 export default function MotivationRewardsPage() {
+  const { t } = useI18n();
   return (
     <PageLayout
-      htmlTitle="Motivation & Récompenses – Quêtes, trophées et badges"
-      metaDescription="Transformez vos sessions Pomodoro en progression : missions quotidiennes, trophées avec paliers, badges communs et événementiels. La régularité est la clé de la réussite."
-      h1="Motivation & Récompenses : restez constant, sans forcer"
-      intro="La partie la plus difficile, ce n'est pas de travailler : c'est d'y revenir tous les jours. Pomocha transforme la concentration en progression concrète grâce à trois piliers : des missions quotidiennes, un système de trophées avec paliers, et des badges qui récompensent votre régularité."
+      htmlTitle={t.pages.motivationRewards.htmlTitle}
+      metaDescription={t.pages.motivationRewards.metaDescription}
+      h1={t.pages.motivationRewards.h1}
+      intro={t.pages.motivationRewards.intro}
     >
       <section className="page-layout__section">
-        <h2>1. Missions quotidiennes</h2>
-        <p><strong>Un plan simple, chaque matin</strong></p>
-        <p>
-          Chaque jour, vous recevez 4 missions adaptées à votre rythme. Objectif : vous aider à
-          démarrer, garder l'élan, et terminer la journée avec une vraie sensation d'avancement.
-        </p>
+        <h2>{t.pages.motivationRewards.sections.dailyMissions.title}</h2>
+        <p><strong>{t.pages.motivationRewards.sections.dailyMissions.subtitle}</strong></p>
+        <p>{t.pages.motivationRewards.sections.dailyMissions.content}</p>
         <p style={{ marginTop: 16, fontStyle: 'italic', color: '#666' }}>
-          <strong>N'oubliez pas :</strong> la régularité est la clé de la réussite.
+          <strong>{t.pages.motivationRewards.sections.dailyMissions.reminder}</strong>
         </p>
 
-        <ul className="page-layout__list">
-          <li><strong>Mission 1 : Se connecter</strong> — Connectez-vous à l'application pour démarrer votre journée</li>
-        </ul>
-        <ul className="page-layout__list">
-          <li><strong>Mission 2 : Lancer un pomodoro</strong> — Démarrez votre première session de travail</li>
-        </ul>
-        <ul className="page-layout__list">
-          <li><strong>Mission 3 : Lancer un deuxième pomodoro</strong> — Continuez votre élan de productivité</li>
-        </ul>
-        <ul className="page-layout__list">
-          <li><strong>Mission 4 : Cocher une tâche</strong> — Terminez une tâche de votre liste</li>
-        </ul>
+        {t.pages.motivationRewards.sections.dailyMissions.missions.map((mission, index) => (
+          <ul key={index} className="page-layout__list">
+            <li><strong>{mission.title}</strong> — {mission.description}</li>
+          </ul>
+        ))}
 
         <div className="motivation-visual">
           <img 
@@ -46,27 +38,18 @@ export default function MotivationRewardsPage() {
       </section>
 
       <section className="page-layout__section">
-        <h2>2. Système de trophées</h2>
-        <p><strong>Des indicateurs concrets sur votre travail</strong></p>
-        <p>
-          Chaque trophée correspond à une action spécifique et possède plusieurs paliers, 
-          de plus en plus difficiles à atteindre. Ils donnent un vrai indicateur sur votre travail 
-          et votre progression au fil du temps.
-        </p>
+        <h2>{t.pages.motivationRewards.sections.trophies.title}</h2>
+        <p><strong>{t.pages.motivationRewards.sections.trophies.subtitle}</strong></p>
+        <p>{t.pages.motivationRewards.sections.trophies.content}</p>
 
-        <p style={{ marginTop: 16 }}><strong>Types de trophées</strong></p>
+        <p style={{ marginTop: 16 }}><strong>{t.pages.motivationRewards.sections.trophies.typesTitle}</strong></p>
         <ul className="page-layout__list">
-          <li><strong>Todos accomplis</strong> — Nombre de tâches complétées (paliers : 10, 50, 100, 500, 1000)</li>
-          <li><strong>Temps de travail</strong> — Heures cumulées de focus (paliers : 10h, 50h, 100h, 500h, 1000h)</li>
-          <li><strong>Nombre de pomodoros</strong> — Sessions complétées (paliers : 25, 100, 500, 1000, 5000)</li>
-          <li><strong>Nombre de jours de travail</strong> — Régularité et assiduité (paliers : 7, 30, 100, 365 jours)</li>
+          {t.pages.motivationRewards.sections.trophies.types.map((type, index) => (
+            <li key={index}><strong>{type.name}</strong> — {type.description}</li>
+          ))}
         </ul>
 
-        <p style={{ marginTop: 16 }}>
-          Chaque palier débloqué vous rapporte des récompenses supplémentaires et vous montre 
-          clairement votre progression. Plus vous avancez, plus les paliers deviennent exigeants, 
-          mais ils reflètent fidèlement votre engagement et votre régularité.
-        </p>
+        <p style={{ marginTop: 16 }}>{t.pages.motivationRewards.sections.trophies.closing}</p>
 
         <div className="motivation-visual">
           <img 
@@ -80,55 +63,34 @@ export default function MotivationRewardsPage() {
       </section>
 
       <section className="page-layout__section">
-        <h2>3. Système de badges</h2>
-        <p><strong>Des récompenses qui surprennent et motivent</strong></p>
-        <p>
-          Vous recevrez des badges selon votre travail et votre régularité. Il existe deux 
-          catégories de badges pour varier les plaisirs et maintenir votre motivation.
-        </p>
+        <h2>{t.pages.motivationRewards.sections.badges.title}</h2>
+        <p><strong>{t.pages.motivationRewards.sections.badges.subtitle}</strong></p>
+        <p>{t.pages.motivationRewards.sections.badges.content}</p>
 
-        <p style={{ marginTop: 16 }}><strong>Badges communs (fixes)</strong></p>
-        <p>
-          Ces badges sont toujours disponibles et récompensent des actions régulières. 
-          Ils sont fixes dans le système et vous pouvez les débloquer à tout moment en 
-          accomplissant les objectifs correspondants.
-        </p>
+        <p style={{ marginTop: 16 }}><strong>{t.pages.motivationRewards.sections.badges.commonTitle}</strong></p>
+        <p>{t.pages.motivationRewards.sections.badges.commonDescription}</p>
         <ul className="page-layout__list">
-          <li><strong>"Rush du Matin"</strong> — Démarrez votre première session avant 8h</li>
-          <li><strong>"Café de Midi"</strong> — Complétez un pomodoro entre 12h et 14h</li>
-          <li><strong>"Barista du Jour"</strong> — Terminez 5 pomodoros en une journée</li>
-          <li>Et bien d'autres à découvrir...</li>
+          {t.pages.motivationRewards.sections.badges.commonExamples.map((example, index) => (
+            <li key={index}>{example}</li>
+          ))}
         </ul>
 
-        <p style={{ marginTop: 16 }}><strong>Badges événementiels</strong></p>
-        <p>
-          Ces badges arrivent tout au long de l'année pour vous surprendre et récompenser 
-          votre régularité ! Ils sont limités dans le temps et créent des moments spéciaux 
-          qui renforcent votre motivation.
-        </p>
+        <p style={{ marginTop: 16 }}><strong>{t.pages.motivationRewards.sections.badges.eventTitle}</strong></p>
+        <p>{t.pages.motivationRewards.sections.badges.eventDescription}</p>
         <ul className="page-layout__list">
-          <li>Badges saisonniers (été, automne, hiver, printemps)</li>
-          <li>Badges d'événements spéciaux (anniversaires, challenges communautaires)</li>
-          <li>Badges de régularité surprise (débloqués après X jours consécutifs)</li>
-          <li>Badges collaboratifs (partagés avec d'autres utilisateurs actifs)</li>
+          {t.pages.motivationRewards.sections.badges.eventExamples.map((example, index) => (
+            <li key={index}>{example}</li>
+          ))}
         </ul>
 
-        <p style={{ marginTop: 16 }}><strong>Indicateur de rareté</strong></p>
-        <p>
-          Chaque badge débloqué affiche un indicateur important : <strong>le pourcentage d'utilisateurs 
-          ayant débloqué ce badge</strong>. Cet indicateur vous permet de :
-        </p>
+        <p style={{ marginTop: 16 }}><strong>{t.pages.motivationRewards.sections.badges.rarityTitle}</strong></p>
+        <p>{t.pages.motivationRewards.sections.badges.rarityContent}</p>
         <ul className="page-layout__list">
-          <li>Voir votre progression par rapport à la communauté</li>
-          <li>Mesurer la rareté de vos accomplissements</li>
-          <li>Vous motiver à débloquer des badges moins communs</li>
-          <li>Comprendre la difficulté relative de chaque badge</li>
+          {t.pages.motivationRewards.sections.badges.rarityItems.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
         </ul>
-        <p>
-          Par exemple, un badge obtenu par 100% des utilisateurs est accessible à tous, tandis 
-          qu'un badge obtenu par seulement 5% des utilisateurs représente un accomplissement rare 
-          et valorisant. La date d'obtention est également affichée pour chaque badge débloqué.
-        </p>
+        <p>{t.pages.motivationRewards.sections.badges.rarityClosing}</p>
 
         <div className="motivation-visual">
           <img 
@@ -142,37 +104,22 @@ export default function MotivationRewardsPage() {
       </section>
 
       <section className="page-layout__section">
-        <h2>La régularité, votre meilleur allié</h2>
-        <p><strong>Constance et progression</strong></p>
-        <p>
-          Que ce soit à travers les missions quotidiennes, les paliers de trophées ou les badges 
-          événementiels, Pomocha met l'accent sur la régularité. C'est en revenant chaque jour 
-          que vous construisez des habitudes durables et que vous voyez les résultats s'accumuler.
-        </p>
-        <p>
-          Les systèmes de récompenses sont conçus pour vous encourager sans créer de pression. 
-          Chaque petit pas compte, et chaque jour est une nouvelle opportunité de progresser.
-        </p>
+        <h2>{t.pages.motivationRewards.sections.regularity.title}</h2>
+        <p><strong>{t.pages.motivationRewards.sections.regularity.subtitle}</strong></p>
+        <p>{t.pages.motivationRewards.sections.regularity.content1}</p>
+        <p>{t.pages.motivationRewards.sections.regularity.content2}</p>
       </section>
 
       <section className="page-layout__section">
-      <p style={{ marginTop: 24 }}>Articles qui pourraient vous intéresser :</p>
-        <a href="/features/pomodoro-timer" style={{ color: '#7e4e4e' }}>
-        → Comment utiliser Pomocha
-        </a>
-        <br/>
-        <a href="/features/rewards-system" style={{ color: '#7e4e4e' }}>
-        → Comment utiliser le système de récompenses
-        </a>
-        <br/>
-        <a href="/use-cases/students" style={{ color: '#7e4e4e' }}>
-        → Utiliser Pomocha en tant qu'étudiant
-        </a>
-        <br/>
-        <a href="/features/freelancers" style={{ color: '#7e4e4e' }}>
-        → Utiliser Pomocha en tant que freelancer
-        </a>
-        <br/>
+        <p style={{ marginTop: 24 }}>{t.pages.motivationRewards.sections.relatedArticles.title}</p>
+        {t.pages.motivationRewards.sections.relatedArticles.links.map((link, index) => (
+          <span key={index}>
+            <a href={link.href} style={{ color: '#7e4e4e' }}>
+              → {link.text}
+            </a>
+            {index < t.pages.motivationRewards.sections.relatedArticles.links.length - 1 && <br/>}
+          </span>
+        ))}
       </section>
       
       <CTASection />
