@@ -208,7 +208,7 @@ const Navbar = () => {
             theme="light"
             type="button"
             onClick={() => {
-              window.location.href = 'https://www.pomocha.io/';
+              window.open('https://www.pomocha.io/', '_blank', 'noopener,noreferrer');
             }}
           />
 

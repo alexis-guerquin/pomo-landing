@@ -178,7 +178,12 @@ const MiniFeature = ({ data, layout = 'vertical', index = 0 }: MiniFeatureProps)
                   if (data.cta?.onClick) {
                     data.cta.onClick();
                   } else if (data.cta?.link) {
-                    window.location.href = data.cta.link;
+                    // Ouvrir les liens externes (comme pomocha.io) dans un nouvel onglet
+                    if (data.cta.link.startsWith('http://') || data.cta.link.startsWith('https://')) {
+                      window.open(data.cta.link, '_blank', 'noopener,noreferrer');
+                    } else {
+                      window.location.href = data.cta.link;
+                    }
                   }
                 }}
                 icon={
