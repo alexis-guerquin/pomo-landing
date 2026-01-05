@@ -54,6 +54,11 @@ export default function Footer() {
           href: '/about',
           isRoute: true,
         },
+        {
+          title: t.components.footer.links.blog,
+          href: '/blog',
+          isRoute: true,
+        },
       ],
     },
   ], [t]);
