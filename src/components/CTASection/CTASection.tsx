@@ -6,7 +6,7 @@ import './CTASection.css';
 const CTASection: React.FC = () => {
   const { t } = useI18n();
   const handleCTAClick = () => {
-    window.location.href = 'https://www.pomocha.io/';
+    window.open('https://www.pomocha.io/', '_blank', 'noopener,noreferrer');
   };
 
   return (

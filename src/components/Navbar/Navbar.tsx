@@ -142,6 +142,7 @@ const Navbar = () => {
       ...featureLinks.map((l) => ({ label: l.label, onClick: () => goToPath(l.to) })),
       ...useCaseLinks.map((l) => ({ label: l.label, onClick: () => goToPath(l.to) })),
       { label: t.components.navbar.about, onClick: () => goToPath('/about') },
+      { label: t.components.navbar.blog, onClick: () => goToPath('/blog') },
     ];
 
     return { featureLinks, useCaseLinks, mobileItems };
@@ -195,6 +196,10 @@ const Navbar = () => {
             <HoveredLink to="/about" onClick={() => setActive(null)}>
               {t.components.navbar.about}
             </HoveredLink>
+
+            <HoveredLink to="/blog" onClick={() => setActive(null)}>
+              {t.components.navbar.blog}
+            </HoveredLink>
           </Menu>
         </div>
 
@@ -208,7 +213,7 @@ const Navbar = () => {
             theme="light"
             type="button"
             onClick={() => {
-              window.location.href = 'https://www.pomocha.io/';
+              window.open('https://www.pomocha.io/', '_blank', 'noopener,noreferrer');
             }}
           />
 
