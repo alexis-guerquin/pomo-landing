@@ -1,74 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
-  <!-- Page d'accueil - Priorité maximale -->
+  <!-- ============================================== -->
+  <!-- PAGE D'ACCUEIL - Priorité maximale           -->
+  <!-- ============================================== -->
   <url>
     <loc>https://pomocha.fr/</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <!-- Balises hreflang pour indiquer les versions linguistiques -->
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pomocha.fr/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pomocha.fr/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pomocha.fr/" />
+    <!-- Image principale pour le SEO visuel -->
+    <image:image>
+      <image:loc>https://pomocha.fr/pomocha-og.png</image:loc>
+      <image:title>Pomocha - Application Pomodoro avec récompenses</image:title>
+      <image:caption>Interface de l'application Pomocha avec timer Pomodoro, badges et statistiques</image:caption>
+    </image:image>
   </url>
   
-  <!-- Section À propos de la page d'accueil -->
-  <url>
-    <loc>https://pomocha.fr/#about</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Section Fonctionnalités de la page d'accueil -->
-  <url>
-    <loc>https://pomocha.fr/#features</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <!-- Pages de fonctionnalités - Haute priorité -->
+  <!-- ============================================== -->
+  <!-- PAGES DE FONCTIONNALITÉS - Haute priorité    -->
+  <!-- ============================================== -->
   <url>
     <loc>https://pomocha.fr/features/pomodoro-timer</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pomocha.fr/features/pomodoro-timer" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pomocha.fr/features/pomodoro-timer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pomocha.fr/features/pomodoro-timer" />
+    <image:image>
+      <image:loc>https://pomocha.fr/visuals/timer.png</image:loc>
+      <image:title>Timer Pomodoro personnalisable</image:title>
+    </image:image>
   </url>
   
   <url>
     <loc>https://pomocha.fr/features/rewards-system</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pomocha.fr/features/rewards-system" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pomocha.fr/features/rewards-system" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pomocha.fr/features/rewards-system" />
+    <image:image>
+      <image:loc>https://pomocha.fr/visuals/badges.png</image:loc>
+      <image:title>Système de badges et récompenses Pomocha</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pomocha.fr/visuals/trophies.png</image:loc>
+      <image:title>Trophées et accomplissements</image:title>
+    </image:image>
   </url>
   
   <url>
     <loc>https://pomocha.fr/features/statistics</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pomocha.fr/features/statistics" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pomocha.fr/features/statistics" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pomocha.fr/features/statistics" />
+    <image:image>
+      <image:loc>https://pomocha.fr/visuals/stats.png</image:loc>
+      <image:title>Statistiques détaillées de productivité</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pomocha.fr/visuals/graph.png</image:loc>
+      <image:title>Graphiques de progression et analyse</image:title>
+    </image:image>
   </url>
   
-  <!-- Pages cas d'usage - Priorité élevée -->
+  <!-- ============================================== -->
+  <!-- PAGES CAS D'USAGE - Priorité élevée          -->
+  <!-- ============================================== -->
   <url>
     <loc>https://pomocha.fr/use-cases/students</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pomocha.fr/use-cases/students" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pomocha.fr/use-cases/students" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pomocha.fr/use-cases/students" />
   </url>
   
   <url>
     <loc>https://pomocha.fr/use-cases/freelancers</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pomocha.fr/use-cases/freelancers" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pomocha.fr/use-cases/freelancers" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pomocha.fr/use-cases/freelancers" />
   </url>
   
-  <!-- Page À propos -->
+  <!-- ============================================== -->
+  <!-- PAGE À PROPOS                                 -->
+  <!-- ============================================== -->
   <url>
     <loc>https://pomocha.fr/about</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-01-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pomocha.fr/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pomocha.fr/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pomocha.fr/about" />
+  </url>
+  
+  <!-- ============================================== -->
+  <!-- BLOG - Priorité élevée pour SEO              -->
+  <!-- ============================================== -->
+  <url>
+    <loc>https://pomocha.fr/blog</loc>
+    <lastmod>2025-01-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pomocha.fr/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pomocha.fr/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pomocha.fr/blog" />
+  </url>
+  
+  <!-- ============================================== -->
+  <!-- ARTICLES DE BLOG - SEO Important             -->
+  <!-- ============================================== -->
+  
+  <!-- Article FR : Meilleur Pomodoro en ligne 2026 -->
+  <url>
+    <loc>https://pomocha.fr/blog/meilleur-pomodoro-en-ligne-2026</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <!-- Lien vers version anglaise via hreflang -->
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pomocha.fr/blog/meilleur-pomodoro-en-ligne-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pomocha.fr/blog/best-online-pomodoro-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pomocha.fr/blog/meilleur-pomodoro-en-ligne-2026" />
+    <image:image>
+      <image:loc>https://pomocha.fr/blog/pomocha-1.png</image:loc>
+      <image:title>Comparatif des meilleurs timers Pomodoro en ligne</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Article EN : Best Online Pomodoro 2026 -->
+  <url>
+    <loc>https://pomocha.fr/blog/best-online-pomodoro-2026</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <!-- Lien vers version française via hreflang -->
+    <xhtml:link rel="alternate" hreflang="en" href="https://pomocha.fr/blog/best-online-pomodoro-2026" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pomocha.fr/blog/meilleur-pomodoro-en-ligne-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pomocha.fr/blog/meilleur-pomodoro-en-ligne-2026" />
+    <image:image>
+      <image:loc>https://pomocha.fr/blog/pomocha-1.png</image:loc>
+      <image:title>Best online Pomodoro timers comparison</image:title>
+    </image:image>
   </url>
   
 </urlset>
