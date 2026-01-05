@@ -571,6 +571,7 @@ export const translations = {
         features: 'Fonctionnalités',
         useCases: 'Cas d\'usage',
         about: 'À propos',
+        blog: 'Blog',
         featureLinks: {
           pomodoroTimer: 'Minuteur Pomodoro',
           rewardsSystem: 'Motivation & récompenses',
@@ -1304,6 +1305,7 @@ export const translations = {
         features: 'Features',
         useCases: 'Use cases',
         about: 'About',
+        blog: 'Blog',
         featureLinks: {
           pomodoroTimer: 'Pomodoro Timer',
           rewardsSystem: 'Motivation & Rewards',
