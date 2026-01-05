@@ -12,6 +12,8 @@ const FocusStatisticsPage = lazy(() => import('./pages/features/FocusStatisticsP
 const StudentsPage = lazy(() => import('./pages/use-cases/StudentsPage'));
 const FreelancersPage = lazy(() => import('./pages/use-cases/FreelancersPage'));
 const AboutPage = lazy(() => import('./pages/about/AboutPage'));
+const BlogPage = lazy(() => import('./pages/blog/BlogPage'));
+const ArticlePage = lazy(() => import('./pages/blog/ArticlePage'));
 
 // Composant de fallback pour le chargement
 const PageLoader = () => (
@@ -48,6 +50,8 @@ export default function App() {
           <Route path="/use-cases/freelancers" element={<FreelancersPage />} />
 
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<ArticlePage />} />
         </Routes>
       </Suspense>
       <Analytics />

@@ -5,3 +5,5 @@ export { default as MotivationRewardsPage } from './features/MotivationRewardsPa
 export { default as StudentsPage } from './use-cases/StudentsPage';
 export { default as FreelancersPage } from './use-cases/FreelancersPage';
 export { default as AboutPage } from './about/AboutPage';
+export { default as BlogPage } from './blog/BlogPage';
+export { default as ArticlePage } from './blog/ArticlePage';

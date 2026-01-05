@@ -1,0 +1,585 @@
+# Pomocha Landing - Règles Cursor
+
+## 🎯 Contexte du Projet
+
+Site vitrine pour Pomocha.io - Application Pomodoro gamifiée avec système de récompenses.
+Stack : React 19 + TypeScript + Vite 7 + React Router 7
+
+---
+
+## 📋 Règles Générales
+
+### Langage de Communication
+- Toujours répondre en **français**
+- Les commentaires dans le code en français
+- La documentation en français
+
+### Style de Code
+- **TypeScript strict** : Toujours typer correctement
+- **Functional components** : Préférer les fonctions fléchées
+- **Hooks** : Utiliser les hooks React (pas de class components)
+- **Imports** : Trier par catégorie (React, bibliothèques externes, composants locaux, types, styles)
+
+### Nommage
+- **Composants** : PascalCase (`MyComponent.tsx`)
+- **Hooks** : camelCase avec préfixe `use` (`usePageMeta.ts`)
+- **Fonctions** : camelCase (`handleClick`, `fetchData`)
+- **Constantes** : UPPER_SNAKE_CASE (`API_URL`, `MAX_RETRIES`)
+- **Types/Interfaces** : PascalCase (`UserData`, `ArticleConfig`)
+- **CSS classes** : BEM notation (`blog-article__meta`, `blog-toc__item--active`)
+
+---
+
+## 🌍 Système i18n
+
+### Architecture
+Le projet utilise un système i18n custom avec React Context.
+
+**Règles strictes :**
+1. ❌ **JAMAIS** de texte en dur dans les composants
+2. ✅ **TOUJOURS** utiliser `useI18n()` et `t.pages...`
+3. ✅ Ajouter les traductions en **FR et EN** simultanément
+4. ✅ Respecter la structure hiérarchique des traductions
+
+### Utilisation du Hook i18n
+
+```typescript
+import { useI18n } from '../contexts/I18nContext';
+
+function MyComponent() {
+  const { t, locale, setLocale } = useI18n();
+  
+  return (
+    <div>
+      <h1>{t.pages.myPage.title}</h1>
+      <p>{t.pages.myPage.description}</p>
+    </div>
+  );
+}
+```
+
+### Structure des Traductions
+
+```typescript
+// src/i18n/translations.ts
+translations = {
+  fr: {
+    seo: { ... },           // Métadonnées SEO
+    pages: { ... },         // Contenu des pages
+    components: { ... },    // Textes des composants
+    features: { ... },      // Configuration features
+    miniFeatures: { ... }   // Mini-features
+  },
+  en: { /* structure identique */ }
+}
+```
+
+### Traductions de Blog
+
+**Chemin** : `src/i18n/blogs/[nomArticle]/`
+
+**Structure requise** :
+```typescript
+// fr.ts et en.ts
+export const nomArticle = {
+  slug: 'url-slug',                    // DOIT être différent en/fr
+  title: 'Titre de l\'article',
+  description: 'Description courte',
+  date: '2025-01-22',                  // Format ISO
+  readTime: '10 min',
+  image: '/blog/image.png',
+  intro: 'Paragraphe d\'introduction',
+  tocTitle: 'Table des matières',     // Pour sidebar
+  sections: {
+    section1: {
+      title: 'Titre',
+      content: 'Contenu',
+      // Peut contenir : content1, content2, items[], etc.
+    }
+  },
+  apps: [{                             // Pour articles comparatifs
+    name: 'Nom App',
+    tagline: 'Description courte',
+    bestFor: 'Cas d\'usage',
+    platform: 'Web / iOS / Android',
+    free: true,
+    standoutFeature: 'Feature unique',
+    description: 'Description longue',
+    whoItsFor: 'Public cible',
+    pros: ['Pro 1', 'Pro 2'],
+    cons: ['Con 1', 'Con 2'],
+    pricing: 'Tarif',
+    images: [
+      { src: '/path/image.png', alt: 'Description' }
+    ]
+  }]
+};
+```
+
+---
+
+## 📝 Système d'Articles de Blog
+
+### Ajouter un Article - Checklist Complète
+
+#### ✅ Étape 1 : Créer les Traductions
+
+```bash
+# Créer le dossier
+src/i18n/blogs/nomArticle/
+  ├── fr.ts
+  └── en.ts
+```
+
+**Contenu** : Suivre la structure du template ci-dessus
+
+#### ✅ Étape 2 : Exporter dans l'Index
+
+```typescript
+// src/i18n/blogs/fr.ts
+import { nomArticle } from './nomArticle/fr';
+
+export const blogTranslations = {
+  articles: {
+    existingArticle,
+    nomArticle,  // <-- Ajouter ici
+  }
+};
+
+// Même chose pour en.ts
+```
+
+#### ✅ Étape 3 : Créer le Composant Article
+
+```typescript
+// src/pages/blog/articles/NomArticle.tsx
+import { useI18n } from '../../../contexts/I18nContext';
+import { useEffect, useState } from 'react';
+import './Article.css';
+
+export function NomArticle() {
+  const { t } = useI18n();
+  const [activeSection, setActiveSection] = useState<string>('');
+  const [tocItems, setTocItems] = useState<TableOfContentItem[]>([]);
+  
+  useEffect(() => {
+    // Générer table des matières
+    const items = [
+      { id: 'section-1', title: t.pages.blog.articles.nomArticle.sections.section1.title, level: 2 }
+    ];
+    setTocItems(items);
+    
+    // Observer pour détecter section active
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActiveSection(entry.target.id);
+      });
+    }, { rootMargin: '-20% 0px -60% 0px' });
+    
+    items.forEach(item => {
+      const element = document.getElementById(item.id);
+      if (element) observer.observe(element);
+    });
+    
+    return () => observer.disconnect();
+  }, [t]);
+  
+  return (
+    <div className="blog-article-container">
+      <aside className="blog-toc">
+        {/* Table des matières */}
+      </aside>
+      
+      <article className="blog-article">
+        <section id="section-1" className="blog-section">
+          <h2>{t.pages.blog.articles.nomArticle.sections.section1.title}</h2>
+          <p>{t.pages.blog.articles.nomArticle.sections.section1.content}</p>
+        </section>
+      </article>
+    </div>
+  );
+}
+```
+
+#### ✅ Étape 4 : Ajouter au Mapping
+
+```typescript
+// src/pages/blog/ArticlePage.tsx
+import { NomArticle } from './articles/NomArticle';
+
+const articleComponents: { [key: string]: React.ComponentType } = {
+  bestPomodoroOnline: BestPomodoroOnlineArticle,
+  nomArticle: NomArticle,  // <-- Ajouter ici (clé = key dans translations)
+};
+```
+
+#### ✅ Étape 5 : Ajouter à la Liste
+
+```typescript
+// src/pages/blog/BlogPage.tsx
+const articles = [
+  {
+    slug: t.pages.blog.articles.existingArticle.slug,
+    // ...
+  },
+  {
+    slug: t.pages.blog.articles.nomArticle.slug,
+    title: t.pages.blog.articles.nomArticle.title,
+    description: t.pages.blog.articles.nomArticle.description,
+    image: t.pages.blog.articles.nomArticle.image,
+    date: t.pages.blog.articles.nomArticle.date,
+    readTime: t.pages.blog.articles.nomArticle.readTime,
+  }
+];
+```
+
+---
+
+## 🎨 Composants
+
+### Structure d'un Composant
+
+```
+ComponentName/
+├── ComponentName.tsx      # Composant principal
+├── ComponentName.css      # Styles
+└── index.ts              # Export
+```
+
+**index.ts** :
+```typescript
+export { ComponentName } from './ComponentName';
+```
+
+### Props Types
+
+**Préférer les interfaces** :
+```typescript
+interface MyComponentProps {
+  title: string;
+  description?: string;        // Optional
+  onClick: () => void;
+  children?: React.ReactNode;
+}
+
+export function MyComponent({ title, description, onClick, children }: MyComponentProps) {
+  // ...
+}
+```
+
+### Imports Order
+
+```typescript
+// 1. React & hooks
+import { useState, useEffect } from 'react';
+
+// 2. Bibliothèques externes
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+
+// 3. Contextes & Hooks custom
+import { useI18n } from '../../contexts/I18nContext';
+import { usePageMeta } from '../../hooks/usePageMeta';
+
+// 4. Composants
+import { Navbar } from '../../components/Navbar';
+import { Footer } from '../../components/Footer';
+
+// 5. Types
+import type { ArticleConfig } from '../../types';
+
+// 6. Styles (toujours en dernier)
+import './MyComponent.css';
+```
+
+---
+
+## 🔍 SEO & Meta Tags
+
+### Hook usePageMeta
+
+**Toujours utiliser** dans les pages :
+
+```typescript
+import { usePageMeta } from '../../hooks/usePageMeta';
+import { useI18n } from '../../contexts/I18nContext';
+
+function MyPage() {
+  const { t, locale } = useI18n();
+  
+  usePageMeta({
+    title: t.seo.pages.myPage.title,
+    description: t.seo.pages.myPage.description,
+    keywords: t.seo.pages.myPage.keywords.join(', '),
+    ogImage: 'https://pomocha.fr/pomocha-og.png',
+    ogUrl: `https://pomocha.fr/${locale}/my-page`,
+    canonicalUrl: `https://pomocha.fr/${locale}/my-page`
+  });
+  
+  return <div>...</div>;
+}
+```
+
+### PageLayout
+
+**Utiliser pour toutes les pages** (sauf LandingPage) :
+
+```typescript
+<PageLayout
+  htmlTitle={t.pages.myPage.htmlTitle}
+  metaDescription={t.pages.myPage.metaDescription}
+  h1={t.pages.myPage.h1}
+  intro={t.pages.myPage.intro}
+>
+  {/* Contenu de la page */}
+</PageLayout>
+```
+
+---
+
+## 💅 Styles CSS
+
+### Variables CSS
+
+**Toujours utiliser** les variables définies dans `src/styles/variables.css` :
+
+```css
+/* Couleurs */
+--theme-surface
+--theme-primary
+--theme-secondary
+--color-text
+--color-accent
+
+/* Espacements */
+--spacing-xs
+--spacing-sm
+--spacing-md
+--spacing-lg
+--spacing-xl
+
+/* Tailles de police */
+--font-size-sm
+--font-size-base
+--font-size-lg
+--font-size-xl
+```
+
+### BEM Notation
+
+```css
+/* Block */
+.blog-article { }
+
+/* Element */
+.blog-article__content { }
+.blog-article__meta { }
+.blog-article__title { }
+
+/* Modifier */
+.blog-article--featured { }
+.blog-article__title--large { }
+.blog-toc__item--active { }
+```
+
+### Responsive
+
+**Mobile-first** :
+
+```css
+/* Mobile par défaut */
+.component {
+  padding: 1rem;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .component {
+    padding: 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .component {
+    padding: 3rem;
+  }
+}
+```
+
+---
+
+## 🚀 Performance
+
+### Lazy Loading
+
+**Toujours lazy load les pages** :
+
+```typescript
+// src/App.tsx
+const MyPage = lazy(() => import('./pages/MyPage'));
+```
+
+### Images
+
+**Toujours ajouter** :
+- `alt` descriptif
+- `loading="lazy"` (sauf hero images)
+- Compression optimale
+
+```tsx
+<img
+  src="/visuals/timer.png"
+  alt="Interface du timer Pomodoro avec durée personnalisable"
+  loading="lazy"
+  className="feature-image"
+/>
+```
+
+### Code Splitting
+
+Ne pas charger de gros packages sans lazy loading.
+
+---
+
+## ✅ Checklist avant Commit
+
+### Code
+- [ ] Pas de `console.log` inutiles
+- [ ] Pas de code commenté (supprimer)
+- [ ] Imports triés et utilisés
+- [ ] Types TypeScript corrects
+- [ ] Aucune erreur ESLint
+
+### i18n
+- [ ] Aucun texte en dur
+- [ ] Traductions FR et EN ajoutées
+- [ ] Structure i18n respectée
+- [ ] Clés descriptives (pas `text1`, `text2`)
+
+### SEO
+- [ ] Meta tags ajoutés (usePageMeta ou PageLayout)
+- [ ] Attributs alt sur images
+- [ ] Structure H1/H2/H3 respectée
+- [ ] Liens internes fonctionnels
+
+### CSS
+- [ ] Variables CSS utilisées
+- [ ] BEM notation respectée
+- [ ] Responsive testé (mobile/tablet/desktop)
+- [ ] Pas de styles inline (sauf animation JS)
+
+### Accessibilité
+- [ ] Attributs `aria-label` sur boutons sans texte
+- [ ] Navigation au clavier fonctionnelle
+- [ ] Contraste suffisant (texte/background)
+- [ ] Balises sémantiques (`<nav>`, `<main>`, `<article>`, etc.)
+
+---
+
+## 🐛 Debugging
+
+### HMR Page Reload
+
+**Normal** : Le hook `useI18n` export casse le Fast Refresh → page reload automatique.
+
+### Traductions Manquantes
+
+1. Vérifier l'import dans `fr.ts` / `en.ts`
+2. Vérifier la structure : `t.pages.blog.articles.nomArticle...`
+3. Redémarrer le serveur si nécessaire
+
+### Route 404
+
+1. Slug correct dans traductions ?
+2. Composant ajouté au mapping `ArticlePage.tsx` ?
+3. Article dans la liste `BlogPage.tsx` ?
+
+---
+
+## 📦 Dépendances
+
+### Ajouter une Dépendance
+
+```bash
+# Production
+npm install package-name
+
+# Dev
+npm install -D package-name
+```
+
+**Privilégier** :
+- Packages légers
+- Tree-shakeable
+- Bien maintenus
+- TypeScript friendly
+
+### Éviter
+
+- Packages jQuery (obsolète)
+- Packages non maintenus (> 2 ans)
+- Packages trop lourds sans alternative
+
+---
+
+## 🎯 Priorités
+
+1. **Performance** : LCP < 2.5s, FID < 100ms, CLS < 0.1
+2. **SEO** : Meta tags, structure sémantique, sitemap
+3. **i18n** : Support FR/EN complet
+4. **Accessibilité** : WCAG 2.1 niveau AA minimum
+5. **UX** : Navigation intuitive, feedback visuel, responsive
+
+---
+
+## 📚 Références
+
+- [React Documentation](https://react.dev)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- [Vite Guide](https://vitejs.dev/guide/)
+- [React Router v7](https://reactrouter.com/en/main)
+- [Framer Motion](https://www.framer.com/motion/)
+- [BEM Methodology](http://getbem.com/)
+
+---
+
+## 🤝 Conventions Git
+
+### Branches
+- `main` : Production (protégée)
+- `develop` : Développement
+- `feature/nom-feature` : Nouvelles fonctionnalités
+- `fix/nom-bug` : Corrections de bugs
+- `article/nom-article` : Nouveaux articles
+
+### Commits
+
+**Format** : `type(scope): message`
+
+**Types** :
+- `feat`: Nouvelle fonctionnalité
+- `fix`: Correction de bug
+- `docs`: Documentation
+- `style`: Formatage, CSS
+- `refactor`: Refactorisation
+- `perf`: Amélioration performance
+- `test`: Ajout/modification tests
+- `i18n`: Traductions
+- `article`: Nouvel article de blog
+
+**Exemples** :
+```
+feat(blog): ajouter article best-pomodoro-apps
+fix(i18n): corriger traduction en anglais page about
+style(navbar): améliorer responsive mobile
+i18n(footer): ajouter traductions manquantes
+article(blog): publier guide technique pomodoro
+refactor(hooks): simplifier usePageMeta
+```
+
+---
+
+**Version** : 1.0
+**Dernière mise à jour** : Janvier 2025
+

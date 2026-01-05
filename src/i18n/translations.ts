@@ -3,6 +3,9 @@
  * Structure: fr (French - original) + en (English - translated)
  */
 
+import { blogTranslations as frBlogTranslations } from './blogs/fr';
+import { blogTranslations as enBlogTranslations } from './blogs/en';
+
 export const translations = {
   fr: {
     seo: {
@@ -146,6 +149,18 @@ export const translations = {
             'productivité',
             'concentration',
             'deep work',
+          ],
+        },
+        blog: {
+          title: 'Blog – Guides et articles sur la productivité',
+          description: 'Découvrez nos articles sur la technique Pomodoro, la productivité et les meilleures applications de gestion du temps.',
+          keywords: [
+            'blog productivité',
+            'articles Pomodoro',
+            'guides productivité',
+            'technique Pomodoro',
+            'applications gestion du temps',
+            'meilleurs minuteurs Pomodoro',
           ],
         },
       },
@@ -489,6 +504,7 @@ export const translations = {
           },
         },
       },
+      blog: frBlogTranslations,
     },
     components: {
       hero: {
@@ -517,6 +533,7 @@ export const translations = {
           students: 'Étudiants',
           freelancers: 'Freelancers',
           about: 'À propos',
+          blog: 'Blog',
           contact: 'Contact',
         },
         copyEmail: 'Copier l\'email',
@@ -554,6 +571,7 @@ export const translations = {
         features: 'Fonctionnalités',
         useCases: 'Cas d\'usage',
         about: 'À propos',
+        blog: 'Blog',
         featureLinks: {
           pomodoroTimer: 'Minuteur Pomodoro',
           rewardsSystem: 'Motivation & récompenses',
@@ -865,6 +883,18 @@ export const translations = {
             'productivity',
             'focus',
             'deep work',
+          ],
+        },
+        blog: {
+          title: 'Blog – Productivity guides and articles',
+          description: 'Discover our articles on the Pomodoro technique, productivity, and the best time management applications.',
+          keywords: [
+            'productivity blog',
+            'Pomodoro articles',
+            'productivity guides',
+            'Pomodoro technique',
+            'time management apps',
+            'best Pomodoro timers',
           ],
         },
       },
@@ -1208,6 +1238,7 @@ export const translations = {
           },
         },
       },
+      blog: enBlogTranslations,
     },
     components: {
       hero: {
@@ -1236,6 +1267,7 @@ export const translations = {
           students: 'Students',
           freelancers: 'Freelancers',
           about: 'About',
+          blog: 'Blog',
           contact: 'Contact',
         },
         copyEmail: 'Copy email',
@@ -1273,6 +1305,7 @@ export const translations = {
         features: 'Features',
         useCases: 'Use cases',
         about: 'About',
+        blog: 'Blog',
         featureLinks: {
           pomodoroTimer: 'Pomodoro Timer',
           rewardsSystem: 'Motivation & Rewards',
