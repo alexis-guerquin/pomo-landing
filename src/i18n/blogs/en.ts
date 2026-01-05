@@ -3,7 +3,6 @@
  */
 
 import { bestPomodoroOnline } from './bestPomodoroOnline/en';
-import { bestPomodoroApps } from './bestPomodoroApps/en';
 
 export const blogTranslations = {
   htmlTitle: 'Blog – Productivity guides and articles',
@@ -17,6 +16,5 @@ export const blogTranslations = {
   },
   articles: {
     bestPomodoroOnline,
-    bestPomodoroApps,
   },
 }
