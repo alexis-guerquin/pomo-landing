@@ -16,7 +16,15 @@ export default function BlogPage() {
       image: t.pages.blog.articles.bestPomodoroOnline.image,
       date: t.pages.blog.articles.bestPomodoroOnline.date,
       readTime: t.pages.blog.articles.bestPomodoroOnline.readTime,
-    }
+    },
+    {
+      slug: t.pages.blog.articles.bestPomodoroApps.slug,
+      title: t.pages.blog.articles.bestPomodoroApps.title,
+      description: t.pages.blog.articles.bestPomodoroApps.description,
+      image: t.pages.blog.articles.bestPomodoroApps.image,
+      date: t.pages.blog.articles.bestPomodoroApps.date,
+      readTime: t.pages.blog.articles.bestPomodoroApps.readTime,
+    },
   ];
 
   return (

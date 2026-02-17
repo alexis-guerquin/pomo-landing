@@ -44,7 +44,7 @@ export default function ArticlePage() {
 
   return (
     <PageLayout
-      htmlTitle={`${metaTitle} | ${t.pages.blog.htmlTitle}`}
+      htmlTitle={`${metaTitle} | Pomocha`}
       metaDescription={metaDescription}
       h1={metaTitle}
       intro={articleMeta.intro}
