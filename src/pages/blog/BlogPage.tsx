@@ -16,7 +16,31 @@ export default function BlogPage() {
       image: t.pages.blog.articles.bestPomodoroOnline.image,
       date: t.pages.blog.articles.bestPomodoroOnline.date,
       readTime: t.pages.blog.articles.bestPomodoroOnline.readTime,
-    }
+    },
+    {
+      slug: t.pages.blog.articles.techniquePomodoro.slug,
+      title: t.pages.blog.articles.techniquePomodoro.title,
+      description: t.pages.blog.articles.techniquePomodoro.description,
+      image: t.pages.blog.articles.techniquePomodoro.image,
+      date: t.pages.blog.articles.techniquePomodoro.date,
+      readTime: t.pages.blog.articles.techniquePomodoro.readTime,
+    },
+    {
+      slug: t.pages.blog.articles.appPomodoroGamifiee.slug,
+      title: t.pages.blog.articles.appPomodoroGamifiee.title,
+      description: t.pages.blog.articles.appPomodoroGamifiee.description,
+      image: t.pages.blog.articles.appPomodoroGamifiee.image,
+      date: t.pages.blog.articles.appPomodoroGamifiee.date,
+      readTime: t.pages.blog.articles.appPomodoroGamifiee.readTime,
+    },
+    {
+      slug: t.pages.blog.articles.pomodoroEtudiantFreelance.slug,
+      title: t.pages.blog.articles.pomodoroEtudiantFreelance.title,
+      description: t.pages.blog.articles.pomodoroEtudiantFreelance.description,
+      image: t.pages.blog.articles.pomodoroEtudiantFreelance.image,
+      date: t.pages.blog.articles.pomodoroEtudiantFreelance.date,
+      readTime: t.pages.blog.articles.pomodoroEtudiantFreelance.readTime,
+    },
   ];
 
   return (

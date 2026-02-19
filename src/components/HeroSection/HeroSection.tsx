@@ -20,15 +20,15 @@ const HeroSection = () => {
               <p className="hero-tagline">
                 {t.components.hero.tagline}
               </p>
-              <h6 className="hero-title">
+              <h1 className="hero-title">
                 {t.components.hero.title.split('\n').map((line, i) => (
                   <span key={i}>
                     {line}
                     {i < t.components.hero.title.split('\n').length - 1 && <br />}
                   </span>
                 ))}
-              </h6>
-              <h5 className="hero-description">{t.components.hero.description}</h5>
+              </h1>
+              <p className="hero-description">{t.components.hero.description}</p>
               <div className="hero-cta">
                 <ThreeDButton
                   text={t.components.hero.cta}

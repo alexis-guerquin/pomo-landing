@@ -4,6 +4,9 @@
 
 import { bestPomodoroOnline } from './bestPomodoroOnline/en';
 import { bestPomodoroApps } from './bestPomodoroApps/en';
+import { techniquePomodoro } from './techniquePomodoro/en';
+import { appPomodoroGamifiee } from './appPomodoroGamifiee/en';
+import { pomodoroEtudiantFreelance } from './pomodoroEtudiantFreelance/en';
 
 export const blogTranslations = {
   htmlTitle: 'Blog – Productivity guides and articles',
@@ -18,5 +21,8 @@ export const blogTranslations = {
   articles: {
     bestPomodoroOnline,
     bestPomodoroApps,
+    techniquePomodoro,
+    appPomodoroGamifiee,
+    pomodoroEtudiantFreelance,
   },
 }

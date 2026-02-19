@@ -32,8 +32,8 @@ export const translations = {
       organizationDescription: 'Application de minuteur Pomodoro avec gamification et statistiques pour améliorer la productivité et la concentration',
       pages: {
         home: {
-          title: 'Pomocha – App Pomodoro avec récompenses et statistiques | Focus & Productivité',
-          description: 'Transformez votre concentration en progression avec Pomocha : minuteur Pomodoro, missions quotidiennes, badges, trophées et statistiques de focus. Idéal pour étudiants, freelances et créateurs.',
+          title: 'Pomocha – App Pomodoro avec récompenses et stats',
+          description: 'Minuteur Pomodoro gamifié avec missions, badges, trophées et statistiques de focus. Idéal pour étudiants, freelances et créateurs.',
           keywords: [
             'Pomodoro',
             'minuteur Pomodoro',
@@ -59,7 +59,7 @@ export const translations = {
         },
         pomodoroTimer: {
           title: 'Minuteur Pomodoro – Simple, épuré, sans distraction',
-          description: 'Un minuteur Pomodoro minimaliste pensé pour le deep work. Intervalles personnalisables, rappels de pause et notifications sonores. Le focus, en toute simplicité.',
+          description: 'Minuteur Pomodoro minimaliste pour le deep work. Intervalles personnalisables, rappels de pause et notifications sonores. Le focus simplifié.',
           keywords: [
             'minuteur Pomodoro',
             'timer Pomodoro',
@@ -75,7 +75,7 @@ export const translations = {
         },
         rewardsSystem: {
           title: 'Motivation & Récompenses – Quêtes, trophées et badges',
-          description: 'Transformez vos sessions Pomodoro en progression : missions quotidiennes, trophées avec paliers, badges communs et événementiels. La régularité est la clé de la réussite.',
+          description: 'Transformez vos sessions Pomodoro en progression : missions quotidiennes, trophées avec paliers et badges. La régularité est la clé.',
           keywords: [
             'récompenses',
             'gamification',
@@ -108,7 +108,7 @@ export const translations = {
         },
         students: {
           title: 'App Pomodoro pour étudiants – Étudier mieux, pas plus dur',
-          description: 'Une app Pomodoro gamifiée pensée pour les étudiants. Construisez des séries d\'étude, complétez des quêtes quotidiennes et rendez la préparation aux exams vraiment motivante.',
+          description: 'App Pomodoro gamifiée pour étudiants. Séries d\'étude, quêtes quotidiennes et préparation aux exams motivante. Étudiez mieux.',
           keywords: [
             'Pomodoro étudiants',
             'révisions',
@@ -123,7 +123,7 @@ export const translations = {
           ],
         },
         freelancers: {
-          title: 'App Pomodoro pour freelances – Focus, suivi du temps, livrer plus',
+          title: 'App Pomodoro pour freelances – Focus et suivi du temps',
           description: 'Une app Pomodoro pensée pour les freelances : sessions de deep work, suivi du temps prêt pour les clients, séries de focus et productivité sans distraction.',
           keywords: [
             'Pomodoro freelance',
@@ -140,7 +140,7 @@ export const translations = {
         },
         about: {
           title: 'À propos de Pomocha – Un Pomodoro simple pour le deep work',
-          description: 'Découvrez pourquoi nous avons créé Pomocha : un minuteur Pomodoro minimaliste avec motivation & récompenses, et des statistiques de focus — pensé pour une productivité sans distraction.',
+          description: 'Découvrez Pomocha : un minuteur Pomodoro minimaliste avec récompenses et statistiques de focus, pensé pour une productivité sans distraction.',
           keywords: [
             'à propos Pomocha',
             'philosophie',
@@ -168,7 +168,7 @@ export const translations = {
     pages: {
       about: {
         htmlTitle: 'À propos de Pomocha – Un Pomodoro simple pour le deep work',
-        metaDescription: 'Découvrez pourquoi nous avons créé Pomocha : un minuteur Pomodoro minimaliste avec motivation & récompenses, et des statistiques de focus — pensé pour une productivité sans distraction.',
+        metaDescription: 'Découvrez Pomocha : un minuteur Pomodoro minimaliste avec récompenses et statistiques de focus, pensé pour une productivité sans distraction.',
         h1: 'À propos de Pomocha',
         intro: 'Nous pensons que la concentration doit rester simple. Pomocha est une app Pomodoro conçue pour vous aider à faire du deep work, construire des habitudes, et voir votre progression — sans surcharge.',
         sections: {
@@ -195,7 +195,7 @@ export const translations = {
             title: 'Articles qui pourraient vous intéresser :',
             links: [
               { text: 'Utiliser Pomocha en tant qu\'étudiant', href: '/use-cases/students' },
-              { text: 'Utiliser Pomocha en tant que freelancer', href: '/features/freelancers' },
+              { text: 'Utiliser Pomocha en tant que freelancer', href: '/use-cases/freelancers' },
               { text: 'Comment utiliser Pomocha', href: '/features/pomodoro-timer' },
               { text: 'Comment utiliser le système de récompenses', href: '/features/rewards-system' },
               { text: 'Comment utiliser les statistiques', href: '/features/statistics' },
@@ -205,7 +205,7 @@ export const translations = {
       },
       pomodoroTimer: {
         htmlTitle: 'Minuteur Pomodoro – Simple, épuré, sans distraction',
-        metaDescription: 'Un minuteur Pomodoro minimaliste pensé pour le deep work. Intervalles personnalisables, rappels de pause et notifications sonores. Le focus, en toute simplicité.',
+        metaDescription: 'Minuteur Pomodoro minimaliste pour le deep work. Intervalles personnalisables, rappels de pause et notifications sonores. Le focus simplifié.',
         h1: 'Un minuteur Pomodoro qui respecte votre concentration',
         intro: 'Le meilleur minuteur, c\'est celui auquel vous n\'avez pas à penser. Le nôtre démarre quand vous êtes prêt, vous garde sur les rails, et n\'interrompt jamais votre flow avec une complexité inutile.',
         sections: {
@@ -267,7 +267,7 @@ export const translations = {
       },
       motivationRewards: {
         htmlTitle: 'Motivation & Récompenses – Quêtes, trophées et badges',
-        metaDescription: 'Transformez vos sessions Pomodoro en progression : missions quotidiennes, trophées avec paliers, badges communs et événementiels. La régularité est la clé de la réussite.',
+        metaDescription: 'Transformez vos sessions Pomodoro en progression : missions quotidiennes, trophées avec paliers et badges. La régularité est la clé.',
         h1: 'Motivation & Récompenses : restez constant, sans forcer',
         intro: 'La partie la plus difficile, ce n\'est pas de travailler : c\'est d\'y revenir tous les jours. Pomocha transforme la concentration en progression concrète grâce à trois piliers : des missions quotidiennes, un système de trophées avec paliers, et des badges qui récompensent votre régularité.',
         sections: {
@@ -338,7 +338,7 @@ export const translations = {
               { text: 'Comment utiliser Pomocha', href: '/features/pomodoro-timer' },
               { text: 'Comment utiliser le système de récompenses', href: '/features/rewards-system' },
               { text: 'Utiliser Pomocha en tant qu\'étudiant', href: '/use-cases/students' },
-              { text: 'Utiliser Pomocha en tant que freelancer', href: '/features/freelancers' },
+              { text: 'Utiliser Pomocha en tant que freelancer', href: '/use-cases/freelancers' },
             ],
           },
         },
@@ -386,14 +386,14 @@ export const translations = {
               { text: 'Comment utiliser Pomocha', href: '/features/pomodoro-timer' },
               { text: 'Comment utiliser le système de récompenses', href: '/features/rewards-system' },
               { text: 'Utiliser Pomocha en tant qu\'étudiant', href: '/use-cases/students' },
-              { text: 'Utiliser Pomocha en tant que freelancer', href: '/features/freelancers' },
+              { text: 'Utiliser Pomocha en tant que freelancer', href: '/use-cases/freelancers' },
             ],
           },
         },
       },
       students: {
         htmlTitle: 'App Pomodoro pour étudiants – Étudier mieux, pas plus dur',
-        metaDescription: 'Une app Pomodoro gamifiée pensée pour les étudiants. Construisez des séries d\'étude, complétez des quêtes quotidiennes et rendez la préparation aux exams vraiment motivante.',
+        metaDescription: 'App Pomodoro gamifiée pour étudiants. Séries d\'étude, quêtes quotidiennes et préparation aux exams motivante. Étudiez mieux.',
         h1: 'L\'app d\'étude qui vous donne envie de réviser',
         intro: 'Soyons honnêtes : réviser, c\'est difficile. Entre les réseaux sociaux, Netflix et les messages, rester concentré paraît impossible. Les apps d\'étude classiques sont ennuyeuses. Et la discipline ne tient qu\'un temps.',
         sections: {
@@ -449,8 +449,8 @@ export const translations = {
         },
       },
       freelancers: {
-        htmlTitle: 'App Pomodoro pour freelances – Focus, suivi du temps, livrer plus',
-        metaDescription: 'Une app Pomodoro pensée pour les freelances : sessions de deep work, suivi du temps prêt pour les clients, séries de focus et productivité sans distraction.',
+        htmlTitle: 'App Pomodoro pour freelances – Focus et suivi du temps',
+        metaDescription: 'Une app Pomodoro pensée pour les freelances : sessions de deep work, suivi du temps prêt pour les clients et productivité sans distraction.',
         h1: 'L\'app Pomodoro pensée pour les freelances',
         intro: 'Être freelance, c\'est la liberté… jusqu\'au jour où votre temps disparaît entre les changements de contexte, les emails et 30 onglets ouverts. Pomodoro vous donne une structure sans tuer la flexibilité : des sprints de focus, des pauses claires, et une progression mesurable.',
         sections: {
@@ -770,8 +770,8 @@ export const translations = {
       organizationDescription: 'Pomodoro timer app with gamification and statistics to improve productivity and focus',
       pages: {
         home: {
-          title: 'Pomocha – Pomodoro app with rewards and statistics | Focus & Productivity',
-          description: 'Transform your focus into progress with Pomocha: Pomodoro timer, daily missions, badges, trophies and focus statistics. Ideal for students, freelancers and creators.',
+          title: 'Pomocha – Pomodoro app with rewards and statistics',
+          description: 'Gamified Pomodoro timer with daily missions, badges, trophies and focus statistics. Ideal for students, freelancers and creators.',
           keywords: [
             'Pomodoro',
             'Pomodoro timer',
@@ -857,7 +857,7 @@ export const translations = {
           ],
         },
         freelancers: {
-          title: 'Pomodoro app for freelancers – Focus, time tracking, deliver more',
+          title: 'Pomodoro app for freelancers – Focus & time tracking',
           description: 'A Pomodoro app built for freelancers: deep work sessions, client-ready time tracking, focus streaks and distraction-free productivity.',
           keywords: [
             'Pomodoro freelance',
@@ -929,7 +929,7 @@ export const translations = {
             title: 'Articles you might be interested in:',
             links: [
               { text: 'Using Pomocha as a student', href: '/use-cases/students' },
-              { text: 'Using Pomocha as a freelancer', href: '/features/freelancers' },
+              { text: 'Using Pomocha as a freelancer', href: '/use-cases/freelancers' },
               { text: 'How to use Pomocha', href: '/features/pomodoro-timer' },
               { text: 'How to use the rewards system', href: '/features/rewards-system' },
               { text: 'How to use statistics', href: '/features/statistics' },
@@ -1072,7 +1072,7 @@ export const translations = {
               { text: 'How to use Pomocha', href: '/features/pomodoro-timer' },
               { text: 'How to use the rewards system', href: '/features/rewards-system' },
               { text: 'Using Pomocha as a student', href: '/use-cases/students' },
-              { text: 'Using Pomocha as a freelancer', href: '/features/freelancers' },
+              { text: 'Using Pomocha as a freelancer', href: '/use-cases/freelancers' },
             ],
           },
         },
@@ -1120,7 +1120,7 @@ export const translations = {
               { text: 'How to use Pomocha', href: '/features/pomodoro-timer' },
               { text: 'How to use the rewards system', href: '/features/rewards-system' },
               { text: 'Using Pomocha as a student', href: '/use-cases/students' },
-              { text: 'Using Pomocha as a freelancer', href: '/features/freelancers' },
+              { text: 'Using Pomocha as a freelancer', href: '/use-cases/freelancers' },
             ],
           },
         },
@@ -1183,7 +1183,7 @@ export const translations = {
         },
       },
       freelancers: {
-        htmlTitle: 'Pomodoro app for freelancers – Focus, time tracking, deliver more',
+        htmlTitle: 'Pomodoro app for freelancers – Focus & time tracking',
         metaDescription: 'A Pomodoro app built for freelancers: deep work sessions, client-ready time tracking, focus streaks and distraction-free productivity.',
         h1: 'The Pomodoro app built for freelancers',
         intro: 'Being a freelancer means freedom… until the day your time disappears between context switches, emails and 30 open tabs. Pomodoro gives you structure without killing flexibility: focus sprints, clear breaks, and measurable progress.',

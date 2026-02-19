@@ -8,6 +8,7 @@ export type PageMeta = {
   ogImage?: string;
   ogUrl?: string;
   ogType?: string;
+  ogLocale?: string;
   twitterCard?: string;
   twitterTitle?: string;
   twitterDescription?: string;
@@ -69,7 +70,7 @@ export function usePageMeta(meta: PageMeta) {
     }
     upsertMeta('property', 'og:type', meta.ogType || 'website');
     upsertMeta('property', 'og:site_name', 'Pomocha');
-    upsertMeta('property', 'og:locale', 'fr_FR');
+    upsertMeta('property', 'og:locale', meta.ogLocale || 'fr_FR');
 
     // Twitter Card
     upsertMeta('name', 'twitter:card', meta.twitterCard || 'summary_large_image');
@@ -92,6 +93,7 @@ export function usePageMeta(meta: PageMeta) {
     meta.ogImage,
     meta.ogUrl,
     meta.ogType,
+    meta.ogLocale,
     meta.twitterCard,
     meta.twitterTitle,
     meta.twitterDescription,

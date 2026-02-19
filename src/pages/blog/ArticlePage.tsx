@@ -2,8 +2,10 @@ import { useParams, Navigate } from 'react-router-dom';
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
-import { BestPomodoroAppsArticle } from './articles/BestPomodoroAppsArticle';
 import { BestPomodoroOnlineArticle } from './articles/BestPomodoroOnlineArticle';
+import { TechniquePomodoroArticle } from './articles/TechniquePomodoroArticle';
+import { AppPomodoroGamifieeArticle } from './articles/AppPomodoroGamifieeArticle';
+import { PomodoroEtudiantFreelanceArticle } from './articles/PomodoroEtudiantFreelanceArticle';
 
 export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -12,7 +14,9 @@ export default function ArticlePage() {
   // Mapper les clés d'articles aux composants
   const articleComponents: { [key: string]: React.ComponentType } = {
     bestPomodoroOnline: BestPomodoroOnlineArticle,
-    bestPomodoroApps: BestPomodoroAppsArticle,
+    techniquePomodoro: TechniquePomodoroArticle,
+    appPomodoroGamifiee: AppPomodoroGamifieeArticle,
+    pomodoroEtudiantFreelance: PomodoroEtudiantFreelanceArticle,
   };
 
   // Trouver l'article correspondant au slug depuis les traductions
@@ -44,7 +48,7 @@ export default function ArticlePage() {
 
   return (
     <PageLayout
-      htmlTitle={`${metaTitle} | ${t.pages.blog.htmlTitle}`}
+      htmlTitle={`${metaTitle} | Pomocha`}
       metaDescription={metaDescription}
       h1={metaTitle}
       intro={articleMeta.intro}

@@ -7,7 +7,7 @@ import { useI18n } from '../../contexts/I18nContext';
 const BASE_URL = SEO_CONFIG.baseUrl;
 
 export function LandingPageSEO() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const homeSEO = t.seo.pages.home;
 
   // Meta tags optimisés pour Google
@@ -21,6 +21,7 @@ export function LandingPageSEO() {
     ogImage: `${BASE_URL}${SEO_CONFIG.defaultImage}`,
     ogUrl: BASE_URL,
     ogType: 'website',
+    ogLocale: locale === 'fr' ? 'fr_FR' : 'en_US',
     twitterCard: 'summary_large_image',
     twitterTitle: homeSEO.title,
     twitterDescription: homeSEO.description,
@@ -42,18 +43,13 @@ export function LandingPageSEO() {
       ],
     },
 
-    // Website Schema avec SearchAction pour la barre de recherche Google
+    // Website Schema
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Pomocha',
       url: BASE_URL,
       description: t.seo.defaultDescription,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: `${BASE_URL}/search?q={search_term_string}`,
-        'query-input': 'required name=search_term_string',
-      },
     },
 
     // SoftwareApplication Schema

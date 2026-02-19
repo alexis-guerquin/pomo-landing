@@ -57,6 +57,8 @@ function nonBlockingCSS(): Plugin {
   };
 }
 
+const isSSR = process.env.VITE_SSR === 'true';
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -64,14 +66,15 @@ export default defineConfig({
     nonBlockingCSS()
   ],
   build: {
-    // Optimisation du code splitting pour réduire les chaînes de requêtes
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Séparer les grandes bibliothèques
-          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-motion': ['framer-motion'],
-        }
+        // manualChunks uniquement pour le build client (pas pour le SSR)
+        ...(!isSSR && {
+          manualChunks: {
+            'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+            'vendor-motion': ['framer-motion'],
+          }
+        }),
       }
     },
     // Augmenter la limite pour inline des assets
