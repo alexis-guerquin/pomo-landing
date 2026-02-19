@@ -3,6 +3,7 @@
  */
 
 import { bestPomodoroOnline } from './bestPomodoroOnline/en';
+import { bestPomodoroApps } from './bestPomodoroApps/en';
 import { techniquePomodoro } from './techniquePomodoro/en';
 import { appPomodoroGamifiee } from './appPomodoroGamifiee/en';
 import { pomodoroEtudiantFreelance } from './pomodoroEtudiantFreelance/en';
@@ -19,6 +20,7 @@ export const blogTranslations = {
   },
   articles: {
     bestPomodoroOnline,
+    bestPomodoroApps,
     techniquePomodoro,
     appPomodoroGamifiee,
     pomodoroEtudiantFreelance,
