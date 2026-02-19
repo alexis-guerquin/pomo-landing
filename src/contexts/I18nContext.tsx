@@ -12,15 +12,17 @@ type I18nContextType = {
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
 
 const STORAGE_KEY = 'pomocha-locale';
+const isServer = typeof window === 'undefined';
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(() => {
+    if (isServer) return 'fr';
     // Récupérer la langue depuis localStorage ou détecter depuis le navigateur
     const saved = localStorage.getItem(STORAGE_KEY) as Locale;
     if (saved && (saved === 'fr' || saved === 'en')) {
       return saved;
     }
-    
+
     // Détection automatique de la langue du navigateur
     const browserLang = navigator.language.split('-')[0];
     return browserLang === 'fr' ? 'fr' : 'en';
@@ -28,9 +30,10 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale);
-    localStorage.setItem(STORAGE_KEY, newLocale);
-    // Mettre à jour l'attribut lang du HTML
-    document.documentElement.lang = newLocale;
+    if (!isServer) {
+      localStorage.setItem(STORAGE_KEY, newLocale);
+      document.documentElement.lang = newLocale;
+    }
   };
 
   useEffect(() => {
