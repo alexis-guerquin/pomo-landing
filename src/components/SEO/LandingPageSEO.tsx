@@ -39,7 +39,6 @@ export function LandingPageSEO() {
       description: t.seo.organizationDescription,
       sameAs: [
         'https://x.com/Team_Pomocha',
-        'https://www.reddit.com/r/pomocha/',
       ],
     },
 
