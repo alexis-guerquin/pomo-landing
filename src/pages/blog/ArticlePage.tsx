@@ -6,6 +6,7 @@ import { BestPomodoroOnlineArticle } from './articles/BestPomodoroOnlineArticle'
 import { TechniquePomodoroArticle } from './articles/TechniquePomodoroArticle';
 import { AppPomodoroGamifieeArticle } from './articles/AppPomodoroGamifieeArticle';
 import { PomodoroEtudiantFreelanceArticle } from './articles/PomodoroEtudiantFreelanceArticle';
+import { PomochaNouveautesArticle } from './articles/PomochaNouveautesArticle';
 
 export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -17,6 +18,7 @@ export default function ArticlePage() {
     techniquePomodoro: TechniquePomodoroArticle,
     appPomodoroGamifiee: AppPomodoroGamifieeArticle,
     pomodoroEtudiantFreelance: PomodoroEtudiantFreelanceArticle,
+    pomochaNouveautes: PomochaNouveautesArticle,
   };
 
   // Trouver l'article correspondant au slug depuis les traductions

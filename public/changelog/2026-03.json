@@ -1,0 +1,85 @@
+{
+  "version": "2026-03",
+  "date": "2026-03-08",
+  "features": [
+    {
+      "id": "stackable-badges",
+      "icon": "🏆",
+      "titleFr": "Badges cumulables",
+      "titleEn": "Stackable Badges",
+      "descriptionFr": "Désormais, tous vos badges sont cumulables ! Chaque jour, gagnez de nouveaux badges qui s'ajoutent à votre collection et vous récompensent à votre juste valeur. Un système pensé pour vous garder motivé au quotidien.",
+      "descriptionEn": "Badges are now stackable! Earn new badges every day that stack up in your collection. A system designed to keep you rewarded and motivated daily.",
+      "urlFr": "https://www.pomocha.io",
+      "urlEn": "https://www.pomocha.io"
+    },
+    {
+      "id": "daily-summary",
+      "icon": "📊",
+      "titleFr": "Résumé détaillé de votre journée",
+      "titleEn": "Detailed Daily Summary",
+      "descriptionFr": "Cliquez sur n'importe quel jour dans la page Activité pour visualiser précisément votre journée : temps total de focus, nombre de Pomodoros, projets et tâches complétées, badges obtenus et XP gagnés.",
+      "descriptionEn": "Click on any day in the Activity page to see a precise breakdown of your day: total focus time, number of Pomodoros, completed projects and tasks, badges earned, and XP gained.",
+      "urlFr": "https://www.pomocha.io/profile/activity",
+      "urlEn": "https://www.pomocha.io/profile/activity"
+    },
+    {
+      "id": "daily-goal",
+      "icon": "🎯",
+      "titleFr": "Objectif journalier",
+      "titleEn": "Daily Goal",
+      "descriptionFr": "Créez votre objectif de journée pour garder le cap sur vos ambitions. Rendez-vous sur la page Activité et cliquez sur l'icône cible à droite de « Activité » pour le paramétrer.",
+      "descriptionEn": "Set a daily goal to keep your ambitions on track. Head to the Activity page and click the target icon next to \"Activity\" to configure it.",
+      "urlFr": "https://www.pomocha.io/profile/activity",
+      "urlEn": "https://www.pomocha.io/profile/activity"
+    },
+    {
+      "id": "recaps",
+      "icon": "📅",
+      "titleFr": "Nouveau système de récaps",
+      "titleEn": "New Recap System",
+      "descriptionFr": "Visualisez vos récaps hebdomadaires et mensuels pour mesurer votre progression et être fier du temps investi dans vos projets. Design soigné, exportable directement sur les réseaux sociaux.",
+      "descriptionEn": "View your weekly and monthly recaps to measure your progress and feel proud of the time invested in your projects. Beautifully designed and exportable directly to social media.",
+      "urlFr": "https://www.pomocha.io/profile/recaps",
+      "urlEn": "https://www.pomocha.io/profile/recaps"
+    }
+  ],
+  "bugfixes": [
+    {
+      "id": "session-times",
+      "descriptionFr": "Les durées de sessions sont désormais correctement enregistrées et associées à vos projets.",
+      "descriptionEn": "Session durations are now correctly recorded and associated with your projects."
+    },
+    {
+      "id": "event-badges",
+      "descriptionFr": "Nouveau système de badges événementiels pour des récompenses encore plus spéciales.",
+      "descriptionEn": "New event-based badge system for even more special rewards."
+    },
+    {
+      "id": "timer-settings",
+      "descriptionFr": "La configuration du minuteur dans les réglages fonctionne désormais correctement.",
+      "descriptionEn": "Timer configuration in settings now works correctly."
+    },
+    {
+      "id": "weekly-recaps-free",
+      "descriptionFr": "Les récaps hebdomadaires sont maintenant inclus dans la version gratuite !",
+      "descriptionEn": "Weekly recaps are now included in the free version!"
+    }
+  ],
+  "inProgress": [
+    {
+      "id": "friends",
+      "descriptionFr": "Le système d'amis est en cours de développement.",
+      "descriptionEn": "The friends system is in development."
+    },
+    {
+      "id": "growth",
+      "descriptionFr": "Pomocha continue de grandir avec de nouvelles fonctionnalités à venir.",
+      "descriptionEn": "Pomocha keeps growing with new features on the way."
+    },
+    {
+      "id": "league-rank",
+      "descriptionFr": "Un système de ligues et de classements est en cours de réflexion.",
+      "descriptionEn": "A league and ranking system is being designed."
+    }
+  ]
+}

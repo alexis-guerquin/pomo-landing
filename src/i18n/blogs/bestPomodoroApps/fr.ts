@@ -8,7 +8,6 @@ export const bestPomodoroApps = {
   description: 'Découvrez les meilleures apps Pomodoro en 2026. Comparaison détaillée des applications mobiles et desktop pour améliorer votre concentration et productivité.',
   image: '/blog/pomocha-1.png',
   date: '15 janvier 2026',
-  readTime: '20 min de lecture',
   tocTitle: 'Table des matières',
   intro: 'Trouver la bonne app Pomodoro peut transformer votre productivité. Ce guide complet compare les meilleures apps Pomodoro disponibles en 2026, vous aidant à choisir l\'outil parfait pour votre workflow.',
   sections: {

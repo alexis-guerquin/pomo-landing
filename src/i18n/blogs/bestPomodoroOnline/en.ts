@@ -8,7 +8,6 @@ export const bestPomodoroOnline = {
       description: 'Discover the best online Pomodoro in 2026. Detailed comparison of free and paid tools to improve your focus and productivity.',
       image: 'https://www.quidlo.com/blog/wp-content/uploads/2022/09/Pomofocus-Application-Screenshot-1024x672.png',
       date: 'January 2, 2026',
-      readTime: '18 min read',
       tocTitle: 'Table of Contents',
       intro: 'In 2026, staying focused can be challenging. Between constant notifications, back-to-back meetings, and the constant temptation to check your phone, deep work has become rare. Yet a simple method has existed for nearly forty years: the Pomodoro Technique. And today, the best online Pomodoro tools transform this approach into modern tools, accessible from any browser, without installation. This article guides you through an objective comparison of available solutions, to help you find the one that truly matches your way of working.',
       sections: {

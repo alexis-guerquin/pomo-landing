@@ -84,7 +84,6 @@ export function TechniquePomodoroArticle() {
       <article className="blog-article">
         <div className="blog-article__meta">
           <time dateTime="2026-02-19">{article.date}</time>
-          <span className="blog-article__read-time">{article.readTime}</span>
         </div>
 
         <div className="blog-article__content">

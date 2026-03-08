@@ -8,7 +8,6 @@ export const techniquePomodoro = {
   description: 'Découvrez la technique Pomodoro : principe, bienfaits et conseils pratiques pour améliorer votre productivité au quotidien. Guide complet avec outils et astuces.',
   image: '/blog/pomocha-2.png',
   date: '19 février 2026',
-  readTime: '8 min de lecture',
   tocTitle: 'Table des matières',
   intro: 'La technique Pomodoro est l\'une des méthodes de productivité les plus populaires au monde. Simple à mettre en place, elle permet de maintenir une concentration optimale tout en évitant le burnout. Voici tout ce qu\'il faut savoir pour l\'adopter efficacement.',
   sections: {

@@ -8,7 +8,6 @@ export const appPomodoroGamifiee = {
   description: 'Why gamified Pomodoro apps are more effective? Badges, missions, levels: discover how gamification transforms productivity into a game.',
   image: '/blog/pomocha-1.png',
   date: 'February 19, 2026',
-  readTime: '7 min read',
   tocTitle: 'Table of contents',
   intro: 'What if your Pomodoro timer could be as addictive as a video game? That is exactly the promise of gamified Pomodoro apps. By combining the rigor of the Pomodoro method with game progression mechanics, these tools transform productivity into an engaging experience.',
   sections: {
