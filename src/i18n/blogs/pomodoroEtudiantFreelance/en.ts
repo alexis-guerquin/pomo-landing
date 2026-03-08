@@ -8,7 +8,6 @@ export const pomodoroEtudiantFreelance = {
   description: 'Practical guide to the Pomodoro method for students and freelancers. Concrete strategies, time management, and recommended tools to work smarter.',
   image: '/blog/pomocha-3.png',
   date: 'February 19, 2026',
-  readTime: '9 min read',
   tocTitle: 'Table of contents',
   intro: 'Students and freelancers share a common challenge: working autonomously, without an imposed structure, while maintaining high productivity. The Pomodoro method is the ideal tool for these profiles — here is how to adapt it to your specific reality.',
   sections: {

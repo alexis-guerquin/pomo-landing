@@ -8,7 +8,6 @@ export const techniquePomodoro = {
   description: 'Discover the Pomodoro Technique: principles, benefits and practical tips to improve your daily productivity. Complete guide with tools and best practices.',
   image: '/blog/pomocha-2.png',
   date: 'February 19, 2026',
-  readTime: '8 min read',
   tocTitle: 'Table of contents',
   intro: 'The Pomodoro Technique is one of the most popular productivity methods in the world. Simple to implement, it helps maintain optimal focus while preventing burnout. Here is everything you need to know to adopt it effectively.',
   sections: {

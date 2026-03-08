@@ -30,6 +30,7 @@ const routes = [
   '/blog/technique-pomodoro-productivite',
   '/blog/application-pomodoro-gamifiee',
   '/blog/pomodoro-etudiant-freelance',
+  '/blog/nouveautes-pomocha-mars-2026',
 ];
 
 async function prerender() {
