@@ -31,7 +31,8 @@ html, body {
   background-color: var(--theme-surface);
 }
 
-* {
+/* Transitions only after page is loaded — prevents flash on initial mount */
+.transitions-ready * {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 

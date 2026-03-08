@@ -22,3 +22,10 @@ if (rootElement.innerHTML.trim() !== '') {
 } else {
   createRoot(rootElement).render(app);
 }
+
+// Enable CSS transitions after first paint to prevent flash on initial load
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.documentElement.classList.add('transitions-ready');
+  });
+});
