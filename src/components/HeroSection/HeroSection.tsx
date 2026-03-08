@@ -13,7 +13,7 @@ const HeroSection = () => {
           <div className="hero-content">
             <m.div
               className="hero-text"
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
@@ -52,7 +52,7 @@ const HeroSection = () => {
               {/* Mockup MacBook */}
               <m.div
                 className="mockup-laptop"
-                initial={{ opacity: 0, y: 50 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
@@ -79,7 +79,7 @@ const HeroSection = () => {
               {/* Mockup Smartphone */}
               <m.div
                 className="mockup-phone"
-                initial={{ opacity: 0, y: 50 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
