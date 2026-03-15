@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 
-export type StructuredData = 
+export type StructuredData =
   | OrganizationSchema
   | WebSiteSchema
   | WebPageSchema
   | BreadcrumbSchema
-  | SoftwareApplicationSchema;
+  | SoftwareApplicationSchema
+  | ServiceSchema;
 
 export interface OrganizationSchema {
   '@context': 'https://schema.org';
@@ -70,6 +71,18 @@ export interface SoftwareApplicationSchema {
     ratingValue: string;
     ratingCount: string;
   };
+}
+
+export interface ServiceSchema {
+  '@context': 'https://schema.org/' | 'https://schema.org';
+  '@type': 'Service';
+  name: string;
+  description?: string;
+  provider?: {
+    '@type': 'Organization';
+    name: string;
+  };
+  url?: string;
 }
 
 /**

@@ -65,6 +65,19 @@ export function LandingPageSEO() {
       },
     },
 
+    // Service Schema
+    {
+      '@context': 'https://schema.org/',
+      '@type': 'Service',
+      name: 'pomocha',
+      description: 'pomocha est une application de pomodoro gamifié, gestion de projets et développement personnel.',
+      provider: {
+        '@type': 'Organization',
+        name: 'pomocha',
+      },
+      url: 'https://www.pomocha.fr/',
+    },
+
     // WebPage Schema avec les sitelinks
     {
       '@context': 'https://schema.org',
