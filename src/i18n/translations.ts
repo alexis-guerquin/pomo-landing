@@ -163,6 +163,58 @@ export const translations = {
             'meilleurs minuteurs Pomodoro',
           ],
         },
+        concept: {
+          title: 'Concept Pomocha – La méthode Pomodoro gamifiée',
+          description: 'Découvrez le concept de Pomocha : un minuteur Pomodoro gamifié avec missions, récompenses et statistiques pour transformer votre productivité.',
+          keywords: [
+            'concept Pomocha',
+            'méthode Pomodoro',
+            'Pomodoro gamifié',
+            'productivité gamification',
+            'technique Pomodoro',
+          ],
+        },
+        app: {
+          title: 'Application Pomocha – Minuteur Pomodoro gamifié en ligne',
+          description: 'Accédez à l\'application Pomocha : minuteur Pomodoro, missions quotidiennes, badges, trophées et statistiques de focus. Gratuit et sans inscription.',
+          keywords: [
+            'application Pomocha',
+            'app Pomodoro en ligne',
+            'minuteur Pomodoro gratuit',
+            'Pomodoro en ligne',
+            'application productivité',
+          ],
+        },
+        extension: {
+          title: 'Extension Chrome Pomocha – Pomodoro dans votre navigateur',
+          description: 'Installez l\'extension Chrome Pomocha : un minuteur Pomodoro gamifié toujours visible dans votre navigateur, sans quitter votre onglet.',
+          keywords: [
+            'extension Chrome Pomodoro',
+            'extension Pomocha',
+            'Pomodoro navigateur',
+            'extension productivité Chrome',
+            'minuteur Chrome',
+          ],
+        },
+        contact: {
+          title: 'Contact – Pomocha',
+          description: 'Contactez l\'équipe Pomocha pour toute question, suggestion ou partenariat. Nous sommes à votre écoute.',
+          keywords: [
+            'contact Pomocha',
+            'équipe Pomocha',
+            'support Pomocha',
+          ],
+        },
+        legal: {
+          title: 'Mentions légales – Pomocha',
+          description: 'Mentions légales, conditions d\'utilisation et politique de confidentialité de Pomocha.',
+          keywords: [
+            'mentions légales Pomocha',
+            'conditions utilisation',
+            'politique confidentialité',
+            'CGU Pomocha',
+          ],
+        },
       },
     },
     pages: {
@@ -504,6 +556,145 @@ export const translations = {
           },
         },
       },
+      concept: {
+        htmlTitle: 'Concept Pomocha – La méthode Pomodoro gamifiée',
+        metaDescription: 'Découvrez le concept de Pomocha : un minuteur Pomodoro gamifié avec missions, récompenses et statistiques pour transformer votre productivité.',
+        h1: 'Le concept Pomocha',
+        intro: 'Pomocha réinvente la méthode Pomodoro en ajoutant de la gamification : missions, récompenses et statistiques pour rendre la productivité engageante et durable.',
+        sections: {
+          pomodoro: {
+            title: 'La méthode Pomodoro, simplifiée',
+            content: 'La technique Pomodoro divise votre travail en sessions de 25 minutes de concentration intense, suivies de courtes pauses. Cette alternance prévient la fatigue mentale et maintient votre focus tout au long de la journée.',
+          },
+          gamification: {
+            title: 'La gamification au service du focus',
+            content: 'Pomocha transforme chaque session en progression : gagnez de l\'XP, débloquez des badges, complétez des missions quotidiennes et suivez vos séries. Le travail devient un jeu où chaque minute compte.',
+          },
+          features: {
+            title: 'Ce que Pomocha vous offre',
+            items: [
+              'Un minuteur Pomodoro personnalisable et minimaliste',
+              'Un système de missions quotidiennes et hebdomadaires',
+              'Des badges et trophées à débloquer avec votre temps de focus',
+              'Des statistiques détaillées pour visualiser votre progression',
+              'La gestion de projets et de tâches intégrée',
+            ],
+          },
+          philosophy: {
+            title: 'Notre philosophie',
+            content: 'Les outils de productivité ne doivent pas être des distractions. Pomocha est conçu pour s\'effacer pendant que vous travaillez et vous récompenser quand vous avez terminé.',
+          },
+        },
+      },
+      app: {
+        htmlTitle: 'Application Pomocha – Minuteur Pomodoro gamifié en ligne',
+        metaDescription: 'Accédez à l\'application Pomocha : minuteur Pomodoro, missions quotidiennes, badges, trophées et statistiques de focus. Gratuit et sans inscription.',
+        h1: 'L\'application Pomocha',
+        intro: 'Pomocha est disponible directement dans votre navigateur. Aucune installation requise, aucune inscription obligatoire. Lancez votre premier Pomodoro en quelques secondes.',
+        sections: {
+          access: {
+            title: 'Accéder à Pomocha',
+            content: 'Pomocha est une application web accessible depuis n\'importe quel navigateur. Rendez-vous sur pomocha.io pour commencer à travailler avec la méthode Pomodoro gamifiée.',
+            cta: 'Lancer Pomocha',
+          },
+          features: {
+            title: 'Fonctionnalités principales',
+            items: [
+              'Minuteur Pomodoro avec sessions personnalisables',
+              'Système de récompenses : badges, trophées, XP et niveaux',
+              'Statistiques détaillées de vos sessions de focus',
+              'Gestion de projets et liste de tâches',
+              'Interface minimaliste et sans distraction',
+            ],
+          },
+          platforms: {
+            title: 'Disponibilité',
+            content: 'Pomocha est accessible sur navigateur (desktop et mobile). Une extension Chrome est également disponible pour garder votre minuteur toujours visible.',
+          },
+        },
+      },
+      extension: {
+        htmlTitle: 'Extension Chrome Pomocha – Pomodoro dans votre navigateur',
+        metaDescription: 'Installez l\'extension Chrome Pomocha : un minuteur Pomodoro gamifié toujours visible dans votre navigateur, sans quitter votre onglet.',
+        h1: 'L\'extension Chrome Pomocha',
+        intro: 'Gardez votre minuteur Pomodoro toujours visible grâce à l\'extension Chrome Pomocha. Travaillez sans jamais quitter votre onglet.',
+        sections: {
+          what: {
+            title: 'Qu\'est-ce que l\'extension Pomocha ?',
+            content: 'L\'extension Chrome Pomocha intègre un minuteur Pomodoro directement dans votre navigateur. Elle se synchronise avec votre compte Pomocha pour que vos statistiques et récompenses soient toujours à jour.',
+          },
+          features: {
+            title: 'Fonctionnalités de l\'extension',
+            items: [
+              'Minuteur Pomodoro dans la barre d\'outils du navigateur',
+              'Notifications de fin de session et de pause',
+              'Synchronisation avec votre compte Pomocha',
+              'Interface compacte et non-intrusive',
+              'Accès rapide à vos statistiques du jour',
+            ],
+          },
+          install: {
+            title: 'Comment l\'installer',
+            content: 'Rendez-vous sur le Chrome Web Store, recherchez "Pomocha" et cliquez sur "Ajouter à Chrome". L\'extension sera prête en quelques secondes.',
+            cta: 'Installer l\'extension',
+          },
+        },
+      },
+      contact: {
+        htmlTitle: 'Contact – Pomocha',
+        metaDescription: 'Contactez l\'équipe Pomocha pour toute question, suggestion ou partenariat. Nous sommes à votre écoute.',
+        h1: 'Contactez-nous',
+        intro: 'Une question, une suggestion, ou une envie de collaborer ? L\'équipe Pomocha est à votre écoute.',
+        sections: {
+          email: {
+            title: 'Par email',
+            content: 'Envoyez-nous un message à l\'adresse suivante :',
+            address: 'team@pomocha.fr',
+          },
+          social: {
+            title: 'Sur les réseaux',
+            content: 'Suivez-nous et échangez avec nous sur X/Twitter :',
+            handle: '@Team_Pomocha',
+          },
+          response: {
+            title: 'Délai de réponse',
+            content: 'Nous faisons de notre mieux pour répondre sous 48h. Pour les demandes urgentes, privilégiez l\'email.',
+          },
+        },
+      },
+      legal: {
+        htmlTitle: 'Mentions légales – Pomocha',
+        metaDescription: 'Mentions légales, conditions d\'utilisation et politique de confidentialité de Pomocha.',
+        h1: 'Mentions légales',
+        intro: 'Informations légales relatives au site pomocha.fr et à l\'application Pomocha.',
+        sections: {
+          editor: {
+            title: 'Éditeur du site',
+            content: 'Le site pomocha.fr est édité par l\'équipe Pomocha.',
+            items: [
+              'Site web : https://www.pomocha.fr',
+              'Application : https://www.pomocha.io',
+              'Contact : team@pomocha.fr',
+            ],
+          },
+          hosting: {
+            title: 'Hébergement',
+            content: 'Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.',
+          },
+          intellectual: {
+            title: 'Propriété intellectuelle',
+            content: 'L\'ensemble du contenu du site (textes, images, logos, icônes) est protégé par le droit d\'auteur. Toute reproduction sans autorisation préalable est interdite.',
+          },
+          data: {
+            title: 'Protection des données',
+            content: 'Pomocha respecte votre vie privée. Les données collectées sont utilisées uniquement pour le fonctionnement de l\'application. Aucune donnée n\'est vendue à des tiers. Pour toute demande relative à vos données personnelles, contactez-nous à team@pomocha.fr.',
+          },
+          cookies: {
+            title: 'Cookies',
+            content: 'Le site utilise des cookies techniques nécessaires à son fonctionnement et des cookies analytiques (Vercel Analytics) pour améliorer l\'expérience utilisateur.',
+          },
+        },
+      },
       blog: frBlogTranslations,
     },
     components: {
@@ -519,10 +710,18 @@ export const translations = {
         subtitle: 'Pomocha t\'attend!',
         button: 'C\'est parti !',
       },
+      extensionCta: {
+        badge: 'Nouveau',
+        title: 'Pomocha, maintenant dans votre navigateur',
+        subtitle: 'Installez l\'extension Chrome Pomocha : un minuteur Pomodoro gamifié toujours visible, sans quitter votre onglet.',
+        installButton: 'Installer l\'extension',
+        learnMoreButton: 'En savoir plus',
+      },
       footer: {
         categories: {
           features: 'Fonctionnalités',
           useCases: 'Cas d\'usage',
+          discover: 'Découvrir',
           about: 'À propos',
           contact: 'Contact',
         },
@@ -530,11 +729,16 @@ export const translations = {
           pomodoroTimer: 'Timer Pomodoro',
           rewardsSystem: 'Système de récompenses',
           statistics: 'Statistiques',
+          chromeExtension: 'Extension Chrome',
           students: 'Étudiants',
           freelancers: 'Freelancers',
+          concept: 'Concept',
+          app: 'Application',
+          extension: 'Extension',
           about: 'À propos',
           blog: 'Blog',
           contact: 'Contact',
+          legal: 'Mentions légales',
         },
         copyEmail: 'Copier l\'email',
         copied: '✓ Copié !',
@@ -557,6 +761,11 @@ export const translations = {
         characterAlt: 'Personnage Pomocha',
         breadcrumbs: {
           home: 'Accueil',
+          concept: 'Concept',
+          app: 'Application',
+          extension: 'Extension',
+          contact: 'Contact',
+          legal: 'Mentions légales',
           about: 'À propos',
           features: 'Fonctionnalités',
           pomodoroTimer: 'Minuteur Pomodoro',
@@ -568,6 +777,11 @@ export const translations = {
       },
       navbar: {
         home: 'Accueil',
+        concept: 'Concept',
+        app: 'Application',
+        extension: 'Extension',
+        contact: 'Contact',
+        legal: 'Mentions légales',
         features: 'Fonctionnalités',
         useCases: 'Cas d\'usage',
         about: 'À propos',
@@ -895,6 +1109,58 @@ export const translations = {
             'Pomodoro technique',
             'time management apps',
             'best Pomodoro timers',
+          ],
+        },
+        concept: {
+          title: 'Pomocha Concept – The gamified Pomodoro method',
+          description: 'Discover the Pomocha concept: a gamified Pomodoro timer with missions, rewards and statistics to transform your productivity.',
+          keywords: [
+            'Pomocha concept',
+            'Pomodoro method',
+            'gamified Pomodoro',
+            'productivity gamification',
+            'Pomodoro technique',
+          ],
+        },
+        app: {
+          title: 'Pomocha App – Gamified Pomodoro timer online',
+          description: 'Access the Pomocha app: Pomodoro timer, daily missions, badges, trophies and focus statistics. Free and no sign-up required.',
+          keywords: [
+            'Pomocha app',
+            'online Pomodoro app',
+            'free Pomodoro timer',
+            'Pomodoro online',
+            'productivity app',
+          ],
+        },
+        extension: {
+          title: 'Pomocha Chrome Extension – Pomodoro in your browser',
+          description: 'Install the Pomocha Chrome extension: a gamified Pomodoro timer always visible in your browser, without leaving your tab.',
+          keywords: [
+            'Chrome Pomodoro extension',
+            'Pomocha extension',
+            'Pomodoro browser',
+            'Chrome productivity extension',
+            'Chrome timer',
+          ],
+        },
+        contact: {
+          title: 'Contact – Pomocha',
+          description: 'Contact the Pomocha team for any question, suggestion or partnership. We are here to help.',
+          keywords: [
+            'contact Pomocha',
+            'Pomocha team',
+            'Pomocha support',
+          ],
+        },
+        legal: {
+          title: 'Legal Notice – Pomocha',
+          description: 'Legal notice, terms of use and privacy policy for Pomocha.',
+          keywords: [
+            'Pomocha legal notice',
+            'terms of use',
+            'privacy policy',
+            'Pomocha terms',
           ],
         },
       },
@@ -1238,6 +1504,145 @@ export const translations = {
           },
         },
       },
+      concept: {
+        htmlTitle: 'Pomocha Concept – The gamified Pomodoro method',
+        metaDescription: 'Discover the Pomocha concept: a gamified Pomodoro timer with missions, rewards and statistics to transform your productivity.',
+        h1: 'The Pomocha concept',
+        intro: 'Pomocha reinvents the Pomodoro method by adding gamification: missions, rewards and statistics to make productivity engaging and sustainable.',
+        sections: {
+          pomodoro: {
+            title: 'The Pomodoro method, simplified',
+            content: 'The Pomodoro technique divides your work into 25-minute sessions of intense concentration, followed by short breaks. This alternation prevents mental fatigue and maintains your focus throughout the day.',
+          },
+          gamification: {
+            title: 'Gamification for better focus',
+            content: 'Pomocha turns every session into progress: earn XP, unlock badges, complete daily missions and track your streaks. Work becomes a game where every minute counts.',
+          },
+          features: {
+            title: 'What Pomocha offers',
+            items: [
+              'A customizable and minimalist Pomodoro timer',
+              'A daily and weekly mission system',
+              'Badges and trophies to unlock with your focus time',
+              'Detailed statistics to visualize your progress',
+              'Integrated project and task management',
+            ],
+          },
+          philosophy: {
+            title: 'Our philosophy',
+            content: 'Productivity tools should not be distractions. Pomocha is designed to fade away while you work and reward you when you\'re done.',
+          },
+        },
+      },
+      app: {
+        htmlTitle: 'Pomocha App – Gamified Pomodoro timer online',
+        metaDescription: 'Access the Pomocha app: Pomodoro timer, daily missions, badges, trophies and focus statistics. Free and no sign-up required.',
+        h1: 'The Pomocha app',
+        intro: 'Pomocha is available directly in your browser. No installation required, no sign-up needed. Start your first Pomodoro in seconds.',
+        sections: {
+          access: {
+            title: 'Access Pomocha',
+            content: 'Pomocha is a web application accessible from any browser. Visit pomocha.io to start working with the gamified Pomodoro method.',
+            cta: 'Launch Pomocha',
+          },
+          features: {
+            title: 'Key features',
+            items: [
+              'Pomodoro timer with customizable sessions',
+              'Reward system: badges, trophies, XP and levels',
+              'Detailed statistics of your focus sessions',
+              'Project management and task list',
+              'Minimalist and distraction-free interface',
+            ],
+          },
+          platforms: {
+            title: 'Availability',
+            content: 'Pomocha is accessible on browsers (desktop and mobile). A Chrome extension is also available to keep your timer always visible.',
+          },
+        },
+      },
+      extension: {
+        htmlTitle: 'Pomocha Chrome Extension – Pomodoro in your browser',
+        metaDescription: 'Install the Pomocha Chrome extension: a gamified Pomodoro timer always visible in your browser, without leaving your tab.',
+        h1: 'The Pomocha Chrome Extension',
+        intro: 'Keep your Pomodoro timer always visible with the Pomocha Chrome extension. Work without ever leaving your tab.',
+        sections: {
+          what: {
+            title: 'What is the Pomocha extension?',
+            content: 'The Pomocha Chrome extension integrates a Pomodoro timer directly into your browser. It syncs with your Pomocha account so your statistics and rewards are always up to date.',
+          },
+          features: {
+            title: 'Extension features',
+            items: [
+              'Pomodoro timer in the browser toolbar',
+              'End-of-session and break notifications',
+              'Sync with your Pomocha account',
+              'Compact and non-intrusive interface',
+              'Quick access to your daily statistics',
+            ],
+          },
+          install: {
+            title: 'How to install',
+            content: 'Go to the Chrome Web Store, search for "Pomocha" and click "Add to Chrome". The extension will be ready in seconds.',
+            cta: 'Install the extension',
+          },
+        },
+      },
+      contact: {
+        htmlTitle: 'Contact – Pomocha',
+        metaDescription: 'Contact the Pomocha team for any question, suggestion or partnership. We are here to help.',
+        h1: 'Contact us',
+        intro: 'A question, a suggestion, or want to collaborate? The Pomocha team is here to help.',
+        sections: {
+          email: {
+            title: 'By email',
+            content: 'Send us a message at:',
+            address: 'team@pomocha.fr',
+          },
+          social: {
+            title: 'On social media',
+            content: 'Follow us and connect on X/Twitter:',
+            handle: '@Team_Pomocha',
+          },
+          response: {
+            title: 'Response time',
+            content: 'We do our best to respond within 48 hours. For urgent requests, please use email.',
+          },
+        },
+      },
+      legal: {
+        htmlTitle: 'Legal Notice – Pomocha',
+        metaDescription: 'Legal notice, terms of use and privacy policy for Pomocha.',
+        h1: 'Legal Notice',
+        intro: 'Legal information regarding the pomocha.fr website and the Pomocha application.',
+        sections: {
+          editor: {
+            title: 'Website editor',
+            content: 'The pomocha.fr website is published by the Pomocha team.',
+            items: [
+              'Website: https://www.pomocha.fr',
+              'Application: https://www.pomocha.io',
+              'Contact: team@pomocha.fr',
+            ],
+          },
+          hosting: {
+            title: 'Hosting',
+            content: 'The website is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United States.',
+          },
+          intellectual: {
+            title: 'Intellectual property',
+            content: 'All content on this website (text, images, logos, icons) is protected by copyright. Any reproduction without prior authorization is prohibited.',
+          },
+          data: {
+            title: 'Data protection',
+            content: 'Pomocha respects your privacy. Collected data is used solely for the operation of the application. No data is sold to third parties. For any request regarding your personal data, contact us at team@pomocha.fr.',
+          },
+          cookies: {
+            title: 'Cookies',
+            content: 'This website uses technical cookies necessary for its operation and analytical cookies (Vercel Analytics) to improve user experience.',
+          },
+        },
+      },
       blog: enBlogTranslations,
     },
     components: {
@@ -1253,10 +1658,18 @@ export const translations = {
         subtitle: 'Pomocha is waiting for you!',
         button: 'Let\'s go!',
       },
+      extensionCta: {
+        badge: 'New',
+        title: 'Pomocha, now in your browser',
+        subtitle: 'Install the Pomocha Chrome extension: a gamified Pomodoro timer always visible, without leaving your tab.',
+        installButton: 'Install the extension',
+        learnMoreButton: 'Learn more',
+      },
       footer: {
         categories: {
           features: 'Features',
           useCases: 'Use cases',
+          discover: 'Discover',
           about: 'About',
           contact: 'Contact',
         },
@@ -1264,11 +1677,16 @@ export const translations = {
           pomodoroTimer: 'Pomodoro Timer',
           rewardsSystem: 'Rewards System',
           statistics: 'Statistics',
+          chromeExtension: 'Chrome Extension',
           students: 'Students',
           freelancers: 'Freelancers',
+          concept: 'Concept',
+          app: 'Application',
+          extension: 'Extension',
           about: 'About',
           blog: 'Blog',
           contact: 'Contact',
+          legal: 'Legal Notice',
         },
         copyEmail: 'Copy email',
         copied: '✓ Copied!',
@@ -1291,6 +1709,11 @@ export const translations = {
         characterAlt: 'Pomocha Character',
         breadcrumbs: {
           home: 'Home',
+          concept: 'Concept',
+          app: 'Application',
+          extension: 'Extension',
+          contact: 'Contact',
+          legal: 'Legal Notice',
           about: 'About',
           features: 'Features',
           pomodoroTimer: 'Pomodoro Timer',
@@ -1302,6 +1725,11 @@ export const translations = {
       },
       navbar: {
         home: 'Home',
+        concept: 'Concept',
+        app: 'Application',
+        extension: 'Extension',
+        contact: 'Contact',
+        legal: 'Legal Notice',
         features: 'Features',
         useCases: 'Use cases',
         about: 'About',

@@ -12,6 +12,11 @@ const FocusStatisticsPage = lazy(() => import('./pages/features/FocusStatisticsP
 const StudentsPage = lazy(() => import('./pages/use-cases/StudentsPage'));
 const FreelancersPage = lazy(() => import('./pages/use-cases/FreelancersPage'));
 const AboutPage = lazy(() => import('./pages/about/AboutPage'));
+const ConceptPage = lazy(() => import('./pages/concept/ConceptPage'));
+const AppPage = lazy(() => import('./pages/app/AppPage'));
+const ExtensionPage = lazy(() => import('./pages/extension/ExtensionPage'));
+const ContactPage = lazy(() => import('./pages/contact/ContactPage'));
+const LegalPage = lazy(() => import('./pages/legal/LegalPage'));
 const BlogPage = lazy(() => import('./pages/blog/BlogPage'));
 const ArticlePage = lazy(() => import('./pages/blog/ArticlePage'));
 
@@ -50,6 +55,11 @@ export default function App() {
           <Route path="/use-cases/freelancers" element={<FreelancersPage />} />
 
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/concept" element={<ConceptPage />} />
+          <Route path="/app" element={<AppPage />} />
+          <Route path="/extension" element={<ExtensionPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/legal" element={<LegalPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<ArticlePage />} />
         </Routes>

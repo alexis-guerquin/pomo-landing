@@ -13,6 +13,11 @@ import FocusStatisticsPage from './pages/features/FocusStatisticsPage';
 import StudentsPage from './pages/use-cases/StudentsPage';
 import FreelancersPage from './pages/use-cases/FreelancersPage';
 import AboutPage from './pages/about/AboutPage';
+import ConceptPage from './pages/concept/ConceptPage';
+import AppPage from './pages/app/AppPage';
+import ExtensionPage from './pages/extension/ExtensionPage';
+import ContactPage from './pages/contact/ContactPage';
+import LegalPage from './pages/legal/LegalPage';
 import BlogPage from './pages/blog/BlogPage';
 import ArticlePage from './pages/blog/ArticlePage';
 
@@ -28,6 +33,11 @@ export default function AppSSR() {
         <Route path="/use-cases/students" element={<StudentsPage />} />
         <Route path="/use-cases/freelancers" element={<FreelancersPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/concept" element={<ConceptPage />} />
+        <Route path="/app" element={<AppPage />} />
+        <Route path="/extension" element={<ExtensionPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/legal" element={<LegalPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<ArticlePage />} />
       </Routes>

@@ -10,6 +10,13 @@ export default function BlogPage() {
   // Liste des articles — du plus récent au plus ancien
   const articles = [
     {
+      slug: t.pages.blog.articles.pomochaExtension.slug,
+      title: t.pages.blog.articles.pomochaExtension.title,
+      description: t.pages.blog.articles.pomochaExtension.description,
+      image: t.pages.blog.articles.pomochaExtension.image,
+      date: t.pages.blog.articles.pomochaExtension.date,
+    },
+    {
       slug: t.pages.blog.articles.pomochaNouveautes.slug,
       title: t.pages.blog.articles.pomochaNouveautes.title,
       description: t.pages.blog.articles.pomochaNouveautes.description,

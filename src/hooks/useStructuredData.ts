@@ -6,7 +6,8 @@ export type StructuredData =
   | WebPageSchema
   | BreadcrumbSchema
   | SoftwareApplicationSchema
-  | ServiceSchema;
+  | ServiceSchema
+  | SiteNavigationElementSchema;
 
 export interface OrganizationSchema {
   '@context': 'https://schema.org';
@@ -83,6 +84,13 @@ export interface ServiceSchema {
     name: string;
   };
   url?: string;
+}
+
+export interface SiteNavigationElementSchema {
+  '@context': 'https://schema.org';
+  '@type': 'SiteNavigationElement';
+  name: string | string[];
+  url: string | string[];
 }
 
 /**

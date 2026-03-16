@@ -1,81 +1,21 @@
 import { useEffect, useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ThreeDButton from '../ui/3DButton/3dbutton';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import { useI18n } from '../../contexts/I18nContext';
 import './Navbar.css';
 
-const transition = {
-  type: 'spring',
-  mass: 0.5,
-  damping: 11.5,
-  stiffness: 100,
-  restDelta: 0.001,
-  restSpeed: 0.001,
-} as const;
-
 function HoveredLink({
   children,
   to,
-  onClick,
 }: {
   children: React.ReactNode;
   to: string;
-  onClick?: () => void;
 }) {
   return (
-    <Link to={to} onClick={onClick} className="nav-hovered-link">
+    <Link to={to} className="nav-hovered-link">
       {children}
     </Link>
-  );
-}
-
-function Menu({
-  setActive,
-  children,
-}: {
-  setActive: (item: string | null) => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <nav onMouseLeave={() => setActive(null)} className="nav-pill" aria-label="Navigation principale">
-      {children}
-    </nav>
-  );
-}
-
-function MenuItem({
-  setActive,
-  active,
-  item,
-  children,
-}: {
-  setActive: (item: string) => void;
-  active: string | null;
-  item: string;
-  children?: React.ReactNode;
-}) {
-  return (
-    <div onMouseEnter={() => setActive(item)} className="nav-item">
-      <motion.p transition={{ duration: 0.3 }} className="nav-item__label">
-        {item}
-      </motion.p>
-
-      {active !== null && (
-        <motion.div initial={{ opacity: 0, scale: 0.85, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={transition}>
-          {active === item && (
-            <div className="nav-dropdown">
-              <motion.div transition={transition} layoutId="active" className="nav-dropdown__panel">
-                <motion.div layout className="nav-dropdown__content">
-                  {children}
-                </motion.div>
-              </motion.div>
-            </div>
-          )}
-        </motion.div>
-      )}
-    </div>
   );
 }
 
@@ -83,7 +23,6 @@ const Navbar = () => {
   const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [active, setActive] = useState<string | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -99,7 +38,6 @@ const Navbar = () => {
   useEffect(() => {
     // Ferme le menu mobile à chaque changement de page
     setMobileMenuOpen(false);
-    setActive(null);
   }, [location.pathname]);
 
   const scrollToSection = (sectionId: string) => {
@@ -125,27 +63,21 @@ const Navbar = () => {
   };
 
   const navConfig = useMemo(() => {
-    const featureLinks = [
-      { label: t.components.navbar.featureLinks.pomodoroTimer, to: '/features/pomodoro-timer' },
-      { label: t.components.navbar.featureLinks.rewardsSystem, to: '/features/rewards-system' },
-      { label: t.components.navbar.featureLinks.statistics, to: '/features/statistics' },
-    ] as const;
-
-    const useCaseLinks = [
-      { label: t.components.navbar.useCaseLinks.students, to: '/use-cases/students' },
-      { label: t.components.navbar.useCaseLinks.freelancers, to: '/use-cases/freelancers' },
+    const mainLinks = [
+      { label: t.components.navbar.concept, to: '/concept' },
+      { label: t.components.navbar.app, to: '/app' },
+      { label: t.components.navbar.extension, to: '/extension' },
+      { label: t.components.navbar.contact, to: '/contact' },
+      { label: t.components.navbar.legal, to: '/legal' },
     ] as const;
 
     const mobileItems = [
       { label: t.components.navbar.mobileItems.home, onClick: () => goToSection('hero') },
-      { label: t.components.navbar.mobileItems.featuresPreview, onClick: () => goToSection('features') },
-      ...featureLinks.map((l) => ({ label: l.label, onClick: () => goToPath(l.to) })),
-      ...useCaseLinks.map((l) => ({ label: l.label, onClick: () => goToPath(l.to) })),
-      { label: t.components.navbar.about, onClick: () => goToPath('/about') },
+      ...mainLinks.map((l) => ({ label: l.label, onClick: () => goToPath(l.to) })),
       { label: t.components.navbar.blog, onClick: () => goToPath('/blog') },
     ];
 
-    return { featureLinks, useCaseLinks, mobileItems };
+    return { mainLinks, mobileItems };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname, t]);
 
@@ -168,39 +100,21 @@ const Navbar = () => {
 
         {/* Menu "pill" au centre */}
         <div className="navbar-menu">
-          <Menu setActive={setActive}>
-            <button className="nav-pill__link" type="button" onMouseEnter={() => setActive(t.components.navbar.home)} onClick={() => goToSection('hero')}>
+          <nav className="nav-pill" aria-label="Navigation principale">
+            <button className="nav-pill__link" type="button" onClick={() => goToSection('hero')}>
               {t.components.navbar.home}
             </button>
 
-            <MenuItem setActive={(item) => setActive(item)} active={active} item={t.components.navbar.features}>
-              <div className="nav-dropdown-grid">
-                {navConfig.featureLinks.map((l) => (
-                  <HoveredLink key={l.to} to={l.to} onClick={() => setActive(null)}>
-                    {l.label}
-                  </HoveredLink>
-                ))}
-              </div>
-            </MenuItem>
+            {navConfig.mainLinks.map((l) => (
+              <HoveredLink key={l.to} to={l.to}>
+                {l.label}
+              </HoveredLink>
+            ))}
 
-            <MenuItem setActive={(item) => setActive(item)} active={active} item={t.components.navbar.useCases}>
-              <div className="nav-dropdown-grid">
-                {navConfig.useCaseLinks.map((l) => (
-                  <HoveredLink key={l.to} to={l.to} onClick={() => setActive(null)}>
-                    {l.label}
-                  </HoveredLink>
-                ))}
-              </div>
-            </MenuItem>
-
-            <HoveredLink to="/about" onClick={() => setActive(null)}>
-              {t.components.navbar.about}
-            </HoveredLink>
-
-            <HoveredLink to="/blog" onClick={() => setActive(null)}>
+            <HoveredLink to="/blog">
               {t.components.navbar.blog}
             </HoveredLink>
-          </Menu>
+          </nav>
         </div>
 
         {/* Actions à droite */}

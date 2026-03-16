@@ -24,6 +24,11 @@ const routes = [
   '/features/statistics',
   '/use-cases/students',
   '/use-cases/freelancers',
+  '/concept',
+  '/app',
+  '/extension',
+  '/contact',
+  '/legal',
   '/about',
   '/blog',
   '/blog/meilleur-pomodoro-en-ligne-2026',
@@ -31,6 +36,7 @@ const routes = [
   '/blog/application-pomodoro-gamifiee',
   '/blog/pomodoro-etudiant-freelance',
   '/blog/nouveautes-pomocha-mars-2026',
+  '/blog/extension-chrome-pomodoro-pomocha',
 ];
 
 async function prerender() {

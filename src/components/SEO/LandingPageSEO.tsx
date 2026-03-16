@@ -42,13 +42,33 @@ export function LandingPageSEO() {
       ],
     },
 
-    // Website Schema
+    // Website Schema with SearchAction
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'Pomocha',
       url: BASE_URL,
       description: t.seo.defaultDescription,
+    },
+
+    // SiteNavigationElement Schema — helps Google identify sitelinks
+    {
+      '@context': 'https://schema.org',
+      '@type': 'SiteNavigationElement',
+      name: [
+        t.components.landingPage.breadcrumbs.concept,
+        t.components.landingPage.breadcrumbs.app,
+        t.components.landingPage.breadcrumbs.extension,
+        t.components.landingPage.breadcrumbs.contact,
+        t.components.landingPage.breadcrumbs.legal,
+      ],
+      url: [
+        `${BASE_URL}/concept`,
+        `${BASE_URL}/app`,
+        `${BASE_URL}/extension`,
+        `${BASE_URL}/contact`,
+        `${BASE_URL}/legal`,
+      ],
     },
 
     // SoftwareApplication Schema
@@ -102,44 +122,32 @@ export function LandingPageSEO() {
           {
             '@type': 'ListItem',
             position: 2,
-            name: t.components.landingPage.breadcrumbs.about,
-            item: `${BASE_URL}#about`,
+            name: t.components.landingPage.breadcrumbs.concept,
+            item: `${BASE_URL}/concept`,
           },
           {
             '@type': 'ListItem',
             position: 3,
-            name: t.components.landingPage.breadcrumbs.features,
-            item: `${BASE_URL}#features`,
+            name: t.components.landingPage.breadcrumbs.app,
+            item: `${BASE_URL}/app`,
           },
           {
             '@type': 'ListItem',
             position: 4,
-            name: t.components.landingPage.breadcrumbs.pomodoroTimer,
-            item: `${BASE_URL}/features/pomodoro-timer`,
+            name: t.components.landingPage.breadcrumbs.extension,
+            item: `${BASE_URL}/extension`,
           },
           {
             '@type': 'ListItem',
             position: 5,
-            name: t.components.landingPage.breadcrumbs.rewards,
-            item: `${BASE_URL}/features/rewards-system`,
+            name: t.components.landingPage.breadcrumbs.contact,
+            item: `${BASE_URL}/contact`,
           },
           {
             '@type': 'ListItem',
             position: 6,
-            name: t.components.landingPage.breadcrumbs.statistics,
-            item: `${BASE_URL}/features/statistics`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 7,
-            name: t.components.landingPage.breadcrumbs.students,
-            item: `${BASE_URL}/use-cases/students`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 8,
-            name: t.components.landingPage.breadcrumbs.freelancers,
-            item: `${BASE_URL}/use-cases/freelancers`,
+            name: t.components.landingPage.breadcrumbs.legal,
+            item: `${BASE_URL}/legal`,
           },
         ],
       },

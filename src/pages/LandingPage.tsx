@@ -3,11 +3,13 @@ import HeroSection from '../components/HeroSection';
 import { MiniFeatureSection } from '../components/MiniFeature';
 import { ScratchToReveal } from '../components/ui/ScratchToReveal';
 import { CTASection } from '../components/CTASection';
+// import { ExtensionCTA } from '../components/ExtensionCTA';
 import { Footer } from '../components/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import { LandingPageSEO } from '../components/SEO/LandingPageSEO';
 import { useI18n } from '../contexts/I18nContext';
 import { useEffect, useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import type { MiniFeatureData } from '../components/MiniFeature';
 
 const CHARACTER_IMAGES = [
@@ -187,6 +189,20 @@ export default function LandingPage() {
           layouts={['vertical', 'left', 'right', 'vertical']}
         />
       </section>
+
+      {/* Section Extension Chrome — désactivée temporairement */}
+      {/* <ExtensionCTA /> */}
+
+      {/* Section Navigation — liens internes pour sitelinks Google */}
+      <nav aria-label="Découvrir Pomocha" style={{ padding: '2rem 1.5rem', maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
+          <Link to="/concept" style={{ color: '#7e4e4e', fontWeight: 500 }}>{t.components.navbar.concept}</Link>
+          <Link to="/app" style={{ color: '#7e4e4e', fontWeight: 500 }}>{t.components.navbar.app}</Link>
+          <Link to="/extension" style={{ color: '#7e4e4e', fontWeight: 500 }}>{t.components.navbar.extension}</Link>
+          <Link to="/contact" style={{ color: '#7e4e4e', fontWeight: 500 }}>{t.components.navbar.contact}</Link>
+          <Link to="/legal" style={{ color: '#7e4e4e', fontWeight: 500 }}>{t.components.navbar.legal}</Link>
+        </div>
+      </nav>
 
       {/* Section Call-to-Action */}
       <section id="cta" aria-label={t.components.landingPage.ariaLabels.cta}>

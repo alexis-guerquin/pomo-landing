@@ -138,6 +138,24 @@
   transform: translateY(0);
 }
 
+.footer-link--highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--gray-600);
+  font-weight: 600;
+}
+
+.footer-link--highlight:hover {
+  color: var(--gray-800);
+}
+
+.footer-link__icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
 .footer-link-button {
   position: relative;
 }

@@ -8,6 +8,7 @@ import { techniquePomodoro } from './techniquePomodoro/en';
 import { appPomodoroGamifiee } from './appPomodoroGamifiee/en';
 import { pomodoroEtudiantFreelance } from './pomodoroEtudiantFreelance/en';
 import { pomochaNouveautes } from './pomochaNouveautes/en';
+import { pomochaExtension } from './pomochaExtension/en';
 
 export const blogTranslations = {
   htmlTitle: 'Blog – Productivity guides and articles',
@@ -26,5 +27,6 @@ export const blogTranslations = {
     appPomodoroGamifiee,
     pomodoroEtudiantFreelance,
     pomochaNouveautes,
+    pomochaExtension,
   },
 }
