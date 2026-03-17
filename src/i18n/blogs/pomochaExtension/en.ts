@@ -22,7 +22,7 @@ export const pomochaExtension = {
       content1: 'At the heart of the extension is a complete, intuitive Pomodoro timer. Start, pause, or skip directly to the next phase — work session or break — from the extension popup.',
       content2: 'Work and break durations are fully customizable to match your rhythm. Whether you prefer classic 25-minute sessions or 50-minute deep work blocks, Pomocha adapts.',
       cta: 'Install Pomocha Extension',
-      ctaUrl: 'https://chromewebstore.google.com/detail/pomocha-pomodoro-timer-pr/ebjlhgfhpbgaghccniaeapmabcoebkjk',
+      ctaUrl: 'https://chromewebstore.google.com/detail/pomocha-%E2%80%94-pomodoro-timer/fcaefgilphmnhhbjjeailgnklfnhcmpc',
     },
     incrustTimer: {
       title: 'Embedded Timer: Stay Focused Without Leaving Your Page',
@@ -82,7 +82,7 @@ export const pomochaExtension = {
       title: 'Ready to Boost Your Productivity?',
       content: 'The Pomocha Chrome extension is much more than a simple timer. It\'s your daily productivity companion: a smart Pomodoro timer, task manager, and session tracker, all accessible in one click from your browser. Install it now and take control of your time!',
       cta: 'Install Pomocha Extension for Free',
-      ctaUrl: 'https://chromewebstore.google.com/detail/pomocha-pomodoro-timer-pr/ebjlhgfhpbgaghccniaeapmabcoebkjk',
+      ctaUrl: 'https://chromewebstore.google.com/detail/pomocha-%E2%80%94-pomodoro-timer/fcaefgilphmnhhbjjeailgnklfnhcmpc',
     },
   },
 };

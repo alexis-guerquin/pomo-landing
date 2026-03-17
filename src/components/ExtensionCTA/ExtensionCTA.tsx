@@ -3,7 +3,7 @@ import { useI18n } from '../../contexts/I18nContext';
 import ThreeDButton from '../ui/3DButton/3dbutton';
 import './ExtensionCTA.css';
 
-const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/pomocha-pomodoro-timer-pr/ebjlhgfhpbgaghccniaeapmabcoebkjk';
+const CHROME_STORE_URL = 'https://chromewebstore.google.com/detail/pomocha-%E2%80%94-pomodoro-timer/fcaefgilphmnhhbjjeailgnklfnhcmpc';
 
 export function ExtensionCTA() {
   const { t } = useI18n();
