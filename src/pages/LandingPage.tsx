@@ -9,7 +9,6 @@ import Navbar from '../components/Navbar/Navbar';
 import { LandingPageSEO } from '../components/SEO/LandingPageSEO';
 import { useI18n } from '../contexts/I18nContext';
 import { useEffect, useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
 import type { MiniFeatureData } from '../components/MiniFeature';
 
 const CHARACTER_IMAGES = [
