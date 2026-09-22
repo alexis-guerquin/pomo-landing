@@ -29,6 +29,7 @@ const routes = [
   '/extension',
   '/contact',
   '/legal',
+  '/delete-account',
   '/about',
   '/blog',
   '/blog/meilleur-pomodoro-en-ligne-2026',
@@ -37,6 +38,13 @@ const routes = [
   '/blog/pomodoro-etudiant-freelance',
   '/blog/nouveautes-pomocha-mars-2026',
   '/blog/extension-chrome-pomodoro-pomocha',
+  '/blog/guide-complet-application-web-extension-productivite-france',
+  '/blog/productivite-side-project-france-tout-savoir-2025',
+  '/blog/productivite-side-project-comparatif-solutions-application-web',
+  '/blog/how-to-be-more-productive-ultimate-guide',
+  '/blog/pomodoro-technique-complete-guide',
+  '/blog/side-project-ideas-start-make-money-2026',
+  '/blog/how-to-stay-focused-eliminate-distractions',
 ];
 
 async function prerender() {

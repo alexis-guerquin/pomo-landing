@@ -63,3 +63,19 @@
 .page-layout__cta p {
   color: var(--theme-text-primary, #111827);
 }
+
+.delete-account__action {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: #7e4e4e;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.delete-account__action:hover,
+.delete-account__action:focus-visible {
+  background: #603a3a;
+  color: #fff;
+}

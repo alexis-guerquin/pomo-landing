@@ -18,6 +18,7 @@ import AppPage from './pages/app/AppPage';
 import ExtensionPage from './pages/extension/ExtensionPage';
 import ContactPage from './pages/contact/ContactPage';
 import LegalPage from './pages/legal/LegalPage';
+import DeleteAccountPage from './pages/delete-account/DeleteAccountPage';
 import BlogPage from './pages/blog/BlogPage';
 import ArticlePage from './pages/blog/ArticlePage';
 
@@ -38,6 +39,7 @@ export default function AppSSR() {
         <Route path="/extension" element={<ExtensionPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/legal" element={<LegalPage />} />
+        <Route path="/delete-account" element={<DeleteAccountPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<ArticlePage />} />
       </Routes>

@@ -8,6 +8,13 @@ import { AppPomodoroGamifieeArticle } from './articles/AppPomodoroGamifieeArticl
 import { PomodoroEtudiantFreelanceArticle } from './articles/PomodoroEtudiantFreelanceArticle';
 import { PomochaNouveautesArticle } from './articles/PomochaNouveautesArticle';
 import { PomochaExtensionArticle } from './articles/PomochaExtensionArticle';
+import { GuideProductiviteFranceArticle } from './articles/GuideProductiviteFranceArticle';
+import { ProductiviteSideProject2025Article } from './articles/ProductiviteSideProject2025Article';
+import { ComparatifProductiviteArticle } from './articles/ComparatifProductiviteArticle';
+import { ProductivityUltimateGuideArticle } from './articles/ProductivityUltimateGuideArticle';
+import { PomodoroTechniqueGuideArticle } from './articles/PomodoroTechniqueGuideArticle';
+import { SideProjectIdeasArticle } from './articles/SideProjectIdeasArticle';
+import { HowToStayFocusedArticle } from './articles/HowToStayFocusedArticle';
 
 export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -21,6 +28,13 @@ export default function ArticlePage() {
     pomodoroEtudiantFreelance: PomodoroEtudiantFreelanceArticle,
     pomochaNouveautes: PomochaNouveautesArticle,
     pomochaExtension: PomochaExtensionArticle,
+    guideProductiviteFrance: GuideProductiviteFranceArticle,
+    productiviteSideProject2025: ProductiviteSideProject2025Article,
+    comparatifProductivite: ComparatifProductiviteArticle,
+    productivityUltimateGuide: ProductivityUltimateGuideArticle,
+    pomodoroTechniqueGuide: PomodoroTechniqueGuideArticle,
+    sideProjectIdeas: SideProjectIdeasArticle,
+    howToStayFocused: HowToStayFocusedArticle,
   };
 
   // Trouver l'article correspondant au slug depuis les traductions

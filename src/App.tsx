@@ -17,6 +17,7 @@ const AppPage = lazy(() => import('./pages/app/AppPage'));
 const ExtensionPage = lazy(() => import('./pages/extension/ExtensionPage'));
 const ContactPage = lazy(() => import('./pages/contact/ContactPage'));
 const LegalPage = lazy(() => import('./pages/legal/LegalPage'));
+const DeleteAccountPage = lazy(() => import('./pages/delete-account/DeleteAccountPage'));
 const BlogPage = lazy(() => import('./pages/blog/BlogPage'));
 const ArticlePage = lazy(() => import('./pages/blog/ArticlePage'));
 
@@ -60,6 +61,7 @@ export default function App() {
           <Route path="/extension" element={<ExtensionPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/legal" element={<LegalPage />} />
+          <Route path="/delete-account" element={<DeleteAccountPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<ArticlePage />} />
         </Routes>

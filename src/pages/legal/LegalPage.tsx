@@ -1,8 +1,9 @@
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
+import { Link } from 'react-router-dom';
 
 export default function LegalPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   return (
     <PageLayout
       htmlTitle={t.pages.legal.htmlTitle}
@@ -33,6 +34,11 @@ export default function LegalPage() {
       <section className="page-layout__section">
         <h2>{t.pages.legal.sections.data.title}</h2>
         <p>{t.pages.legal.sections.data.content}</p>
+        <p style={{ marginTop: 12 }}>
+          <Link to="/delete-account">
+            {locale === 'fr' ? 'Demander la suppression de votre compte et de vos données' : 'Request deletion of your account and data'}
+          </Link>
+        </p>
       </section>
 
       <section className="page-layout__section">

@@ -2,63 +2,72 @@ import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
 import { Link } from 'react-router-dom';
+import { useState, useRef } from 'react';
 import './BlogPage.css';
 
 export default function BlogPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const a = t.pages.blog.articles;
+  const c = t.pages.blog.categories;
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const categoriesRef = useRef<HTMLDivElement>(null);
 
-  // Liste des articles — du plus récent au plus ancien
-  const articles = [
+  const allLabel = locale === 'fr' ? 'Tout' : 'All';
+
+  const categories = [
     {
-      slug: t.pages.blog.articles.pomochaExtension.slug,
-      title: t.pages.blog.articles.pomochaExtension.title,
-      description: t.pages.blog.articles.pomochaExtension.description,
-      image: t.pages.blog.articles.pomochaExtension.image,
-      date: t.pages.blog.articles.pomochaExtension.date,
+      key: 'pomodoro',
+      ...c.pomodoro,
+      articles: [
+        a.pomodoroTechniqueGuide,
+        a.howToStayFocused,
+        a.techniquePomodoro,
+        a.bestPomodoroOnline,
+        a.bestPomodoroApps,
+      ],
     },
     {
-      slug: t.pages.blog.articles.pomochaNouveautes.slug,
-      title: t.pages.blog.articles.pomochaNouveautes.title,
-      description: t.pages.blog.articles.pomochaNouveautes.description,
-      image: t.pages.blog.articles.pomochaNouveautes.image,
-      date: t.pages.blog.articles.pomochaNouveautes.date,
+      key: 'productivity',
+      ...c.productivity,
+      articles: [
+        a.productivityUltimateGuide,
+        a.comparatifProductivite,
+        a.guideProductiviteFrance,
+        a.appPomodoroGamifiee,
+      ],
     },
     {
-      slug: t.pages.blog.articles.techniquePomodoro.slug,
-      title: t.pages.blog.articles.techniquePomodoro.title,
-      description: t.pages.blog.articles.techniquePomodoro.description,
-      image: t.pages.blog.articles.techniquePomodoro.image,
-      date: t.pages.blog.articles.techniquePomodoro.date,
+      key: 'sideProject',
+      ...c.sideProject,
+      articles: [
+        a.sideProjectIdeas,
+        a.productiviteSideProject2025,
+        a.pomodoroEtudiantFreelance,
+      ],
     },
     {
-      slug: t.pages.blog.articles.appPomodoroGamifiee.slug,
-      title: t.pages.blog.articles.appPomodoroGamifiee.title,
-      description: t.pages.blog.articles.appPomodoroGamifiee.description,
-      image: t.pages.blog.articles.appPomodoroGamifiee.image,
-      date: t.pages.blog.articles.appPomodoroGamifiee.date,
-    },
-    {
-      slug: t.pages.blog.articles.pomodoroEtudiantFreelance.slug,
-      title: t.pages.blog.articles.pomodoroEtudiantFreelance.title,
-      description: t.pages.blog.articles.pomodoroEtudiantFreelance.description,
-      image: t.pages.blog.articles.pomodoroEtudiantFreelance.image,
-      date: t.pages.blog.articles.pomodoroEtudiantFreelance.date,
-    },
-    {
-      slug: t.pages.blog.articles.bestPomodoroApps.slug,
-      title: t.pages.blog.articles.bestPomodoroApps.title,
-      description: t.pages.blog.articles.bestPomodoroApps.description,
-      image: t.pages.blog.articles.bestPomodoroApps.image,
-      date: t.pages.blog.articles.bestPomodoroApps.date,
-    },
-    {
-      slug: t.pages.blog.articles.bestPomodoroOnline.slug,
-      title: t.pages.blog.articles.bestPomodoroOnline.title,
-      description: t.pages.blog.articles.bestPomodoroOnline.description,
-      image: t.pages.blog.articles.bestPomodoroOnline.image,
-      date: t.pages.blog.articles.bestPomodoroOnline.date,
+      key: 'pomocha',
+      ...c.pomocha,
+      articles: [
+        a.pomochaExtension,
+        a.pomochaNouveautes,
+      ],
     },
   ];
+
+  const totalArticles = categories.reduce((sum, cat) => sum + cat.articles.length, 0);
+  const visibleCategories = activeFilter
+    ? categories.filter((cat) => cat.key === activeFilter)
+    : categories;
+
+  const handleFilter = (key: string | null) => {
+    setActiveFilter(key);
+    if (categoriesRef.current) {
+      const offset = 100;
+      const top = categoriesRef.current.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
 
   return (
     <PageLayout
@@ -68,24 +77,37 @@ export default function BlogPage() {
       intro={t.pages.blog.intro}
     >
       <div className="blog-container">
-        <section className="blog-articles-section">
-          <h2 className="blog-articles-title">{t.pages.blog.articlesList.title}</h2>
+        <nav className="blog-filters" ref={categoriesRef}>
+          <button
+            className={`blog-filters__btn ${activeFilter === null ? 'blog-filters__btn--active' : ''}`}
+            onClick={() => handleFilter(null)}
+            type="button"
+          >
+            {allLabel}
+            <span className="blog-filters__count">{totalArticles}</span>
+          </button>
+          {categories.map((cat) => (
+            <button
+              key={cat.key}
+              className={`blog-filters__btn ${activeFilter === cat.key ? 'blog-filters__btn--active' : ''}`}
+              onClick={() => handleFilter(cat.key)}
+              type="button"
+            >
+              {cat.title}
+              <span className="blog-filters__count">{cat.articles.length}</span>
+            </button>
+          ))}
+        </nav>
 
-          {articles.length === 0 ? (
-            <p className="blog-empty">{t.pages.blog.articlesList.empty}</p>
-          ) : (
+        {visibleCategories.map((category) => (
+          <section key={category.key} className="blog-category">
+            <h2 className="blog-category__title">{category.title}</h2>
+            <p className="blog-category__description">{category.description}</p>
+
             <div className="blog-articles-grid">
-              {articles.map((article) => (
+              {category.articles.map((article) => (
                 <article key={article.slug} className="blog-card">
                   <Link to={`/blog/${article.slug}`} className="blog-card__link">
-                    <div className="blog-card__image-wrapper">
-                      <img
-                        src={article.image}
-                        alt={article.title}
-                        className="blog-card__image"
-                        loading="lazy"
-                      />
-                    </div>
                     <div className="blog-card__content">
                       <div className="blog-card__meta">
                         <time dateTime={article.date} className="blog-card__date">
@@ -95,15 +117,15 @@ export default function BlogPage() {
                       <h3 className="blog-card__title">{article.title}</h3>
                       <p className="blog-card__description">{article.description}</p>
                       <span className="blog-card__cta">
-                        {t.pages.blog.articlesList.readMore || 'Lire la suite →'}
+                        {t.pages.blog.articlesList.readMore}
                       </span>
                     </div>
                   </Link>
                 </article>
               ))}
             </div>
-          )}
-        </section>
+          </section>
+        ))}
 
         <CTASection />
       </div>
