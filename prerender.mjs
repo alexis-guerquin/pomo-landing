@@ -30,6 +30,8 @@ const routes = [
   '/contact',
   '/legal',
   '/delete-account',
+  '/privacy',
+  '/community-guidelines',
   '/about',
   '/blog',
   '/blog/meilleur-pomodoro-en-ligne-2026',

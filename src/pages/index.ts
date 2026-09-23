@@ -7,3 +7,5 @@ export { default as FreelancersPage } from './use-cases/FreelancersPage';
 export { default as AboutPage } from './about/AboutPage';
 export { default as BlogPage } from './blog/BlogPage';
 export { default as ArticlePage } from './blog/ArticlePage';
+export { default as PrivacyPage } from './privacy/PrivacyPage';
+export { default as CommunityGuidelinesPage } from './community-guidelines/CommunityGuidelinesPage';

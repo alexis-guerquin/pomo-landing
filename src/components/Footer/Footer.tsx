@@ -69,6 +69,16 @@ export default function Footer() {
           href: '/legal',
           isRoute: true,
         },
+        {
+          title: 'Confidentialité / Privacy',
+          href: '/privacy',
+          isRoute: true,
+        },
+        {
+          title: 'Communauté / Community',
+          href: '/community-guidelines',
+          isRoute: true,
+        },
       ],
     },
   ], [t]);
@@ -293,4 +303,3 @@ export default function Footer() {
     </footer>
   );
 }
-
