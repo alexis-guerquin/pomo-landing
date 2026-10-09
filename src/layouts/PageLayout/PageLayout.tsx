@@ -3,6 +3,7 @@ import { Footer } from '../../components/Footer';
 import { usePageMeta } from '../../hooks/usePageMeta';
 import { useI18n } from '../../contexts/I18nContext';
 import { useLocation } from 'react-router-dom';
+import { SEO_CONFIG } from '../../config/seo.config';
 import './PageLayout.css';
 
 const BASE_FR = 'https://www.pomocha.fr';
@@ -13,6 +14,7 @@ type PageLayoutProps = {
   keywords?: string;
   h1: string;
   intro?: string;
+  ogImage?: string;
   children: React.ReactNode;
 };
 
@@ -22,17 +24,22 @@ export function PageLayout({
   keywords,
   h1,
   intro,
+  ogImage,
   children,
 }: PageLayoutProps) {
   const { locale } = useI18n();
   const location = useLocation();
   const canonicalUrl = `${BASE_FR}${location.pathname}`;
+  const socialImage = ogImage ?? `${BASE_FR}${SEO_CONFIG.defaultImage}`;
 
   usePageMeta({
     title: htmlTitle,
     description: metaDescription,
     keywords,
     canonicalUrl,
+    ogUrl: canonicalUrl,
+    ogImage: socialImage,
+    twitterImage: socialImage,
     ogLocale: locale === 'fr' ? 'fr_FR' : 'en_US',
   });
 

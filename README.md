@@ -11,7 +11,7 @@ Ce site présente [Pomocha sur le web](https://www.pomocha.io/) et l'application
 ![Pomocha Desktop](./public/assets/Home-desktop.png)
 
 <p align="center">
-  <img src="./public/assets/pocha/mascot-reveal.webp" alt="Vraie capture de Pocha sur Android" width="240">
+  <img src="./public/assets/pocha/mobile/daily-missions.webp" alt="Capture réelle de Pocha sur iPhone" width="240">
 </p>
 
 ## Fonctionnalités

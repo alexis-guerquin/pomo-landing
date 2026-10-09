@@ -4,6 +4,16 @@ import { useI18n } from '../../contexts/I18nContext';
 import { MobileStoreLinks } from '../../components/MobileStoreLinks/MobileStoreLinks';
 import './AppPage.css';
 
+const screenshots = [
+  { file: 'focus-session', width: 600, height: 1299 },
+  { file: 'session-complete', width: 600, height: 1299 },
+  { file: 'break-activities', width: 600, height: 1299 },
+  { file: 'break-timer', width: 600, height: 1299 },
+  { file: 'streak-calendar', width: 600, height: 1299 },
+  { file: 'focus-statistics', width: 600, height: 1299 },
+  { file: 'collection', width: 600, height: 1299 },
+] as const;
+
 export default function AppPage() {
   const { t } = useI18n();
   return (
@@ -12,6 +22,7 @@ export default function AppPage() {
       metaDescription={t.pages.app.metaDescription}
       h1={t.pages.app.h1}
       intro={t.pages.app.intro}
+      ogImage="https://www.pomocha.fr/assets/pocha/mobile/daily-missions.webp"
     >
       <section className="page-layout__section pocha-mobile-feature">
         <div>
@@ -20,7 +31,55 @@ export default function AppPage() {
           <p>{t.pages.app.mobile.content}</p>
           <MobileStoreLinks />
         </div>
-        <img src="/assets/pocha/mascot-reveal.webp" alt={t.pages.app.mobile.imageAlt} width="540" height="1200" loading="eager" />
+        <img className="pocha-mobile-feature__screen" src="/assets/pocha/mobile/daily-missions.webp" alt={t.pages.app.mobile.imageAlt} width="600" height="1299" loading="eager" fetchPriority="high" />
+      </section>
+
+      <section className="page-layout__section pocha-gallery" aria-labelledby="pocha-gallery-title">
+        <h2 id="pocha-gallery-title">{t.pages.app.media.galleryTitle}</h2>
+        <p>{t.pages.app.media.galleryIntro}</p>
+        <div className="pocha-gallery__rail" tabIndex={0} role="region" aria-label={t.pages.app.media.galleryLabel}>
+          {screenshots.map(({ file, width, height }, index) => (
+            <figure className="pocha-gallery__item" key={file}>
+              <img
+                src={`/assets/pocha/mobile/${file}.webp`}
+                alt={t.pages.app.media.screenshots[index].alt}
+                width={width}
+                height={height}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>{t.pages.app.media.screenshots[index].caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section className="page-layout__section pocha-demo" aria-labelledby="pocha-demo-title">
+        <div className="pocha-demo__copy">
+          <h2 id="pocha-demo-title">{t.pages.app.media.demoTitle}</h2>
+          <p>{t.pages.app.media.demoIntro}</p>
+          <MobileStoreLinks />
+        </div>
+        <video
+          controls
+          playsInline
+          preload="none"
+          poster="/assets/pocha/mobile/focus-session.webp"
+          width="540"
+          height="1168"
+          aria-label={t.pages.app.media.demoLabel}
+        >
+          <source src="/assets/pocha/mobile/pocha-demo.mp4" type="video/mp4" />
+          {t.pages.app.media.videoFallback}
+        </video>
+      </section>
+
+      <section className="page-layout__section pocha-widget" aria-labelledby="pocha-widget-title">
+        <div>
+          <h2 id="pocha-widget-title">{t.pages.app.media.widgetTitle}</h2>
+          <p>{t.pages.app.media.widgetIntro}</p>
+        </div>
+        <img src="/assets/pocha/mobile/widget.webp" alt={t.pages.app.media.widgetAlt} width="800" height="378" loading="lazy" decoding="async" />
       </section>
       <section className="page-layout__section">
         <h2>{t.pages.app.sections.access.title}</h2>

@@ -4,11 +4,12 @@
 
 ## Pocha mobile (mise à jour du 9 octobre 2026)
 
-Pocha est l'application native de concentration sur iPhone, iPad et Android. Elle propose des sessions Pomodoro, des défis quotidiens, des séries et des statistiques de focus. Les fonctionnalités détaillées ci-dessous décrivent principalement Pomocha sur le web ; ne pas les attribuer automatiquement à Pocha mobile.
+Pocha est l'application native de concentration sur iPhone, iPad et Android. Les captures et la démonstration iPhone montrent des sessions Pomodoro, des activités de pause, des missions quotidiennes, des oranges gagnées, un calendrier de série, des statistiques, une collection de récompenses et un widget de progression. Les fonctionnalités détaillées ci-dessous décrivent principalement Pomocha sur le web ; ne pas les attribuer automatiquement à Pocha mobile.
 
 - App Store : https://apps.apple.com/fr/app/pocha-minuteur-pomodoro/id6802377633
 - Google Play : https://play.google.com/store/apps/details?id=com.pocha.android
 - Présentation et téléchargements : https://www.pomocha.fr/app
+- Captures et démonstration vidéo : https://www.pomocha.fr/app
 
 ---
 

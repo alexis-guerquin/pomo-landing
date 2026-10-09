@@ -8,6 +8,7 @@ Pocha propose un minuteur Pomodoro, des défis quotidiens, des séries et des st
 
 - [Accueil](https://www.pomocha.fr/) : présentation de Pomocha et Pocha.
 - [Pocha mobile et Pomocha web](https://www.pomocha.fr/app) : fonctionnalités et téléchargements officiels.
+- [Captures et démonstration de Pocha](https://www.pomocha.fr/app) : minuteur, pauses, missions, séries, statistiques, collection et widget sur iPhone.
 - [Concept](https://www.pomocha.fr/concept) : méthode Pomodoro gamifiée.
 - [Fonctionnalités](https://www.pomocha.fr/features/pomodoro-timer) : minuteur Pomodoro.
 - [Blog](https://www.pomocha.fr/blog) : guides de concentration et productivité.

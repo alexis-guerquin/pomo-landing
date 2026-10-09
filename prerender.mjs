@@ -57,6 +57,10 @@ function pageTemplate(template, content, route) {
     ['name', 'twitter:description', description],
     ['name', 'twitter:url', canonical],
   ];
+  if (route === '/app') {
+    const image = `${siteUrl}/assets/pocha/mobile/daily-missions.webp`;
+    meta.push(['property', 'og:image', image], ['name', 'twitter:image', image]);
+  }
   for (const [attribute, name, value] of meta) {
     const pattern = new RegExp(`(<meta ${attribute}="${name}" content=")[^"]*(">)`);
     html = html.replace(pattern, `$1${escapeAttribute(value)}$2`);
@@ -73,8 +77,20 @@ function pageTemplate(template, content, route) {
     };
     html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(schema)}</script></head>`);
   }
+  if (route === '/app') {
+    const video = {
+      '@context': 'https://schema.org', '@type': 'VideoObject',
+      name: 'Pocha mobile : démonstration de l’application Pomodoro',
+      description: 'Découvrez le minuteur, les séries, les statistiques et les récompenses de Pocha sur iPhone.',
+      thumbnailUrl: `${siteUrl}/assets/pocha/mobile/focus-session.webp`,
+      uploadDate: '2026-10-09T21:11:00Z',
+      duration: 'PT1M12S',
+      contentUrl: `${siteUrl}/assets/pocha/mobile/pocha-demo.mp4`,
+    };
+    html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(video)}</script></head>`);
+  }
   if (route === '/') {
-    html = html.replace('</head>', '<link rel="preload" as="image" href="/assets/Home-desktop.png" fetchpriority="high" media="(min-width: 769px)"><link rel="preload" as="image" href="/assets/pocha/mascot-reveal.webp" fetchpriority="high" media="(max-width: 768px)"></head>');
+    html = html.replace('</head>', '<link rel="preload" as="image" href="/assets/Home-desktop.png" fetchpriority="high" media="(min-width: 769px)"><link rel="preload" as="image" href="/assets/pocha/mobile/focus-session.webp" fetchpriority="high" media="(max-width: 768px)"></head>');
   }
   return html;
 }

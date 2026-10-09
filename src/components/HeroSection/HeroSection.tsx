@@ -89,13 +89,13 @@ const HeroSection = () => {
                   <div className="phone-frame">
                     <div className="phone-screen">
                       <img
-                        src="/assets/pocha/mascot-reveal.webp"
-                        alt="Capture réelle de Pocha sur Android : découverte du compagnon de concentration"
+                        src="/assets/pocha/mobile/focus-session.webp"
+                        alt={t.pages.app.mobile.heroImageAlt}
                         className="phone-image"
                         fetchPriority="high"
                         loading="eager"
-                        width="540"
-                        height="1200"
+                        width="600"
+                        height="1299"
                       />
                     </div>
                   </div>
