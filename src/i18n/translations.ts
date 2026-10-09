@@ -602,6 +602,8 @@ export const translations = {
           galleryTitle: 'Pocha en images',
           galleryIntro: 'Parcourez les vrais écrans de l’application : concentrez-vous, prenez une pause, puis suivez vos progrès.',
           galleryLabel: 'Captures d’écran de Pocha mobile',
+          pauseGallery: 'Mettre le défilement des images en pause',
+          resumeGallery: 'Reprendre le défilement des images',
           screenshots: [
             { caption: 'Restez concentré', alt: 'Minuteur de concentration de Pocha avec le compagnon au travail' },
             { caption: 'Célébrez chaque session', alt: 'Bilan de session avec oranges gagnées et progression de l’objectif quotidien' },
@@ -1578,6 +1580,8 @@ export const translations = {
           galleryTitle: 'Pocha in pictures',
           galleryIntro: 'Explore real screens from the app: focus, take a break, then follow your progress.',
           galleryLabel: 'Screenshots of the Pocha mobile app',
+          pauseGallery: 'Pause the screenshot carousel',
+          resumeGallery: 'Resume the screenshot carousel',
           screenshots: [
             { caption: 'Stay focused', alt: 'Pocha focus timer with the companion working' },
             { caption: 'Celebrate each session', alt: 'Session summary with earned oranges and daily goal progress' },

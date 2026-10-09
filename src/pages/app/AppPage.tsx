@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
@@ -16,6 +17,7 @@ const screenshots = [
 
 export default function AppPage() {
   const { t } = useI18n();
+  const [galleryPaused, setGalleryPaused] = useState(false);
   return (
     <PageLayout
       htmlTitle={t.pages.app.htmlTitle}
@@ -35,22 +37,41 @@ export default function AppPage() {
       </section>
 
       <section className="page-layout__section pocha-gallery" aria-labelledby="pocha-gallery-title">
-        <h2 id="pocha-gallery-title">{t.pages.app.media.galleryTitle}</h2>
-        <p>{t.pages.app.media.galleryIntro}</p>
-        <div className="pocha-gallery__rail" tabIndex={0} role="region" aria-label={t.pages.app.media.galleryLabel}>
-          {screenshots.map(({ file, width, height }, index) => (
-            <figure className="pocha-gallery__item" key={file}>
-              <img
-                src={`/assets/pocha/mobile/${file}.webp`}
-                alt={t.pages.app.media.screenshots[index].alt}
-                width={width}
-                height={height}
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>{t.pages.app.media.screenshots[index].caption}</figcaption>
-            </figure>
-          ))}
+        <div className="pocha-gallery__heading">
+          <div>
+            <h2 id="pocha-gallery-title">{t.pages.app.media.galleryTitle}</h2>
+            <p>{t.pages.app.media.galleryIntro}</p>
+          </div>
+          <button
+            type="button"
+            className="pocha-gallery__control"
+            aria-label={galleryPaused ? t.pages.app.media.resumeGallery : t.pages.app.media.pauseGallery}
+            aria-pressed={galleryPaused}
+            onClick={() => setGalleryPaused((paused) => !paused)}
+          >
+            <span aria-hidden="true">{galleryPaused ? '▶' : 'Ⅱ'}</span>
+          </button>
+        </div>
+        <div className="pocha-gallery__viewport" tabIndex={0} role="region" aria-label={t.pages.app.media.galleryLabel}>
+          <div className={`pocha-gallery__track${galleryPaused ? ' pocha-gallery__track--paused' : ''}`}>
+            {[0, 1].map((copy) => (
+              <div className="pocha-gallery__sequence" aria-hidden={copy === 1 ? true : undefined} key={copy}>
+                {screenshots.map(({ file, width, height }, index) => (
+                  <figure className="pocha-gallery__item" key={file}>
+                    <img
+                      src={`/assets/pocha/mobile/${file}.webp`}
+                      alt={copy === 0 ? t.pages.app.media.screenshots[index].alt : ''}
+                      width={width}
+                      height={height}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption>{t.pages.app.media.screenshots[index].caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
