@@ -16,17 +16,17 @@ const isServer = typeof window === 'undefined';
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(() => {
-    if (isServer) return 'fr';
-    // Récupérer la langue depuis localStorage ou détecter depuis le navigateur
-    const saved = localStorage.getItem(STORAGE_KEY) as Locale;
-    if (saved && (saved === 'fr' || saved === 'en')) {
-      return saved;
-    }
-
-    // Détection automatique de la langue du navigateur
-    const browserLang = navigator.language.split('-')[0];
-    return browserLang === 'fr' ? 'fr' : 'en';
+    // Le HTML pré-rendu de pomocha.fr est français : même état au premier rendu.
+    return 'fr';
   });
+
+  useEffect(() => {
+    if (isServer) return;
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved !== 'en') return;
+    const timer = window.setTimeout(() => setLocaleState('en'), 0);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale);
@@ -57,4 +57,3 @@ export function useI18n() {
   }
   return context;
 }
-

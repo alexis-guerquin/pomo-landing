@@ -79,9 +79,8 @@ export default function LandingPage() {
     }
   ], [t]);
 
-  const [currentCharacter] = useState<string>(() => {
-    return CHARACTER_IMAGES[Math.floor(Math.random() * CHARACTER_IMAGES.length)];
-  });
+  // Identique côté serveur et navigateur pour éviter un remplacement du DOM à l'hydratation.
+  const [currentCharacter] = useState<string>(CHARACTER_IMAGES[1]);
 
   const [imageDimensions, setImageDimensions] = useState({ width: 300, height: 300 });
   const [key] = useState(0);

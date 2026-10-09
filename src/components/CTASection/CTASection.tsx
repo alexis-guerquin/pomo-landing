@@ -1,6 +1,7 @@
 import React from 'react';
 import ThreeDButton from '../ui/3DButton/3dbutton';
 import { useI18n } from '../../contexts/I18nContext';
+import { MobileStoreLinks } from '../MobileStoreLinks/MobileStoreLinks';
 import './CTASection.css';
 
 const CTASection: React.FC = () => {
@@ -22,6 +23,7 @@ const CTASection: React.FC = () => {
             color="secondary"
             theme="dark"
           />
+          <MobileStoreLinks compact />
         </div>
         <div className="cta-image">
           <img src="/icons/target.svg" alt="Target" width="200" height="200" />
@@ -32,4 +34,3 @@ const CTASection: React.FC = () => {
 };
 
 export default CTASection;
-

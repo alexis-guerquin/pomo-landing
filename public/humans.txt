@@ -47,6 +47,8 @@
 
 --- Site ---
 
-   Last update: 2025/12/18
-   website version: v1
+   Last update: 2026/10/09
+   website version: v2
+   Mobile app: Pocha (iOS and Android)
+   Download: https://www.pomocha.fr/app
 

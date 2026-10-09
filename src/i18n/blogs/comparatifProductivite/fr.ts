@@ -98,10 +98,11 @@ export const comparatifProductivite = {
             'Système social : amis, profils, récapitulatifs partageables',
             'Plan gratuit complet — premium accessible (4,99€/mois)',
             'Interface en français, conçue pour le marché français',
+            'Application Pocha disponible sur iPhone et Android pour le focus mobile',
           ],
           cons: [
             'Statistiques avancées et récapitulatifs détaillés réservés au premium',
-            'Actuellement application web uniquement (pas d\'app native mobile)',
+            'Gestion de projets et de tâches propre à la version web Pomocha',
           ],
           verdict: 'Le meilleur équilibre entre organisation et motivation pour un side project. La gamification fait la différence sur la durée.',
         },

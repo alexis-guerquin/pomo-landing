@@ -1,15 +1,17 @@
 # Pomocha Landing Page
 
-Ce site est la vitrine de [pomocha.io](https://pomocha.io).
+Ce site présente [Pomocha sur le web](https://www.pomocha.io/) et l'application mobile Pocha.
 
-🌐 **Déployé sur** : [pomocha.fr](https://pomocha.fr)
+🌐 **Déployé sur** : [www.pomocha.fr](https://www.pomocha.fr)
+
+📱 **Pocha mobile** : [App Store](https://apps.apple.com/fr/app/pocha-minuteur-pomodoro/id6802377633) · [Google Play](https://play.google.com/store/apps/details?id=com.pocha.android)
 
 ## Aperçu de Pomocha.io
 
 ![Pomocha Desktop](./public/assets/Home-desktop.png)
 
 <p align="center">
-  <img src="./public/assets/Home-mobile.png" alt="Pomocha Mobile" width="300">
+  <img src="./public/assets/pocha/mascot-reveal.webp" alt="Vraie capture de Pocha sur Android" width="240">
 </p>
 
 ## Fonctionnalités
@@ -25,4 +27,3 @@ Ce site est la vitrine de [pomocha.io](https://pomocha.io).
 | ![Missions](./public/visuals/dailymissions.png) | ![Graph](./public/visuals/graph.png) | ![Trophées](./public/visuals/trophies.png) |
 
 </div>
-

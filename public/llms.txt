@@ -1,0 +1,25 @@
+# Pomocha et Pocha
+
+> Site officiel de Pomocha, l'expérience Pomodoro sur le web, et de Pocha, l'application mobile de concentration.
+
+Pocha propose un minuteur Pomodoro, des défis quotidiens, des séries et des statistiques de concentration sur iPhone, iPad et Android. Pomocha est également disponible dans le navigateur à https://www.pomocha.io/.
+
+## Pages principales
+
+- [Accueil](https://www.pomocha.fr/) : présentation de Pomocha et Pocha.
+- [Pocha mobile et Pomocha web](https://www.pomocha.fr/app) : fonctionnalités et téléchargements officiels.
+- [Concept](https://www.pomocha.fr/concept) : méthode Pomodoro gamifiée.
+- [Fonctionnalités](https://www.pomocha.fr/features/pomodoro-timer) : minuteur Pomodoro.
+- [Blog](https://www.pomocha.fr/blog) : guides de concentration et productivité.
+- [Confidentialité](https://www.pomocha.fr/privacy) : politique de confidentialité.
+
+## Téléchargements officiels de Pocha
+
+- [App Store](https://apps.apple.com/fr/app/pocha-minuteur-pomodoro/id6802377633)
+- [Google Play](https://play.google.com/store/apps/details?id=com.pocha.android)
+
+## Index des pages
+
+- [Sitemap XML](https://www.pomocha.fr/sitemap.xml)
+
+Dernière mise à jour : 2026-10-09.

@@ -1,24 +1,6 @@
-# Robots.txt pour Pomocha
-# https://www.pomocha.fr
-
-# Autoriser tous les robots
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://www.pomocha.fr/sitemap.xml
-
-# Optimisations pour Googlebot
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-# Optimisations pour Bingbot
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 0
-
-# Bloquer l'accès aux fichiers sensibles
 Disallow: /api/
-Disallow: /*.json$
 Disallow: /admin/
+
+Sitemap: https://www.pomocha.fr/sitemap.xml

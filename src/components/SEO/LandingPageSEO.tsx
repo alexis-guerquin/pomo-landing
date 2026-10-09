@@ -35,10 +35,12 @@ export function LandingPageSEO() {
       '@type': 'Organization',
       name: 'Pomocha',
       url: BASE_URL,
-      logo: `${BASE_URL}/logo.png`,
+      logo: `${BASE_URL}/break-ic.svg`,
       description: t.seo.organizationDescription,
       sameAs: [
         'https://x.com/Team_Pomocha',
+        'https://apps.apple.com/fr/app/pocha-minuteur-pomodoro/id6802377633',
+        'https://play.google.com/store/apps/details?id=com.pocha.android',
       ],
     },
 
@@ -75,9 +77,12 @@ export function LandingPageSEO() {
     {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
-      name: 'Pomocha',
-      operatingSystem: 'Web, iOS, Android',
+      name: 'Pocha',
+      operatingSystem: 'iOS, Android',
       applicationCategory: 'ProductivityApplication',
+      url: `${BASE_URL}/app`,
+      downloadUrl: 'https://apps.apple.com/fr/app/pocha-minuteur-pomodoro/id6802377633',
+      sameAs: ['https://play.google.com/store/apps/details?id=com.pocha.android'],
       offers: {
         '@type': 'Offer',
         price: '0',
@@ -109,48 +114,6 @@ export function LandingPageSEO() {
         '@type': 'WebSite',
         url: BASE_URL,
       },
-      breadcrumb: {
-        '@context': 'https://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: t.components.landingPage.breadcrumbs.home,
-            item: BASE_URL,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: t.components.landingPage.breadcrumbs.concept,
-            item: `${BASE_URL}/concept`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: t.components.landingPage.breadcrumbs.app,
-            item: `${BASE_URL}/app`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 4,
-            name: t.components.landingPage.breadcrumbs.extension,
-            item: `${BASE_URL}/extension`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 5,
-            name: t.components.landingPage.breadcrumbs.contact,
-            item: `${BASE_URL}/contact`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 6,
-            name: t.components.landingPage.breadcrumbs.legal,
-            item: `${BASE_URL}/legal`,
-          },
-        ],
-      },
     },
   ];
 
@@ -158,4 +121,3 @@ export function LandingPageSEO() {
 
   return null;
 }
-

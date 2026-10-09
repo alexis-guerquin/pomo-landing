@@ -32,8 +32,8 @@ export const translations = {
       organizationDescription: 'Application de minuteur Pomodoro avec gamification et statistiques pour améliorer la productivité et la concentration',
       pages: {
         home: {
-          title: 'Pomocha – App Pomodoro avec récompenses et stats',
-          description: 'Minuteur Pomodoro gamifié avec missions, badges, trophées et statistiques de focus. Idéal pour étudiants, freelances et créateurs.',
+          title: 'Pocha sur iPhone et Android | Pomocha Pomodoro sur le web',
+          description: 'Téléchargez Pocha sur iPhone et Android pour vos sessions Pomodoro, défis quotidiens et statistiques. Retrouvez Pomocha sur le web.',
           keywords: [
             'Pomodoro',
             'minuteur Pomodoro',
@@ -175,8 +175,8 @@ export const translations = {
           ],
         },
         app: {
-          title: 'Application Pomocha – Minuteur Pomodoro gamifié en ligne',
-          description: 'Accédez à l\'application Pomocha : minuteur Pomodoro, missions quotidiennes, badges, trophées et statistiques de focus. Gratuit et sans inscription.',
+          title: 'Pocha sur iPhone et Android | Application Pomodoro Pomocha',
+          description: 'Téléchargez Pocha sur iPhone et Android : minuteur Pomodoro, défis quotidiens, séries et statistiques de concentration.',
           keywords: [
             'application Pomocha',
             'app Pomodoro en ligne',
@@ -587,10 +587,16 @@ export const translations = {
         },
       },
       app: {
-        htmlTitle: 'Application Pomocha – Minuteur Pomodoro gamifié en ligne',
-        metaDescription: 'Accédez à l\'application Pomocha : minuteur Pomodoro, missions quotidiennes, badges, trophées et statistiques de focus. Gratuit et sans inscription.',
-        h1: 'L\'application Pomocha',
-        intro: 'Pomocha est disponible directement dans votre navigateur. Aucune installation requise, aucune inscription obligatoire. Lancez votre premier Pomodoro en quelques secondes.',
+        htmlTitle: 'Pocha sur iPhone et Android | Application Pomodoro Pomocha',
+        metaDescription: 'Téléchargez Pocha sur iPhone et Android : minuteur Pomodoro, défis quotidiens, séries et statistiques de concentration. Découvrez aussi Pomocha sur le web.',
+        h1: 'Pocha, votre compagnon Pomodoro sur mobile',
+        intro: 'Téléchargez Pocha sur iPhone ou Android pour rester concentré où que vous soyez. La version web Pomocha reste disponible dans votre navigateur.',
+        mobile: {
+          eyebrow: 'Pocha mobile',
+          title: 'Votre concentration vous suit partout',
+          content: 'Lancez une session Pomodoro, relevez des défis quotidiens, construisez votre série et suivez vos progrès directement sur votre téléphone.',
+          imageAlt: 'Vraie capture de l’application Pocha sur Android avec son compagnon de concentration',
+        },
         sections: {
           access: {
             title: 'Accéder à Pomocha',
@@ -598,7 +604,7 @@ export const translations = {
             cta: 'Lancer Pomocha',
           },
           features: {
-            title: 'Fonctionnalités principales',
+            title: 'Fonctionnalités de Pomocha sur le web',
             items: [
               'Minuteur Pomodoro avec sessions personnalisables',
               'Système de récompenses : badges, trophées, XP et niveaux',
@@ -609,7 +615,7 @@ export const translations = {
           },
           platforms: {
             title: 'Disponibilité',
-            content: 'Pomocha est accessible sur navigateur (desktop et mobile). Une extension Chrome est également disponible pour garder votre minuteur toujours visible.',
+            content: 'Pocha est disponible sur iPhone, iPad et Android. Pomocha est aussi accessible dans un navigateur, avec une extension Chrome pour le web.',
           },
         },
       },
@@ -703,7 +709,7 @@ export const translations = {
         title: 'l\'application qui vous poussera vers\nvos objectifs',
         description: 'Gamifie ton temps de travail',
         cta: 'Tester Pomocha',
-        availableOn: 'Available on: Browser',
+        availableOn: 'Pocha est disponible sur iPhone et Android · Pomocha sur le web',
       },
       cta: {
         title: 'Alors, t\'attends quoi pour te lancer ?',
@@ -733,7 +739,7 @@ export const translations = {
           students: 'Étudiants',
           freelancers: 'Freelancers',
           concept: 'Concept',
-          app: 'Application',
+          app: 'Pocha mobile',
           extension: 'Extension',
           about: 'À propos',
           blog: 'Blog',
@@ -778,7 +784,7 @@ export const translations = {
       navbar: {
         home: 'Accueil',
         concept: 'Concept',
-        app: 'Application',
+        app: 'Pocha mobile',
         extension: 'Extension',
         contact: 'Contact',
         legal: 'Mentions légales',
@@ -984,8 +990,8 @@ export const translations = {
       organizationDescription: 'Pomodoro timer app with gamification and statistics to improve productivity and focus',
       pages: {
         home: {
-          title: 'Pomocha – Pomodoro app with rewards and statistics',
-          description: 'Gamified Pomodoro timer with daily missions, badges, trophies and focus statistics. Ideal for students, freelancers and creators.',
+          title: 'Pocha for iPhone and Android | Pomocha Pomodoro on the web',
+          description: 'Download Pocha for iPhone and Android for Pomodoro sessions, daily challenges and focus statistics. Find Pomocha on the web too.',
           keywords: [
             'Pomodoro',
             'Pomodoro timer',
@@ -1123,8 +1129,8 @@ export const translations = {
           ],
         },
         app: {
-          title: 'Pomocha App – Gamified Pomodoro timer online',
-          description: 'Access the Pomocha app: Pomodoro timer, daily missions, badges, trophies and focus statistics. Free and no sign-up required.',
+          title: 'Pocha for iPhone and Android | Pomocha Pomodoro app',
+          description: 'Download Pocha for iPhone and Android: Pomodoro timer, daily challenges, streaks and focus statistics.',
           keywords: [
             'Pomocha app',
             'online Pomodoro app',
@@ -1535,10 +1541,16 @@ export const translations = {
         },
       },
       app: {
-        htmlTitle: 'Pomocha App – Gamified Pomodoro timer online',
-        metaDescription: 'Access the Pomocha app: Pomodoro timer, daily missions, badges, trophies and focus statistics. Free and no sign-up required.',
-        h1: 'The Pomocha app',
-        intro: 'Pomocha is available directly in your browser. No installation required, no sign-up needed. Start your first Pomodoro in seconds.',
+        htmlTitle: 'Pocha for iPhone and Android | Pomocha Pomodoro app',
+        metaDescription: 'Download Pocha for iPhone and Android: Pomodoro timer, daily challenges, streaks and focus statistics. Explore Pomocha on the web too.',
+        h1: 'Pocha, your Pomodoro companion on mobile',
+        intro: 'Download Pocha for iPhone or Android to stay focused wherever you are. Pomocha is also available in your browser.',
+        mobile: {
+          eyebrow: 'Pocha mobile',
+          title: 'Take your focus with you',
+          content: 'Start a Pomodoro session, complete daily challenges, build your streak and track your progress right on your phone.',
+          imageAlt: 'Real screenshot of the Pocha Android app showing its focus companion',
+        },
         sections: {
           access: {
             title: 'Access Pomocha',
@@ -1546,7 +1558,7 @@ export const translations = {
             cta: 'Launch Pomocha',
           },
           features: {
-            title: 'Key features',
+            title: 'Pomocha web features',
             items: [
               'Pomodoro timer with customizable sessions',
               'Reward system: badges, trophies, XP and levels',
@@ -1557,7 +1569,7 @@ export const translations = {
           },
           platforms: {
             title: 'Availability',
-            content: 'Pomocha is accessible on browsers (desktop and mobile). A Chrome extension is also available to keep your timer always visible.',
+            content: 'Pocha is available on iPhone, iPad and Android. Pomocha is also available in a browser, with a Chrome extension for the web.',
           },
         },
       },
@@ -1651,7 +1663,7 @@ export const translations = {
         title: 'the app that will push you toward\nyour goals',
         description: 'Gamify your work time',
         cta: 'Try Pomocha',
-        availableOn: 'Available on: Browser',
+        availableOn: 'Pocha on iPhone and Android · Pomocha on the web',
       },
       cta: {
         title: 'So, what are you waiting for?',
@@ -1681,7 +1693,7 @@ export const translations = {
           students: 'Students',
           freelancers: 'Freelancers',
           concept: 'Concept',
-          app: 'Application',
+          app: 'Pocha mobile',
           extension: 'Extension',
           about: 'About',
           blog: 'Blog',
@@ -1726,7 +1738,7 @@ export const translations = {
       navbar: {
         home: 'Home',
         concept: 'Concept',
-        app: 'Application',
+        app: 'Pocha mobile',
         extension: 'Extension',
         contact: 'Contact',
         legal: 'Legal Notice',
@@ -1912,4 +1924,3 @@ export const translations = {
 
 export type Locale = 'fr' | 'en';
 export type TranslationKeys = typeof translations.fr;
-

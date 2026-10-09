@@ -3,6 +3,7 @@ import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
 import { BestPomodoroOnlineArticle } from './articles/BestPomodoroOnlineArticle';
+import { BestPomodoroAppsArticle } from './articles/BestPomodoroAppsArticle';
 import { TechniquePomodoroArticle } from './articles/TechniquePomodoroArticle';
 import { AppPomodoroGamifieeArticle } from './articles/AppPomodoroGamifieeArticle';
 import { PomodoroEtudiantFreelanceArticle } from './articles/PomodoroEtudiantFreelanceArticle';
@@ -23,6 +24,7 @@ export default function ArticlePage() {
   // Mapper les clés d'articles aux composants
   const articleComponents: { [key: string]: React.ComponentType } = {
     bestPomodoroOnline: BestPomodoroOnlineArticle,
+    bestPomodoroApps: BestPomodoroAppsArticle,
     techniquePomodoro: TechniquePomodoroArticle,
     appPomodoroGamifiee: AppPomodoroGamifieeArticle,
     pomodoroEtudiantFreelance: PomodoroEtudiantFreelanceArticle,
@@ -78,4 +80,3 @@ export default function ArticlePage() {
     </PageLayout>
   );
 }
-

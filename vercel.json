@@ -1,8 +1,120 @@
 {
   "rewrites": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/features/pomodoro-timer",
+      "destination": "/features/pomodoro-timer/index.html"
+    },
+    {
+      "source": "/features/rewards-system",
+      "destination": "/features/rewards-system/index.html"
+    },
+    {
+      "source": "/features/statistics",
+      "destination": "/features/statistics/index.html"
+    },
+    {
+      "source": "/use-cases/students",
+      "destination": "/use-cases/students/index.html"
+    },
+    {
+      "source": "/use-cases/freelancers",
+      "destination": "/use-cases/freelancers/index.html"
+    },
+    {
+      "source": "/concept",
+      "destination": "/concept/index.html"
+    },
+    {
+      "source": "/app",
+      "destination": "/app/index.html"
+    },
+    {
+      "source": "/extension",
+      "destination": "/extension/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
+      "source": "/legal",
+      "destination": "/legal/index.html"
+    },
+    {
+      "source": "/delete-account",
+      "destination": "/delete-account/index.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy/index.html"
+    },
+    {
+      "source": "/community-guidelines",
+      "destination": "/community-guidelines/index.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/blog/meilleur-pomodoro-en-ligne-2026",
+      "destination": "/blog/meilleur-pomodoro-en-ligne-2026/index.html"
+    },
+    {
+      "source": "/blog/technique-pomodoro-productivite",
+      "destination": "/blog/technique-pomodoro-productivite/index.html"
+    },
+    {
+      "source": "/blog/application-pomodoro-gamifiee",
+      "destination": "/blog/application-pomodoro-gamifiee/index.html"
+    },
+    {
+      "source": "/blog/pomodoro-etudiant-freelance",
+      "destination": "/blog/pomodoro-etudiant-freelance/index.html"
+    },
+    {
+      "source": "/blog/nouveautes-pomocha-mars-2026",
+      "destination": "/blog/nouveautes-pomocha-mars-2026/index.html"
+    },
+    {
+      "source": "/blog/extension-chrome-pomodoro-pomocha",
+      "destination": "/blog/extension-chrome-pomodoro-pomocha/index.html"
+    },
+    {
+      "source": "/blog/guide-complet-application-web-extension-productivite-france",
+      "destination": "/blog/guide-complet-application-web-extension-productivite-france/index.html"
+    },
+    {
+      "source": "/blog/productivite-side-project-france-tout-savoir-2025",
+      "destination": "/blog/productivite-side-project-france-tout-savoir-2025/index.html"
+    },
+    {
+      "source": "/blog/productivite-side-project-comparatif-solutions-application-web",
+      "destination": "/blog/productivite-side-project-comparatif-solutions-application-web/index.html"
+    },
+    {
+      "source": "/blog/guide-ultime-productivite",
+      "destination": "/blog/guide-ultime-productivite/index.html"
+    },
+    {
+      "source": "/blog/technique-pomodoro-guide-complet",
+      "destination": "/blog/technique-pomodoro-guide-complet/index.html"
+    },
+    {
+      "source": "/blog/idees-side-project-gagner-argent-2026",
+      "destination": "/blog/idees-side-project-gagner-argent-2026/index.html"
+    },
+    {
+      "source": "/blog/comment-rester-concentre-eliminer-distractions",
+      "destination": "/blog/comment-rester-concentre-eliminer-distractions/index.html"
+    },
+    {
+      "source": "/blog/meilleures-apps-pomodoro-2026",
+      "destination": "/blog/meilleures-apps-pomodoro-2026/index.html"
     }
   ],
   "headers": [
@@ -69,5 +181,6 @@
         }
       ]
     }
-  ]
+  ],
+  "trailingSlash": false
 }

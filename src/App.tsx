@@ -1,54 +1,32 @@
 import './App.css';
-import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from './components/ScrollToTop';
 
-// Lazy loading des pages pour optimiser le LCP
-const LandingPage = lazy(() => import('./pages/LandingPage'));
-const PomodoroTimerPage = lazy(() => import('./pages/features/PomodoroTimerPage'));
-const MotivationRewardsPage = lazy(() => import('./pages/features/MotivationRewardsPage'));
-const FocusStatisticsPage = lazy(() => import('./pages/features/FocusStatisticsPage'));
-const StudentsPage = lazy(() => import('./pages/use-cases/StudentsPage'));
-const FreelancersPage = lazy(() => import('./pages/use-cases/FreelancersPage'));
-const AboutPage = lazy(() => import('./pages/about/AboutPage'));
-const ConceptPage = lazy(() => import('./pages/concept/ConceptPage'));
-const AppPage = lazy(() => import('./pages/app/AppPage'));
-const ExtensionPage = lazy(() => import('./pages/extension/ExtensionPage'));
-const ContactPage = lazy(() => import('./pages/contact/ContactPage'));
-const LegalPage = lazy(() => import('./pages/legal/LegalPage'));
-const DeleteAccountPage = lazy(() => import('./pages/delete-account/DeleteAccountPage'));
-const PrivacyPage = lazy(() => import('./pages/privacy/PrivacyPage'));
-const CommunityGuidelinesPage = lazy(() => import('./pages/community-guidelines/CommunityGuidelinesPage'));
-const BlogPage = lazy(() => import('./pages/blog/BlogPage'));
-const ArticlePage = lazy(() => import('./pages/blog/ArticlePage'));
-
-// Composant de fallback pour le chargement
-const PageLoader = () => (
-  <div style={{
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    minHeight: '100vh',
-    background: 'var(--theme-surface)'
-  }}>
-    <div style={{
-      width: '50px',
-      height: '50px',
-      border: '4px solid rgba(255, 255, 255, 0.3)',
-      borderTop: '4px solid #fff',
-      borderRadius: '50%',
-      animation: 'spin 1s linear infinite'
-    }} />
-  </div>
-);
+// Même arbre que le pré-rendu serveur : l'hydratation conserve la page affichée.
+import LandingPage from './pages/LandingPage';
+import PomodoroTimerPage from './pages/features/PomodoroTimerPage';
+import MotivationRewardsPage from './pages/features/MotivationRewardsPage';
+import FocusStatisticsPage from './pages/features/FocusStatisticsPage';
+import StudentsPage from './pages/use-cases/StudentsPage';
+import FreelancersPage from './pages/use-cases/FreelancersPage';
+import AboutPage from './pages/about/AboutPage';
+import ConceptPage from './pages/concept/ConceptPage';
+import AppPage from './pages/app/AppPage';
+import ExtensionPage from './pages/extension/ExtensionPage';
+import ContactPage from './pages/contact/ContactPage';
+import LegalPage from './pages/legal/LegalPage';
+import DeleteAccountPage from './pages/delete-account/DeleteAccountPage';
+import PrivacyPage from './pages/privacy/PrivacyPage';
+import CommunityGuidelinesPage from './pages/community-guidelines/CommunityGuidelinesPage';
+import BlogPage from './pages/blog/BlogPage';
+import ArticlePage from './pages/blog/ArticlePage';
 
 export default function App() {
   return (
     <>
       <ScrollToTop />
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
+      <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/features/pomodoro-timer" element={<PomodoroTimerPage />} />
           <Route path="/features/rewards-system" element={<MotivationRewardsPage />} />
@@ -68,8 +46,7 @@ export default function App() {
           <Route path="/community-guidelines" element={<CommunityGuidelinesPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<ArticlePage />} />
-        </Routes>
-      </Suspense>
+      </Routes>
       <Analytics />
     </>
   );

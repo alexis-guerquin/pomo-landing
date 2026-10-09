@@ -1,5 +1,6 @@
 import { m, LazyMotion, domAnimation } from "framer-motion";
 import ThreeDButton from "../ui/3DButton/3dbutton";
+import { MobileStoreLinks } from "../MobileStoreLinks/MobileStoreLinks";
 import { useI18n } from "../../contexts/I18nContext";
 import "./HeroSection.css";
 
@@ -41,6 +42,7 @@ const HeroSection = () => {
                   }}
                 />
                 <p className="available-on">{t.components.hero.availableOn}</p>
+                <MobileStoreLinks />
               </div>
             </m.div>{" "}
           </div>
@@ -84,25 +86,16 @@ const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 <div className="phone-div">
-                  <img
-                    src="/character/meditation.svg"
-                    alt="Personnage méditation"
-                    className="character-svg"
-                    loading="lazy"
-                    width="200"
-                    height="200"
-                  />
                   <div className="phone-frame">
                     <div className="phone-screen">
                       <img
-                        src="/assets/Home-mobile.png"
-                        alt="Application Pomocha - Vue mobile"
+                        src="/assets/pocha/mascot-reveal.webp"
+                        alt="Capture réelle de Pocha sur Android : découverte du compagnon de concentration"
                         className="phone-image"
-                        loading="lazy"
-                        width="266"
-                        height="457"
-                        sizes="(max-width: 480px) 200px, 266px"
-                        srcSet="/assets/Home-mobile.png 266w, /assets/Home-mobile.png 200w"
+                        fetchPriority="high"
+                        loading="eager"
+                        width="540"
+                        height="1200"
                       />
                     </div>
                   </div>

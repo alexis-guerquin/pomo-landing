@@ -100,7 +100,7 @@ const Navbar = () => {
 
         {/* Menu "pill" au centre */}
         <div className="navbar-menu">
-          <nav className="nav-pill" aria-label="Navigation principale">
+          <div className="nav-pill" aria-label="Navigation principale">
             <button className="nav-pill__link" type="button" onClick={() => goToSection('hero')}>
               {t.components.navbar.home}
             </button>
@@ -114,7 +114,7 @@ const Navbar = () => {
             <HoveredLink to="/blog">
               {t.components.navbar.blog}
             </HoveredLink>
-          </nav>
+          </div>
         </div>
 
         {/* Actions à droite */}

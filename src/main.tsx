@@ -18,14 +18,11 @@ const app = (
 
 // Hydrater si du HTML pré-rendu est présent, sinon monter normalement
 if (rootElement.innerHTML.trim() !== '') {
-  hydrateRoot(rootElement, app);
+  hydrateRoot(rootElement, app, {
+    onRecoverableError(error, info) {
+      console.error('Hydration Pomocha:', error, info.componentStack);
+    },
+  });
 } else {
   createRoot(rootElement).render(app);
 }
-
-// Enable CSS transitions after first paint to prevent flash on initial load
-requestAnimationFrame(() => {
-  requestAnimationFrame(() => {
-    document.documentElement.classList.add('transitions-ready');
-  });
-});

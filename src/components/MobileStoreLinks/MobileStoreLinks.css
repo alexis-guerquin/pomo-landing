@@ -1,0 +1,13 @@
+.mobile-store-links { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; }
+.mobile-store-link { display: inline-flex; align-items: center; gap: .65rem; min-width: 150px; padding: .5rem .8rem; border-radius: 12px; background: #203c2d; color: #fff; text-decoration: none; border: 2px solid #203c2d; box-shadow: 0 4px 0 #14271c; transition: transform .15s ease, box-shadow .15s ease; }
+.mobile-store-link:hover, .mobile-store-link:focus-visible { transform: translateY(-2px); box-shadow: 0 6px 0 #14271c; color: #fff; }
+.mobile-store-link:focus-visible { outline: 3px solid #e6a86f; outline-offset: 3px; }
+.mobile-store-link span:last-child { display: flex; flex-direction: column; line-height: 1.1; }
+.mobile-store-link small { font-size: .65rem; font-weight: 600; }
+.mobile-store-link strong { font-size: 1rem; font-weight: 800; }
+.mobile-store-link__icon { font-size: 1.4rem; line-height: 1; }
+.mobile-store-link__icon--ios { font-size: .9rem; font-weight: 800; letter-spacing: -.05em; }
+.mobile-store-link__icon--play { font-size: 1.2rem; color: #aee7c3; }
+.mobile-store-links--compact .mobile-store-link { min-width: 132px; padding: .35rem .65rem; }
+.mobile-store-links--compact .mobile-store-link strong { font-size: .88rem; }
+@media (max-width: 480px) { .mobile-store-links { justify-content: center; } .mobile-store-link { min-width: 136px; } }

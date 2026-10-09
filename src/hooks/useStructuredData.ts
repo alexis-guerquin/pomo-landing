@@ -62,6 +62,9 @@ export interface SoftwareApplicationSchema {
   name: string;
   operatingSystem: string;
   applicationCategory: string;
+  url?: string;
+  downloadUrl?: string;
+  sameAs?: string[];
   offers?: {
     '@type': 'Offer';
     price: string;
@@ -120,4 +123,3 @@ export function useStructuredData(data: StructuredData | StructuredData[]) {
     };
   }, [data]);
 }
-

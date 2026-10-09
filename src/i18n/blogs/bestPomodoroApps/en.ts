@@ -70,9 +70,9 @@ export const bestPomodoroApps = {
     {
       name: 'Pomocha',
       tagline: 'Gamified Pomodoro with rewards and statistics',
-      description: 'Pomocha combines a clean Pomodoro timer with gamification elements to keep you motivated. Track your progress with detailed statistics and unlock rewards as you build consistent work habits.',
+      description: 'Pomocha combines a web Pomodoro timer with gamification to keep you motivated. Pocha also offers a native iPhone and Android experience with daily challenges, streaks and focus statistics.',
       bestFor: 'Students and freelancers',
-      platform: 'Web',
+      platform: 'Web (Pomocha), iOS and Android (Pocha)',
       free: true,
       standoutFeature: 'Gamification and statistics',
       whoItsFor: 'Students, freelancers, and anyone who wants to gamify their productivity',
@@ -85,7 +85,7 @@ export const bestPomodoroApps = {
       ],
       cons: [
         'Some advanced features require subscription',
-        'Currently web-based only',
+        'Project and task management belongs to the web version',
       ],
       pricing: 'Free with premium features available',
       images: [] as Array<{ src: string; alt: string }>,
@@ -98,4 +98,3 @@ export const bestPomodoroApps = {
     pricing: 'Pricing',
   },
 };
-

@@ -4,9 +4,9 @@
  */
 
 export const SEO_CONFIG = {
-  baseUrl: 'https://pomocha.fr',
+  baseUrl: 'https://www.pomocha.fr',
   siteName: 'Pomocha',
-  defaultTitle: 'Pomocha – App Pomodoro avec récompenses et statistiques',
+  defaultTitle: 'Pocha sur iPhone et Android | Pomocha Pomodoro sur le web',
   titleTemplate: '%s | Pomocha',
   
   defaultDescription:
@@ -28,6 +28,9 @@ export const SEO_CONFIG = {
     'application Pomodoro',
     'timer Pomodoro',
     'Pomocha',
+    'Pocha',
+    'Pocha iPhone',
+    'Pocha Android',
   ],
 
   defaultImage: '/pomocha-og.png',
@@ -40,7 +43,7 @@ export const SEO_CONFIG = {
 
   organization: {
     name: 'Pomocha',
-    logo: '/logo.png',
+    logo: '/break-ic.svg',
     description:
       'Application de minuteur Pomodoro avec gamification et statistiques pour améliorer la productivité et la concentration',
   },
@@ -52,9 +55,9 @@ export const SEO_CONFIG = {
  */
 export const PAGE_SEO = {
   home: {
-    title: 'Pomocha – App Pomodoro avec récompenses et statistiques | Focus & Productivité',
+    title: 'Pocha sur iPhone et Android | Pomocha Pomodoro sur le web',
     description:
-      'Transformez votre concentration en progression avec Pomocha : minuteur Pomodoro, missions quotidiennes, badges, trophées et statistiques de focus. Idéal pour étudiants, freelances et créateurs.',
+      'Téléchargez Pocha sur iPhone et Android pour vos sessions Pomodoro, défis quotidiens et statistiques. Retrouvez Pomocha sur le web.',
     keywords: [
       ...SEO_CONFIG.defaultKeywords,
       'app étudiants',
@@ -171,4 +174,3 @@ export const PAGE_SEO = {
     ],
   },
 };
-

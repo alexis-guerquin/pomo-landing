@@ -2,6 +2,7 @@ import './Footer.css';
 import { useState, useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useI18n } from '../../contexts/I18nContext';
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from '../MobileStoreLinks/MobileStoreLinks';
 
 export default function Footer() {
   const { t } = useI18n();
@@ -23,6 +24,16 @@ export default function Footer() {
           title: t.components.footer.links.app,
           href: '/app',
           isRoute: true,
+        },
+        {
+          title: 'App Store · Pocha',
+          href: APP_STORE_URL,
+          isRoute: false,
+        },
+        {
+          title: 'Google Play · Pocha',
+          href: GOOGLE_PLAY_URL,
+          isRoute: false,
         },
         {
           title: t.components.footer.links.extension,
@@ -106,6 +117,7 @@ export default function Footer() {
   };
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute: boolean) => {
+    if (href.startsWith('https://')) return;
     e.preventDefault();
     
     if (isRoute) {

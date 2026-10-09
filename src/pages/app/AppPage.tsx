@@ -1,6 +1,8 @@
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
+import { MobileStoreLinks } from '../../components/MobileStoreLinks/MobileStoreLinks';
+import './AppPage.css';
 
 export default function AppPage() {
   const { t } = useI18n();
@@ -11,6 +13,15 @@ export default function AppPage() {
       h1={t.pages.app.h1}
       intro={t.pages.app.intro}
     >
+      <section className="page-layout__section pocha-mobile-feature">
+        <div>
+          <p className="pocha-mobile-feature__eyebrow">{t.pages.app.mobile.eyebrow}</p>
+          <h2>{t.pages.app.mobile.title}</h2>
+          <p>{t.pages.app.mobile.content}</p>
+          <MobileStoreLinks />
+        </div>
+        <img src="/assets/pocha/mascot-reveal.webp" alt={t.pages.app.mobile.imageAlt} width="540" height="1200" loading="eager" />
+      </section>
       <section className="page-layout__section">
         <h2>{t.pages.app.sections.access.title}</h2>
         <p>{t.pages.app.sections.access.content}</p>
