@@ -152,3 +152,6 @@
 }
   
   
+.cta-image { width: 180px; max-width: 40%; }
+.cta-image .phone-preview__frame img { scale: 1; filter: none; max-width: 100%; }
+.cta-image .phone-preview figcaption { color: #e5eccf; }

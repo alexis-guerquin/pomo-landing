@@ -1,3 +1,5 @@
+import { DevicePair } from '../DevicePair/DevicePair';
+import type { PhoneScene } from '../../config/phone-media';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ThreeDButton from '../ui/3DButton/3dbutton';
@@ -12,6 +14,7 @@ export interface MiniFeatureData {
   description: string;
   visual: string;
   visualAlt?: string;
+  phoneScene?: PhoneScene;
   features?: string[];
   cta?: {
     text: string;
@@ -80,15 +83,25 @@ const MiniFeature = ({ data, layout = 'vertical', index = 0 }: MiniFeatureProps)
           variants={imageVariants}
         >
           <div className="mini-feature__visual-wrapper">
+            {data.phoneScene ? <DevicePair phoneScene={data.phoneScene}>
             <img 
               src={data.visual} 
               alt={data.visualAlt || data.title}
               className="mini-feature__image"
-              width="637"
-              height="296"
+              width="1440"
+              height="900"
               sizes="(max-width: 640px) 400px, (max-width: 1024px) 500px, 637px"
-              srcSet={`${data.visual} 637w, ${data.visual} 500w, ${data.visual} 400w`}
             />
+            </DevicePair> : (
+            <img 
+              src={data.visual} 
+              alt={data.visualAlt || data.title}
+              className="mini-feature__image"
+              width="1440"
+              height="900"
+              sizes="(max-width: 640px) 400px, (max-width: 1024px) 500px, 637px"
+            />
+            )}
             <div className="mini-feature__visual-glow"></div>
           </div>
         </motion.div>

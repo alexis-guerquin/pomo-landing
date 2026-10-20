@@ -36,14 +36,15 @@ function escapeAttribute(value) {
   return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 }
 
-function pageTemplate(template, content, route) {
+function pageTemplate(template, content, route, releaseMetadata) {
+  const article = releaseMetadata[route];
   const titleText = plainText(content.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] || 'Pomocha');
   const intro = plainText(content.match(/<p\b[^>]*class="(?:page-layout__intro|hero-description)"[^>]*>([\s\S]*?)<\/p>/)?.[1] || '');
   const title = route === '/' ? 'Pocha sur Mac, iPhone et Android | Pomocha Pomodoro sur le web'
     : route === '/app' ? 'Pocha sur Mac, iPhone et Android | Application Pomodoro Pomocha'
       : `${titleText} | Pomocha`;
-  const description = route === '/' ? 'Découvrez Pocha sur Mac, iPhone et Android : sessions de focus, minuteur dans l’encoche, séries et statistiques. Pomocha est aussi disponible sur le web.'
-    : intro || 'Découvrez Pomocha, le minuteur Pomodoro gamifié et ses outils pour rester concentré.';
+  const description = article?.description || (route === '/' ? 'Découvrez Pocha sur Mac, iPhone et Android : sessions de focus, minuteur dans l’encoche, séries et statistiques. Pomocha est aussi disponible sur le web.'
+    : intro || 'Découvrez Pomocha, le minuteur Pomodoro gamifié et ses outils pour rester concentré.');
   if (!content.includes('<h1')) throw new Error(`Aucun H1 pré-rendu pour ${route}`);
   const canonical = `${siteUrl}${route === '/' ? '/' : route}`;
   let html = template.replace('<div id="root"></div>', `<div id="root">${content}</div>`);
@@ -60,6 +61,25 @@ function pageTemplate(template, content, route) {
   if (route === '/app' || route === '/') {
     const image = `${siteUrl}/assets/pocha/mac/build-4/fr/01-focus.webp`;
     meta.push(['property', 'og:image', image], ['name', 'twitter:image', image]);
+  }
+  if (article) {
+    const image = `${siteUrl}${article.image}`;
+    meta.push(['property', 'og:image', image], ['name', 'twitter:image', image], ['property', 'og:type', 'article']);
+    const articleSchema = {
+      '@context': 'https://schema.org', '@type': 'BlogPosting',
+      headline: article.title, description: article.description, image: [image],
+      datePublished: `${article.publishedAt}`,
+      dateModified: `${article.publishedAt}`, inLanguage: 'fr',
+      author: { '@type': 'Organization', name: 'Équipe Pocha', url: `${siteUrl}/about` },
+      publisher: { '@type': 'Organization', name: 'Pomocha', url: siteUrl, logo: { '@type': 'ImageObject', url: `${siteUrl}/break-ic.svg` } },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+    };
+    const breadcrumb = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${siteUrl}/` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` },
+      { '@type': 'ListItem', position: 3, name: article.title, item: canonical },
+    ] };
+    html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(articleSchema)}</script><script type="application/ld+json">${JSON.stringify(breadcrumb)}</script><meta property="article:published_time" content="${article.publishedAt}"></head>`);
   }
   for (const [attribute, name, value] of meta) {
     const pattern = new RegExp(`(<meta ${attribute}="${name}" content=")[^"]*(">)`);
@@ -121,7 +141,7 @@ async function prerender() {
     process.exit(1);
   }
 
-  const { render } = await import(serverEntryPath);
+  const { render, releaseMetadata } = await import(serverEntryPath);
 
   let successCount = 0;
   let errorCount = 0;
@@ -132,7 +152,7 @@ async function prerender() {
       const appHtml = await render(route);
 
       // Injecter dans le template
-      const html = pageTemplate(template, appHtml, route);
+      const html = pageTemplate(template, appHtml, route, releaseMetadata);
 
       // Déterminer le chemin de sortie
       const outputDir = route === '/'

@@ -123,6 +123,18 @@
     {
       "source": "/terms",
       "destination": "/terms/index.html"
+    },
+    {
+      "source": "/blog/pocha-ios-lancement-septembre-2026",
+      "destination": "/blog/pocha-ios-lancement-septembre-2026/index.html"
+    },
+    {
+      "source": "/blog/pocha-android-lancement-octobre-2026",
+      "destination": "/blog/pocha-android-lancement-octobre-2026/index.html"
+    },
+    {
+      "source": "/blog/pocha-ios-mac-fin-octobre-2026",
+      "destination": "/blog/pocha-ios-mac-fin-octobre-2026/index.html"
     }
   ],
   "headers": [

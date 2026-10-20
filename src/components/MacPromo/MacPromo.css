@@ -81,3 +81,5 @@
 @media (prefers-reduced-motion: reduce) {
   .mac-promo__link { transition: none; }
 }
+
+.mac-promo > .device-pair { display: grid; border-radius: 0; box-shadow: none; }

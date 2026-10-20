@@ -1,3 +1,4 @@
+import { releaseArticles } from '../../content/releases';
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
@@ -49,6 +50,7 @@ export default function BlogPage() {
       key: 'pomocha',
       ...c.pomocha,
       articles: [
+        ...[...releaseArticles].reverse().map(article => ({ ...article[locale], slug: article.slug, date: article.period[locale], publishedAt: article.publishedAt })),
         a.pomochaExtension,
         a.pomochaNouveautes,
       ],
@@ -99,7 +101,7 @@ export default function BlogPage() {
           ))}
         </nav>
 
-        {visibleCategories.map((category) => (
+        {[...visibleCategories].sort((a, b) => Number(b.key === 'pomocha') - Number(a.key === 'pomocha')).map((category) => (
           <section key={category.key} className="blog-category">
             <h2 className="blog-category__title">{category.title}</h2>
             <p className="blog-category__description">{category.description}</p>
@@ -110,7 +112,7 @@ export default function BlogPage() {
                   <Link to={`/blog/${article.slug}`} className="blog-card__link">
                     <div className="blog-card__content">
                       <div className="blog-card__meta">
-                        <time dateTime={article.date} className="blog-card__date">
+                        <time dateTime={'publishedAt' in article ? article.publishedAt : undefined} className="blog-card__date">
                           {article.date}
                         </time>
                       </div>

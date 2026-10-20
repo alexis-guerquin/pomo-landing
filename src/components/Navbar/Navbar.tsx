@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import ThreeDButton from '../ui/3DButton/3dbutton';
+import { APP_STORE_URL, GOOGLE_PLAY_URL } from '../MobileStoreLinks/MobileStoreLinks';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import { useI18n } from '../../contexts/I18nContext';
 import './Navbar.css';
@@ -120,16 +120,10 @@ const Navbar = () => {
         {/* Actions à droite */}
         <div className="navbar-actions">
           <LanguageSwitcher />
-          <ThreeDButton
-            text={locale === 'fr' ? 'Découvrir Pocha' : 'Explore Pocha'}
-            variant="rectangle"
-            color="primary"
-            theme="light"
-            type="button"
-            onClick={() => {
-              navigate('/app');
-            }}
-          />
+          <div className="navbar-stores" aria-label={locale === 'fr' ? 'Télécharger Pocha' : 'Download Pocha'}>
+            <a className="navbar-store navbar-store--apple" href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" aria-label={locale === 'fr' ? 'Télécharger Pocha sur l’App Store' : 'Download Pocha on the App Store'}><span aria-hidden="true">↗</span> App Store</a>
+            <a className="navbar-store navbar-store--play" href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer" aria-label={locale === 'fr' ? 'Télécharger Pocha sur Google Play' : 'Download Pocha on Google Play'}><span aria-hidden="true">▶</span> Google Play</a>
+          </div>
 
           <button
             className="navbar-mobile-toggle"

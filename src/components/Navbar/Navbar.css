@@ -273,3 +273,11 @@
     gap: 0.5rem;
   }
 }
+
+.navbar-stores { display: flex; gap: 8px; }
+.navbar-store { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 42px; padding: 0 12px; border: 2px solid #293c30; border-radius: 12px; background: #293c30; color: #fff; font-weight: 800; font-size: .82rem; text-decoration: none; white-space: nowrap; box-shadow: 0 4px 0 #18271d; }
+.navbar-store--play { background: #e5eccf; color: #293c30; }
+.navbar-store:focus-visible { outline: 3px solid #a86f48; outline-offset: 4px; }
+@media (max-width: 1240px) { .navbar-menu { display: none; } .navbar-mobile-toggle { display: inline-flex; } }
+@media (max-width: 480px) { .navbar { padding: .75rem; } .navbar-stores { gap: 5px; } .navbar-store { min-height: 38px; font-size: .68rem; padding: 0 7px; } .navbar-actions { gap: 6px; } .navbar-actions .language-switcher { margin-right: 0; } .navbar-mobile-toggle { padding: .5rem; font-size: .8rem; } }
+@media (max-width: 359px) { .navbar-store span { display: none; } .navbar-logo img { height: 26px; } }

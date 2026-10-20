@@ -1,0 +1,14 @@
+.release-article { max-width: 960px; margin: 0 auto; }
+.release-article__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-bottom: 32px; color: #657064; font-size: .9rem; }
+.release-article__meta > span { padding: 8px 14px; border-radius: 20px; background: #e6edda; color: #4b6038; font-weight: 800; }
+.release-article__visual { max-width: 960px; margin: 32px auto; }
+.release-article__visual > .phone-preview { max-width: 230px; }
+.release-article__toc { padding: 24px; border-radius: 20px; background: #e9eddf; display: grid; gap: 12px; }
+.release-article a { color: #653b30; text-underline-offset: 4px; }
+.release-article > section { margin: 48px 0; scroll-margin-top: 110px; }
+.release-article h2 { line-height: 1.25; }
+.release-article p { line-height: 1.8; }
+.release-article__links { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-top: 24px; }
+.release-article > aside { margin-top: 48px; padding-top: 24px; border-top: 1px solid #d5dccd; }
+
+.release-article__visual > img { display: block; width: 100%; height: auto; border-radius: 24px; }

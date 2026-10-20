@@ -1,3 +1,5 @@
+import { releaseArticles } from '../../content/releases';
+import ReleaseArticlePage from './articles/ReleaseArticlePage';
 import { useParams, Navigate } from 'react-router-dom';
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
@@ -21,6 +23,9 @@ export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useI18n();
 
+  const release = releaseArticles.find(article => article.slug === slug);
+  if (release) return <ReleaseArticlePage article={release} />;
+
   // Mapper les clés d'articles aux composants
   const articleComponents: { [key: string]: React.ComponentType } = {
     bestPomodoroOnline: BestPomodoroOnlineArticle,
@@ -41,7 +46,7 @@ export default function ArticlePage() {
 
   // Trouver l'article correspondant au slug depuis les traductions
   let articleKey: string | null = null;
-  let articleMeta: any = null;
+  let articleMeta: (typeof t.pages.blog.articles)[keyof typeof t.pages.blog.articles] | null = null;
 
   // Vérifier tous les articles pour trouver celui qui correspond au slug
   const articles = t.pages.blog.articles;

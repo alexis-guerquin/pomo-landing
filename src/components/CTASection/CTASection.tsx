@@ -1,3 +1,4 @@
+import { PhoneScreenshot } from '../DevicePair/DevicePair';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ThreeDButton from '../ui/3DButton/3dbutton';
@@ -28,7 +29,7 @@ const CTASection: React.FC = () => {
           <MobileStoreLinks compact />
         </div>
         <div className="cta-image">
-          <img src="/icons/target.svg" alt="Target" width="200" height="200" />
+          <PhoneScreenshot scene="focus" />
         </div>
       </div>
     </section>

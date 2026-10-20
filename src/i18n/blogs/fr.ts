@@ -41,8 +41,8 @@ export const blogTranslations = {
       description: 'Tout pour lancer, maintenir et réussir votre side project : idées, motivation, gamification du travail et conseils pour freelances et étudiants.',
     },
     pomocha: {
-      title: 'Pomocha : Actualités & Fonctionnalités',
-      description: 'Nouveautés, mises à jour et guides sur l\'application Pomocha — le Pomodoro gamifié avec extension Chrome.',
+      title: 'Pocha : actualités iOS, Android et Mac',
+      description: 'Les lancements, mises à jour et coulisses de Pocha sur iPhone, iPad, Android et Mac.',
     },
   },
   articles: {

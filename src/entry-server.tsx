@@ -43,3 +43,5 @@ export function render(url: string): Promise<string> {
     );
   });
 }
+
+export { releaseMetadata } from './content/releases';

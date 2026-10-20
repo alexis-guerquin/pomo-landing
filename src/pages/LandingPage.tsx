@@ -32,6 +32,7 @@ export default function LandingPage() {
       title: t.miniFeatures.concept.title,
       description: t.miniFeatures.concept.description,
       visual: macMedia(locale, '01-focus'),
+      phoneScene: 'focus',
       visualAlt: t.miniFeatures.concept.visualAlt,
       features: t.miniFeatures.concept.items,
       cta: {
@@ -45,6 +46,7 @@ export default function LandingPage() {
       title: t.miniFeatures.rewards.title,
       description: t.miniFeatures.rewards.description,
       visual: macMedia(locale, '04-collection'),
+      phoneScene: 'collection',
       visualAlt: t.miniFeatures.rewards.visualAlt,
       features: t.miniFeatures.rewards.items,
       cta: {
@@ -58,6 +60,7 @@ export default function LandingPage() {
       title: t.miniFeatures.statistics.title,
       description: t.miniFeatures.statistics.description,
       visual: macMedia(locale, '02-statistics'),
+      phoneScene: 'statistics',
       visualAlt: t.miniFeatures.statistics.visualAlt,
       features: t.miniFeatures.statistics.items,
       cta: {
@@ -70,8 +73,9 @@ export default function LandingPage() {
       id: 'mini-more',
       title: t.miniFeatures.more.title,
       description: t.miniFeatures.more.description,
-      visual: '',
-      visualAlt: '',
+      visual: macMedia(locale, '05-community'),
+      visualAlt: locale === 'fr' ? 'La communauté Pocha sur Mac' : 'Pocha community on Mac',
+      phoneScene: 'community',
       features: t.miniFeatures.more.items,
       cta: {
         text: t.miniFeatures.more.cta,

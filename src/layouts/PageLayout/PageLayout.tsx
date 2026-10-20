@@ -15,6 +15,7 @@ type PageLayoutProps = {
   h1: string;
   intro?: string;
   ogImage?: string;
+  ogType?: string;
   children: React.ReactNode;
 };
 
@@ -25,6 +26,7 @@ export function PageLayout({
   h1,
   intro,
   ogImage,
+  ogType,
   children,
 }: PageLayoutProps) {
   const { locale } = useI18n();
@@ -38,6 +40,7 @@ export function PageLayout({
     keywords,
     canonicalUrl,
     ogUrl: canonicalUrl,
+    ogType,
     ogImage: socialImage,
     twitterImage: socialImage,
     ogLocale: locale === 'fr' ? 'fr_FR' : 'en_US',

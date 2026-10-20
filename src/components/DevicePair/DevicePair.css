@@ -1,0 +1,11 @@
+.device-pair { width: 100%; min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .24fr); gap: clamp(10px, 2vw, 26px); align-items: center; }
+.device-pair__mac { min-width: 0; }
+.device-pair__mac > img { display: block; width: 100%; height: auto; }
+.phone-preview { min-width: 0; width: 100%; max-width: 230px; margin: 0 auto; text-align: center; }
+.phone-preview__frame { position: relative; padding: clamp(3px, .5vw, 7px); border-radius: clamp(14px, 2.3vw, 34px); background: #171918; box-shadow: 0 8px 0 #bfc2bd, 0 16px 30px #26342b1a; overflow: hidden; }
+.phone-preview__frame img { display: block; width: 100%; height: auto; border-radius: clamp(11px, 1.8vw, 27px); }
+.phone-preview figcaption { margin-top: 16px; color: #647067; font-size: clamp(.65rem, 1vw, .8rem); font-weight: 800; }
+.device-pair__mac .phone-preview { max-width: 140px; }
+.pocha-notch__card .device-pair { grid-template-columns: minmax(0, 1fr) minmax(0, .45fr); gap: 12px; }
+.pocha-notch__card .phone-preview__frame img { max-height: none; object-fit: initial; }
+@media (max-width: 480px) { .device-pair { grid-template-columns: minmax(0, 1fr) minmax(0, .34fr); gap: 10px; } }

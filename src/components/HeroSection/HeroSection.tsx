@@ -1,4 +1,5 @@
 import { m, LazyMotion, domAnimation } from "framer-motion";
+import { PhoneScreenshot } from '../DevicePair/DevicePair';
 import { useNavigate } from 'react-router-dom';
 import { MacScreenshot } from '../MacScreenshot/MacScreenshot';
 import ThreeDButton from "../ui/3DButton/3dbutton";
@@ -61,7 +62,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <MacScreenshot scene="macbook-focus" className="hero-mac-image" priority />
+                <MacScreenshot scene="macbook-focus" className="hero-mac-image" priority paired={false} />
               </m.div>
 
               {/* Mockup Smartphone */}
@@ -71,21 +72,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <div className="phone-div">
-                  <div className="phone-frame">
-                    <div className="phone-screen">
-                      <img
-                        src="/assets/pocha/mobile/focus-session.webp"
-                        alt={t.pages.app.mobile.heroImageAlt}
-                        className="phone-image"
-                        fetchPriority="high"
-                        loading="eager"
-                        width="600"
-                        height="1299"
-                      />
-                    </div>
-                  </div>
-                </div>
+                <PhoneScreenshot scene="focus" priority />
               </m.div>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import { DevicePair } from '../../components/DevicePair/DevicePair';
 import { Link } from 'react-router-dom';
 import { MacScreenshot } from '../../components/MacScreenshot/MacScreenshot';
 import { macMedia, macScenes } from '../../config/mac-media';
@@ -52,15 +53,15 @@ export default function AppPage() {
         </div>
         <div className="pocha-notch__grid">
           <figure className="pocha-notch__card pocha-notch__card--compact">
-            <img src="/assets/pocha/mac/notch-collapsed.webp" alt={t.pages.app.mac.notchCollapsedAlt} width="944" height="616" loading="lazy" decoding="async" />
+            <DevicePair phoneScene="focus"><img src="/assets/pocha/mac/notch-collapsed.webp" alt={t.pages.app.mac.notchCollapsedAlt} width="944" height="616" loading="lazy" decoding="async" /></DevicePair>
             <figcaption>{t.pages.app.mac.notchCollapsed}</figcaption>
           </figure>
           <figure className="pocha-notch__card">
-            <img src="/assets/pocha/mac/notch-timer.webp" alt={t.pages.app.mac.notchTimerAlt} width="698" height="912" loading="lazy" decoding="async" />
+            <DevicePair phoneScene="duration"><img src="/assets/pocha/mac/notch-timer.webp" alt={t.pages.app.mac.notchTimerAlt} width="698" height="912" loading="lazy" decoding="async" /></DevicePair>
             <figcaption>{t.pages.app.mac.notchTimer}</figcaption>
           </figure>
           <figure className="pocha-notch__card">
-            <img src="/assets/pocha/mac/notch-session.webp" alt={t.pages.app.mac.notchSessionAlt} width="708" height="856" loading="lazy" decoding="async" />
+            <DevicePair phoneScene="focus"><img src="/assets/pocha/mac/notch-session.webp" alt={t.pages.app.mac.notchSessionAlt} width="708" height="856" loading="lazy" decoding="async" /></DevicePair>
             <figcaption>{t.pages.app.mac.notchSession}</figcaption>
           </figure>
         </div>

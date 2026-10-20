@@ -41,8 +41,8 @@ export const blogTranslations = {
       description: 'Everything to launch, maintain, and succeed with your side project: ideas, motivation, work gamification, and tips for freelancers and students.',
     },
     pomocha: {
-      title: 'Pomocha: News & Features',
-      description: 'Updates, releases, and guides about the Pomocha app — the gamified Pomodoro with Chrome extension.',
+      title: 'Pocha: iOS, Android and Mac news',
+      description: 'Pocha releases, updates and behind the scenes on iPhone, iPad, Android and Mac.',
     },
   },
   articles: {
