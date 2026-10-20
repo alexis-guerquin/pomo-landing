@@ -24,8 +24,64 @@ export default function AppPage() {
       metaDescription={t.pages.app.metaDescription}
       h1={t.pages.app.h1}
       intro={t.pages.app.intro}
-      ogImage="https://www.pomocha.fr/assets/pocha/mobile/daily-missions.webp"
+      ogImage="https://www.pomocha.fr/assets/pocha/mac/macbook-notch.webp"
     >
+      <section id="mac" className="page-layout__section pocha-mac-feature" aria-labelledby="pocha-mac-title">
+        <div className="pocha-mac-feature__copy">
+          <p className="pocha-mac-feature__eyebrow">{t.pages.app.mac.eyebrow}</p>
+          <h2 id="pocha-mac-title">{t.pages.app.mac.title}</h2>
+          <p>{t.pages.app.mac.content}</p>
+          <p className="pocha-mac-feature__availability">{t.pages.app.mac.availability}</p>
+        </div>
+        <img
+          src="/assets/pocha/mac/macbook-notch.webp"
+          alt={t.pages.app.mac.heroAlt}
+          width="1714"
+          height="996"
+          loading="eager"
+          fetchPriority="high"
+        />
+      </section>
+
+      <section className="page-layout__section pocha-notch" aria-labelledby="pocha-notch-title">
+        <div className="pocha-notch__heading">
+          <p className="pocha-mac-feature__eyebrow">{t.pages.app.mac.notchEyebrow}</p>
+          <h2 id="pocha-notch-title">{t.pages.app.mac.notchTitle}</h2>
+          <p>{t.pages.app.mac.notchContent}</p>
+        </div>
+        <div className="pocha-notch__grid">
+          <figure className="pocha-notch__card pocha-notch__card--compact">
+            <img src="/assets/pocha/mac/notch-collapsed.webp" alt={t.pages.app.mac.notchCollapsedAlt} width="944" height="616" loading="lazy" decoding="async" />
+            <figcaption>{t.pages.app.mac.notchCollapsed}</figcaption>
+          </figure>
+          <figure className="pocha-notch__card">
+            <img src="/assets/pocha/mac/notch-timer.webp" alt={t.pages.app.mac.notchTimerAlt} width="698" height="912" loading="lazy" decoding="async" />
+            <figcaption>{t.pages.app.mac.notchTimer}</figcaption>
+          </figure>
+          <figure className="pocha-notch__card">
+            <img src="/assets/pocha/mac/notch-session.webp" alt={t.pages.app.mac.notchSessionAlt} width="708" height="856" loading="lazy" decoding="async" />
+            <figcaption>{t.pages.app.mac.notchSession}</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="page-layout__section pocha-mac-desktop" aria-labelledby="pocha-mac-desktop-title">
+        <div className="pocha-mac-desktop__heading">
+          <h2 id="pocha-mac-desktop-title">{t.pages.app.mac.desktopTitle}</h2>
+          <p>{t.pages.app.mac.desktopContent}</p>
+        </div>
+        <div className="pocha-mac-desktop__grid">
+          <figure>
+            <img src="/assets/pocha/mac/mac-home.webp" alt={t.pages.app.mac.homeAlt} width="1120" height="1590" loading="lazy" decoding="async" />
+            <figcaption>{t.pages.app.mac.homeCaption}</figcaption>
+          </figure>
+          <figure>
+            <img src="/assets/pocha/mac/mac-statistics.webp" alt={t.pages.app.mac.statisticsAlt} width="1120" height="1590" loading="lazy" decoding="async" />
+            <figcaption>{t.pages.app.mac.statisticsCaption}</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section className="page-layout__section pocha-mobile-feature">
         <div>
           <p className="pocha-mobile-feature__eyebrow">{t.pages.app.mobile.eyebrow}</p>

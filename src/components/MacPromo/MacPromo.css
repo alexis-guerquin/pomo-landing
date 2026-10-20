@@ -1,0 +1,83 @@
+.mac-promo {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  max-width: 1200px;
+  margin: clamp(4rem, 8vw, 7rem) auto;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: 32px;
+  background: #e9f0df;
+  box-shadow: 0 18px 55px rgba(33, 50, 30, .08);
+}
+
+.mac-promo__eyebrow {
+  display: inline-block;
+  margin-bottom: .8rem;
+  color: #566b35;
+  font-size: .9rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.mac-promo h2 {
+  max-width: 14ch;
+  margin: 0 0 1rem;
+  color: #25352c;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.08;
+}
+
+.mac-promo p {
+  max-width: 48ch;
+  margin: 0;
+  color: #526158;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.mac-promo .mac-promo__availability {
+  margin-top: 1rem;
+  color: #5a6e37;
+  font-size: .95rem;
+  font-weight: 800;
+}
+
+.mac-promo__link {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin-top: 1.5rem;
+  padding: .8rem 1.15rem;
+  border-radius: 14px;
+  background: #5a6e37;
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.mac-promo__link:hover { background: #435329; transform: translateY(-2px); }
+.mac-promo__link:focus-visible { outline: 3px solid #25352c; outline-offset: 3px; }
+
+.mac-promo__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  box-shadow: 0 16px 32px rgba(28, 31, 27, .18);
+}
+
+@media (max-width: 760px) {
+  .mac-promo {
+    grid-template-columns: 1fr;
+    margin: 3rem 1rem;
+    padding: 1.5rem;
+  }
+  .mac-promo h2 { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mac-promo__link { transition: none; }
+}

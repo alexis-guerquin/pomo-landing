@@ -4,6 +4,7 @@ import { MiniFeatureSection } from '../components/MiniFeature';
 import { ScratchToReveal } from '../components/ui/ScratchToReveal';
 import { CTASection } from '../components/CTASection';
 import { ExtensionCTA } from '../components/ExtensionCTA';
+import { MacPromo } from '../components/MacPromo/MacPromo';
 import { Footer } from '../components/Footer';
 import Navbar from '../components/Navbar/Navbar';
 import { LandingPageSEO } from '../components/SEO/LandingPageSEO';
@@ -188,6 +189,7 @@ export default function LandingPage() {
         />
       </section>
 
+      <MacPromo />
       <ExtensionCTA />
 
       {/* Section Call-to-Action */}

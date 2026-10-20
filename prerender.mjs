@@ -39,10 +39,10 @@ function escapeAttribute(value) {
 function pageTemplate(template, content, route) {
   const titleText = plainText(content.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1] || 'Pomocha');
   const intro = plainText(content.match(/<p\b[^>]*class="(?:page-layout__intro|hero-description)"[^>]*>([\s\S]*?)<\/p>/)?.[1] || '');
-  const title = route === '/' ? 'Pocha sur iPhone et Android | Pomocha Pomodoro sur le web'
-    : route === '/app' ? 'Pocha sur iPhone et Android | Application Pomodoro Pomocha'
+  const title = route === '/' ? 'Pocha sur Mac, iPhone et Android | Pomocha Pomodoro sur le web'
+    : route === '/app' ? 'Pocha sur Mac, iPhone et Android | Application Pomodoro Pomocha'
       : `${titleText} | Pomocha`;
-  const description = route === '/' ? 'Découvrez Pocha, l’application Pomodoro sur iPhone et Android : sessions de focus, défis quotidiens, séries et statistiques. Pomocha est aussi disponible sur le web.'
+  const description = route === '/' ? 'Découvrez Pocha sur Mac, iPhone et Android : sessions de focus, minuteur dans l’encoche, séries et statistiques. Pomocha est aussi disponible sur le web.'
     : intro || 'Découvrez Pomocha, le minuteur Pomodoro gamifié et ses outils pour rester concentré.';
   if (!content.includes('<h1')) throw new Error(`Aucun H1 pré-rendu pour ${route}`);
   const canonical = `${siteUrl}${route === '/' ? '/' : route}`;
@@ -58,7 +58,7 @@ function pageTemplate(template, content, route) {
     ['name', 'twitter:url', canonical],
   ];
   if (route === '/app') {
-    const image = `${siteUrl}/assets/pocha/mobile/daily-missions.webp`;
+    const image = `${siteUrl}/assets/pocha/mac/macbook-notch.webp`;
     meta.push(['property', 'og:image', image], ['name', 'twitter:image', image]);
   }
   for (const [attribute, name, value] of meta) {

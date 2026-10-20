@@ -1,3 +1,129 @@
+.pocha-mac-feature {
+  display: grid;
+  gap: 1.5rem;
+  overflow: hidden;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: 28px;
+  background: #e9f0df;
+}
+
+.pocha-mac-feature__copy {
+  max-width: 700px;
+}
+
+.pocha-mac-feature .pocha-mac-feature__availability {
+  display: inline-block;
+  margin: .75rem 0 0;
+  padding: .45rem .85rem;
+  border-radius: 999px;
+  background: #d7e4c2;
+  color: #43552d;
+  font-size: .9rem;
+  font-weight: 800;
+}
+
+.pocha-mac-feature__eyebrow {
+  margin: 0 0 .45rem;
+  color: #5a6e37 !important;
+  font-size: .9rem !important;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.pocha-mac-feature h2,
+.pocha-notch h2,
+.pocha-mac-desktop h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.15;
+}
+
+.pocha-mac-feature > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(38, 48, 39, .15);
+}
+
+.pocha-notch__heading,
+.pocha-mac-desktop__heading {
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+}
+
+.pocha-notch__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.pocha-notch__card,
+.pocha-mac-desktop figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(.85rem, 2vw, 1.5rem);
+  border-radius: 24px;
+  background: #f2f3ef;
+}
+
+.pocha-notch__card img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 390px;
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+.pocha-notch__card--compact img {
+  width: 100%;
+}
+
+.pocha-notch figcaption,
+.pocha-mac-desktop figcaption {
+  margin-top: 1rem;
+  color: #3e5739;
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.pocha-mac-desktop__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pocha-mac-desktop figure {
+  background: #f4f0e9;
+}
+
+.pocha-mac-desktop img {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(36, 34, 31, .12);
+}
+
+@media (max-width: 760px) {
+  .pocha-notch__grid,
+  .pocha-mac-desktop__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pocha-notch__card img {
+    max-height: 380px;
+  }
+}
+
 .pocha-mobile-feature {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(160px, 250px);
