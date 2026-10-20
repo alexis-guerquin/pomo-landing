@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://www.pomocha.fr/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://www.pomocha.fr/features/pomodoro-timer</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://www.pomocha.fr/features/rewards-system</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://www.pomocha.fr/features/statistics</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://www.pomocha.fr/use-cases/students</loc>
@@ -30,14 +30,14 @@
   </url>
   <url>
     <loc>https://www.pomocha.fr/app</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <video:video>
       <video:thumbnail_loc>https://www.pomocha.fr/assets/pocha/mobile/focus-session.webp</video:thumbnail_loc>
       <video:title>Pocha mobile : démonstration de l’application Pomodoro</video:title>
       <video:description>Découvrez une session de concentration, les séries, les statistiques et les récompenses dans cette démonstration de l’application.</video:description>
       <video:content_loc>https://www.pomocha.fr/assets/pocha/mobile/pocha-demo.mp4</video:content_loc>
       <video:duration>73</video:duration>
-      <video:publication_date>2026-10-09T21:11:00Z</video:publication_date>
+      <video:publication_date>2026-10-20T21:11:00Z</video:publication_date>
     </video:video>
   </url>
   <url>
@@ -46,19 +46,19 @@
   </url>
   <url>
     <loc>https://www.pomocha.fr/contact</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://www.pomocha.fr/legal</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://www.pomocha.fr/delete-account</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://www.pomocha.fr/privacy</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-20</lastmod>
   </url>
   <url>
     <loc>https://www.pomocha.fr/community-guidelines</loc>
@@ -128,4 +128,6 @@
     <loc>https://www.pomocha.fr/blog/meilleures-apps-pomodoro-2026</loc>
     <lastmod>2026-10-09</lastmod>
   </url>
+  <url><loc>https://www.pomocha.fr/support</loc><lastmod>2026-10-20</lastmod></url>
+  <url><loc>https://www.pomocha.fr/terms</loc><lastmod>2026-10-20</lastmod></url>
 </urlset>

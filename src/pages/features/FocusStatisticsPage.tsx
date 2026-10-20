@@ -1,3 +1,4 @@
+import { MacScreenshot } from '../../components/MacScreenshot/MacScreenshot';
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
@@ -20,13 +21,7 @@ export default function FocusStatisticsPage() {
         <p>{t.pages.focusStatistics.sections.weeklySummary.content}</p>
         <p>{t.pages.focusStatistics.sections.weeklySummary.billingNote}</p>
         <div className="statistics-visual">
-          <img 
-            src="/visuals/graph.png" 
-            alt="Graphique de temps de travail par projet et par jour de semaine"
-            className="statistics-visual__image"
-            width="1920"
-            height="1080"
-          />
+          <MacScreenshot scene="02-statistics" className="statistics-visual__image" />
         </div>
       </section>
 
@@ -38,13 +33,7 @@ export default function FocusStatisticsPage() {
         <p>{t.pages.focusStatistics.sections.topProjects.content}</p>
         <p>{t.pages.focusStatistics.sections.topProjects.flexibility}</p>
         <div className="statistics-visual">
-          <img 
-            src="/visuals/topprojects.png" 
-            alt="Classement des projets par temps de travail"
-            className="statistics-visual__image"
-            width="1920"
-            height="1080"
-          />
+          <MacScreenshot scene="02-statistics" className="statistics-visual__image" />
         </div>
       </section>
 
@@ -72,13 +61,7 @@ export default function FocusStatisticsPage() {
           <em>{t.pages.focusStatistics.sections.recaps.note}</em>
         </p>
         <div className="statistics-visual">
-          <img 
-            src="/visuals/recaps.png" 
-            alt="Exemple de récapitulatif hebdomadaire POMOCHA"
-            className="statistics-visual__image"
-            width="1920"
-            height="1080"
-          />
+          <MacScreenshot scene="03-streak" className="statistics-visual__image" />
         </div>
       </section>
 

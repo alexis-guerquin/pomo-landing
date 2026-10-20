@@ -487,3 +487,13 @@
   }
 
 }
+
+.hero-mac-image { display: block; width: 100%; border-radius: 16px; }
+.hero-mockups .mockup-laptop { flex: 1 1 520px; }
+.hero-mockups .mockup-phone { flex-basis: 120px; margin-left: -60px; }
+.hero-mockups .phone-image { width: 120px; }
+@media (max-width: 480px) {
+  .hero-mockups { flex-direction: column; }
+  .hero-mockups .mockup-laptop { flex: none; }
+  .hero-mockups .mockup-phone { flex: none; margin-left: 0; }
+}

@@ -1,13 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ThreeDButton from '../ui/3DButton/3dbutton';
 import { useI18n } from '../../contexts/I18nContext';
 import { MobileStoreLinks } from '../MobileStoreLinks/MobileStoreLinks';
 import './CTASection.css';
 
 const CTASection: React.FC = () => {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const navigate = useNavigate();
   const handleCTAClick = () => {
-    window.open('https://www.pomocha.io/', '_blank', 'noopener,noreferrer');
+    navigate('/app');
   };
 
   return (
@@ -17,7 +19,7 @@ const CTASection: React.FC = () => {
           <h2 className="cta-title">{t.components.cta.title}</h2>
           <p className="cta-subtitle">{t.components.cta.subtitle}</p>
           <ThreeDButton
-            text={t.components.cta.button}
+            text={locale === 'fr' ? 'Choisir ma version de Pocha' : 'Find my version of Pocha'}
             onClick={handleCTAClick}
             variant="rectangle"
             color="secondary"

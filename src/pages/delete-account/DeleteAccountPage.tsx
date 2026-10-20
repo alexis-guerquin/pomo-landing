@@ -20,8 +20,8 @@ export default function DeleteAccountPage() {
         action: 'Demander la suppression par e-mail',
         dataTitle: 'Données concernées',
         data: 'La suppression retire les données directement associées à votre compte, notamment votre profil, vos projets, sessions, statistiques, réglages, progression, portefeuille de récompenses, publications, réactions, notifications, relations, signalements et blocages. Des agrégats anonymes qui ne permettent plus de vous identifier peuvent subsister. Certaines informations strictement nécessaires peuvent être conservées lorsque la loi l’impose ou pour prévenir la fraude et les abus.',
-        subscriptionTitle: 'Abonnement Google Play',
-        subscription: 'La suppression du compte ne résilie pas automatiquement un abonnement Google Play. Si vous avez un abonnement actif, annulez-le dans Google Play avant ou après votre demande afin d’éviter tout renouvellement.',
+        subscriptionTitle: 'Abonnements App Store et Google Play',
+        subscription: 'La suppression du compte ne résilie pas automatiquement votre abonnement. Pour éviter un renouvellement, résiliez-le dans les réglages de votre compte Apple pour un achat App Store, ou dans Google Play pour un achat Android.',
         appTitle: 'Depuis l’application',
         app: 'Vous pouvez aussi supprimer votre compte directement dans POCHA : Réglages → Compte → Supprimer mon compte.',
         contactTitle: 'Besoin d’aide ?',
@@ -36,8 +36,8 @@ export default function DeleteAccountPage() {
         action: 'Request deletion by email',
         dataTitle: 'Data covered',
         data: 'Deletion removes data directly associated with your account, including your profile, projects, sessions, statistics, settings, progress, reward wallet, posts, reactions, notifications, connections, reports, and blocks. Anonymous aggregates that can no longer identify you may remain. Strictly necessary information may be retained where required by law or to prevent fraud and abuse.',
-        subscriptionTitle: 'Google Play subscription',
-        subscription: 'Deleting your account does not automatically cancel a Google Play subscription. If you have an active subscription, cancel it in Google Play before or after your request to avoid renewal.',
+        subscriptionTitle: 'App Store and Google Play subscriptions',
+        subscription: 'Deleting your account does not automatically cancel your subscription. To avoid renewal, cancel it in your Apple account settings for App Store purchases, or in Google Play for Android purchases.',
         appTitle: 'From the app',
         app: 'You can also delete your account directly in POCHA: Settings → Account → Delete my account.',
         contactTitle: 'Need help?',
@@ -66,7 +66,7 @@ export default function DeleteAccountPage() {
 
       <section className="page-layout__section">
         <h2>{copy.subscriptionTitle}</h2>
-        <p>{copy.subscription}</p>
+        <p>{copy.subscription}</p><p><a href="https://apps.apple.com/account/subscriptions">Apple</a> · <a href="https://play.google.com/store/account/subscriptions">Google Play</a></p>
       </section>
 
       <section className="page-layout__section">

@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import { MacScreenshot } from '../../components/MacScreenshot/MacScreenshot';
+import { macMedia, macScenes } from '../../config/mac-media';
 import { useState } from 'react';
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
@@ -16,7 +19,7 @@ const screenshots = [
 ] as const;
 
 export default function AppPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [galleryPaused, setGalleryPaused] = useState(false);
   return (
     <PageLayout
@@ -24,7 +27,7 @@ export default function AppPage() {
       metaDescription={t.pages.app.metaDescription}
       h1={t.pages.app.h1}
       intro={t.pages.app.intro}
-      ogImage="https://www.pomocha.fr/assets/pocha/mac/macbook-notch.webp"
+      ogImage={`https://www.pomocha.fr${macMedia(locale, '01-focus')}`}
     >
       <section id="mac" className="page-layout__section pocha-mac-feature" aria-labelledby="pocha-mac-title">
         <div className="pocha-mac-feature__copy">
@@ -33,14 +36,12 @@ export default function AppPage() {
           <p>{t.pages.app.mac.content}</p>
           <p className="pocha-mac-feature__availability">{t.pages.app.mac.availability}</p>
         </div>
-        <img
-          src="/assets/pocha/mac/macbook-notch.webp"
-          alt={t.pages.app.mac.heroAlt}
-          width="1714"
-          height="996"
-          loading="eager"
-          fetchPriority="high"
-        />
+        <MacScreenshot scene="macbook-focus" priority />
+        <div className="pocha-mac-resources">
+          <Link to="/support">{locale === 'fr' ? 'Aide et support Mac' : 'Mac help and support'}</Link>
+          <Link to="/privacy">{locale === 'fr' ? 'Confidentialité' : 'Privacy'}</Link>
+          <Link to="/terms">{locale === 'fr' ? 'Conditions d’utilisation' : 'Terms of use'}</Link>
+        </div>
       </section>
 
       <section className="page-layout__section pocha-notch" aria-labelledby="pocha-notch-title">
@@ -72,14 +73,19 @@ export default function AppPage() {
         </div>
         <div className="pocha-mac-desktop__grid">
           <figure>
-            <img src="/assets/pocha/mac/mac-home.webp" alt={t.pages.app.mac.homeAlt} width="1120" height="1590" loading="lazy" decoding="async" />
+            <MacScreenshot scene="01-focus" window />
             <figcaption>{t.pages.app.mac.homeCaption}</figcaption>
           </figure>
           <figure>
-            <img src="/assets/pocha/mac/mac-statistics.webp" alt={t.pages.app.mac.statisticsAlt} width="1120" height="1590" loading="lazy" decoding="async" />
+            <MacScreenshot scene="02-statistics" window />
             <figcaption>{t.pages.app.mac.statisticsCaption}</figcaption>
           </figure>
         </div>
+      </section>
+
+      <section className="page-layout__section" aria-labelledby="mac-gallery-title">
+        <h2 id="mac-gallery-title">{locale === 'fr' ? 'Votre quotidien, dans Pocha sur Mac' : 'Your day, in Pocha for Mac'}</h2>
+        <div className="pocha-mac-gallery">{macScenes.map(scene => <MacScreenshot key={scene} scene={scene} />)}</div>
       </section>
 
       <section className="page-layout__section pocha-mobile-feature">

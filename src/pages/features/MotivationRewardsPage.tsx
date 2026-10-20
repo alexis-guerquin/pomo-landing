@@ -1,3 +1,4 @@
+import { MacScreenshot } from '../../components/MacScreenshot/MacScreenshot';
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
@@ -27,13 +28,7 @@ export default function MotivationRewardsPage() {
         ))}
 
         <div className="motivation-visual">
-          <img 
-            src="/visuals/dailymissions.png" 
-            alt="Interface des missions quotidiennes avec progression et récompenses"
-            className="motivation-visual__image"
-            width="1920"
-            height="1080"
-          />
+          <MacScreenshot scene="03-streak" className="motivation-visual__image" />
         </div>
       </section>
 
@@ -52,13 +47,7 @@ export default function MotivationRewardsPage() {
         <p style={{ marginTop: 16 }}>{t.pages.motivationRewards.sections.trophies.closing}</p>
 
         <div className="motivation-visual">
-          <img 
-            src="/visuals/trophies.png" 
-            alt="Système de trophées avec différents types et paliers"
-            className="motivation-visual__image"
-            width="1920"
-            height="1080"
-          />
+          <MacScreenshot scene="04-collection" className="motivation-visual__image" />
         </div>
       </section>
 
@@ -93,13 +82,7 @@ export default function MotivationRewardsPage() {
         <p>{t.pages.motivationRewards.sections.badges.rarityClosing}</p>
 
         <div className="motivation-visual">
-          <img 
-            src="/visuals/badges.png" 
-            alt="Système de badges communs et événementiels avec exemples de badges débloqués"
-            className="motivation-visual__image"
-            width="1920"
-            height="1080"
-          />
+          <MacScreenshot scene="04-collection" className="motivation-visual__image" />
         </div>
       </section>
 

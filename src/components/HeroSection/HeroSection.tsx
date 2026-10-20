@@ -1,11 +1,14 @@
 import { m, LazyMotion, domAnimation } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
+import { MacScreenshot } from '../MacScreenshot/MacScreenshot';
 import ThreeDButton from "../ui/3DButton/3dbutton";
 import { MobileStoreLinks } from "../MobileStoreLinks/MobileStoreLinks";
 import { useI18n } from "../../contexts/I18nContext";
 import "./HeroSection.css";
 
 const HeroSection = () => {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const navigate = useNavigate();
   return (
     <LazyMotion features={domAnimation} strict>
       <section className="hero-section" id="hero">
@@ -32,13 +35,13 @@ const HeroSection = () => {
               <p className="hero-description">{t.components.hero.description}</p>
               <div className="hero-cta">
                 <ThreeDButton
-                  text={t.components.hero.cta}
+                  text={locale === 'fr' ? 'Découvrir Pocha sur Mac' : 'Explore Pocha for Mac'}
                   variant="rectangle"
                   color="primary"
                   theme="light"
                   type="button"
                   onClick={() => {
-                    window.location.href = 'https://www.pomocha.io/';
+                    navigate('/app#mac');
                   }}
                 />
                 <p className="available-on">{t.components.hero.availableOn}</p>
@@ -58,24 +61,7 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <div className="laptop-frame">
-                  <div className="laptop-screen">
-                    <div className="laptop-content">
-                    <img
-                      src="/assets/Home-desktop.png"
-                      alt="Application Pomocha - Vue desktop"
-                      className="laptop-image"
-                      fetchPriority="high"
-                      loading="eager"
-                      width="665"
-                      height="316"
-                      sizes="(max-width: 1024px) 450px, 665px"
-                      srcSet="/assets/Home-desktop.png 665w, /assets/Home-desktop.png 450w"
-                    />
-                    </div>
-                  </div>
-                  <div className="laptop-base"></div>
-                </div>
+                <MacScreenshot scene="macbook-focus" className="hero-mac-image" priority />
               </m.div>
 
               {/* Mockup Smartphone */}

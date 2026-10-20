@@ -1,3 +1,4 @@
+import { MacScreenshot } from '../MacScreenshot/MacScreenshot';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../contexts/I18nContext';
 import './MacPromo.css';
@@ -17,15 +18,7 @@ export function MacPromo() {
           {mac.homeCta} <span aria-hidden="true">↗</span>
         </Link>
       </div>
-      <img
-        className="mac-promo__image"
-        src="/assets/pocha/mac/macbook-notch.webp"
-        alt={mac.heroAlt}
-        width="1714"
-        height="996"
-        loading="lazy"
-        decoding="async"
-      />
+      <MacScreenshot scene="macbook-focus" className="mac-promo__image" />
     </section>
   );
 }

@@ -6,7 +6,7 @@
 export const SEO_CONFIG = {
   baseUrl: 'https://www.pomocha.fr',
   siteName: 'Pomocha',
-  defaultTitle: 'Pocha sur iPhone et Android | Pomocha Pomodoro sur le web',
+  defaultTitle: 'Pocha sur Mac, iPhone et Android | Pomocha',
   titleTemplate: '%s | Pomocha',
   
   defaultDescription:
@@ -31,9 +31,11 @@ export const SEO_CONFIG = {
     'Pocha',
     'Pocha iPhone',
     'Pocha Android',
+    'Pocha Mac',
+    'Pomodoro macOS',
   ],
 
-  defaultImage: '/pomocha-og.png',
+  defaultImage: '/assets/pocha/mac/build-4/fr/01-focus.webp',
   
   social: {
     twitter: '@pomocha', // À remplacer par votre handle Twitter
@@ -55,9 +57,9 @@ export const SEO_CONFIG = {
  */
 export const PAGE_SEO = {
   home: {
-    title: 'Pocha sur iPhone et Android | Pomocha Pomodoro sur le web',
+    title: 'Pocha sur Mac, iPhone et Android | Pomocha',
     description:
-      'Téléchargez Pocha sur iPhone et Android pour vos sessions Pomodoro, défis quotidiens et statistiques. Retrouvez Pomocha sur le web.',
+      'Découvrez Pocha sur Mac, iPhone et Android : minuteur dans l’encoche, sessions de focus, séries, récompenses et statistiques.',
     keywords: [
       ...SEO_CONFIG.defaultKeywords,
       'app étudiants',

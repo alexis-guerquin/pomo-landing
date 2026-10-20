@@ -57,8 +57,8 @@ function pageTemplate(template, content, route) {
     ['name', 'twitter:description', description],
     ['name', 'twitter:url', canonical],
   ];
-  if (route === '/app') {
-    const image = `${siteUrl}/assets/pocha/mac/macbook-notch.webp`;
+  if (route === '/app' || route === '/') {
+    const image = `${siteUrl}/assets/pocha/mac/build-4/fr/01-focus.webp`;
     meta.push(['property', 'og:image', image], ['name', 'twitter:image', image]);
   }
   for (const [attribute, name, value] of meta) {
@@ -69,7 +69,7 @@ function pageTemplate(template, content, route) {
   if (route === '/' || route === '/app') {
     const schema = {
       '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'Pocha',
-      applicationCategory: 'ProductivityApplication', operatingSystem: 'iOS, Android',
+      applicationCategory: 'ProductivityApplication', operatingSystem: 'macOS, iOS, iPadOS, Android',
       url: `${siteUrl}/app`,
       downloadUrl: 'https://apps.apple.com/fr/app/pocha-minuteur-pomodoro/id6802377633',
       sameAs: ['https://play.google.com/store/apps/details?id=com.pocha.android'],
@@ -90,7 +90,7 @@ function pageTemplate(template, content, route) {
     html = html.replace('</head>', `<script type="application/ld+json">${JSON.stringify(video)}</script></head>`);
   }
   if (route === '/') {
-    html = html.replace('</head>', '<link rel="preload" as="image" href="/assets/Home-desktop.png" fetchpriority="high" media="(min-width: 769px)"><link rel="preload" as="image" href="/assets/pocha/mobile/focus-session.webp" fetchpriority="high" media="(max-width: 768px)"></head>');
+    html = html.replace('</head>', '<link rel="preload" as="image" href="/assets/pocha/mac/build-4/fr/macbook-focus.webp" fetchpriority="high" media="(min-width: 769px)"><link rel="preload" as="image" href="/assets/pocha/mobile/focus-session.webp" fetchpriority="high" media="(max-width: 768px)"></head>');
   }
   return html;
 }

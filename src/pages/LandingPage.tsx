@@ -1,9 +1,9 @@
+import { macMedia } from '../config/mac-media';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 import HeroSection from '../components/HeroSection';
 import { MiniFeatureSection } from '../components/MiniFeature';
 import { ScratchToReveal } from '../components/ui/ScratchToReveal';
 import { CTASection } from '../components/CTASection';
-import { ExtensionCTA } from '../components/ExtensionCTA';
 import { MacPromo } from '../components/MacPromo/MacPromo';
 import { Footer } from '../components/Footer';
 import Navbar from '../components/Navbar/Navbar';
@@ -23,7 +23,7 @@ const CHARACTER_IMAGES = [
 ];
 
 export default function LandingPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   useSmoothScroll();
 
   const miniFeaturesConfig = useMemo<MiniFeatureData[]>(() => [
@@ -31,12 +31,12 @@ export default function LandingPage() {
       id: 'mini-concept',
       title: t.miniFeatures.concept.title,
       description: t.miniFeatures.concept.description,
-      visual: '/visuals/concept.png',
+      visual: macMedia(locale, '01-focus'),
       visualAlt: t.miniFeatures.concept.visualAlt,
       features: t.miniFeatures.concept.items,
       cta: {
         text: t.miniFeatures.concept.cta,
-        link: 'https://www.pomocha.io/'
+        link: '/app#mac'
       },
       moreInfoLink: '/features/pomodoro-timer'
     },
@@ -44,12 +44,12 @@ export default function LandingPage() {
       id: 'mini-rewards',
       title: t.miniFeatures.rewards.title,
       description: t.miniFeatures.rewards.description,
-      visual: '/visuals/rec.png',
+      visual: macMedia(locale, '04-collection'),
       visualAlt: t.miniFeatures.rewards.visualAlt,
       features: t.miniFeatures.rewards.items,
       cta: {
         text: t.miniFeatures.rewards.cta,
-        link: 'https://www.pomocha.io/'
+        link: '/app#mac'
       },
       moreInfoLink: '/features/rewards-system'
     },
@@ -57,12 +57,12 @@ export default function LandingPage() {
       id: 'mini-stats',
       title: t.miniFeatures.statistics.title,
       description: t.miniFeatures.statistics.description,
-      visual: '/visuals/stats.png',
+      visual: macMedia(locale, '02-statistics'),
       visualAlt: t.miniFeatures.statistics.visualAlt,
       features: t.miniFeatures.statistics.items,
       cta: {
         text: t.miniFeatures.statistics.cta,
-        link: 'https://www.pomocha.io/'
+        link: '/app#mac'
       },
       moreInfoLink: '/features/statistics'
     },
@@ -75,10 +75,10 @@ export default function LandingPage() {
       features: t.miniFeatures.more.items,
       cta: {
         text: t.miniFeatures.more.cta,
-        link: 'https://www.pomocha.io/'
+        link: '/app#mac'
       }
     }
-  ], [t]);
+  ], [t, locale]);
 
   // Identique côté serveur et navigateur pour éviter un remplacement du DOM à l'hydratation.
   const [currentCharacter] = useState<string>(CHARACTER_IMAGES[1]);
@@ -190,7 +190,6 @@ export default function LandingPage() {
       </section>
 
       <MacPromo />
-      <ExtensionCTA />
 
       {/* Section Call-to-Action */}
       <section id="cta" aria-label={t.components.landingPage.ariaLabels.cta}>

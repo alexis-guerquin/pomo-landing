@@ -1,6 +1,7 @@
 import { usePageMeta } from '../../hooks/usePageMeta';
 import { useStructuredData } from '../../hooks/useStructuredData';
 import type { StructuredData } from '../../hooks/useStructuredData';
+import { macMedia } from '../../config/mac-media';
 import { SEO_CONFIG } from '../../config/seo.config';
 import { useI18n } from '../../contexts/I18nContext';
 
@@ -18,7 +19,8 @@ export function LandingPageSEO() {
     canonicalUrl: BASE_URL,
     ogTitle: homeSEO.title,
     ogDescription: homeSEO.description,
-    ogImage: `${BASE_URL}${SEO_CONFIG.defaultImage}`,
+    ogImage: `${BASE_URL}${macMedia(locale, '01-focus')}`,
+    twitterImage: `${BASE_URL}${macMedia(locale, '01-focus')}`,
     ogUrl: BASE_URL,
     ogType: 'website',
     ogLocale: locale === 'fr' ? 'fr_FR' : 'en_US',
@@ -78,7 +80,7 @@ export function LandingPageSEO() {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
       name: 'Pocha',
-      operatingSystem: 'iOS, Android',
+      operatingSystem: 'macOS, iOS, iPadOS, Android',
       applicationCategory: 'ProductivityApplication',
       url: `${BASE_URL}/app`,
       downloadUrl: 'https://apps.apple.com/fr/app/pocha-minuteur-pomodoro/id6802377633',

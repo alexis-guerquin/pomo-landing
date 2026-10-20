@@ -20,7 +20,7 @@ function HoveredLink({
 }
 
 const Navbar = () => {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -121,13 +121,13 @@ const Navbar = () => {
         <div className="navbar-actions">
           <LanguageSwitcher />
           <ThreeDButton
-            text={t.components.navbar.cta}
+            text={locale === 'fr' ? 'Découvrir Pocha' : 'Explore Pocha'}
             variant="rectangle"
             color="primary"
             theme="light"
             type="button"
             onClick={() => {
-              window.open('https://www.pomocha.io/', '_blank', 'noopener,noreferrer');
+              navigate('/app');
             }}
           />
 

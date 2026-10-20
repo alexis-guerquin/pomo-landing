@@ -5,7 +5,7 @@ import { useI18n } from '../../contexts/I18nContext';
 import { APP_STORE_URL, GOOGLE_PLAY_URL } from '../MobileStoreLinks/MobileStoreLinks';
 
 export default function Footer() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const [showContact, setShowContact] = useState(false);
   const [copied, setCopied] = useState(false);
   const location = useLocation();
@@ -80,19 +80,21 @@ export default function Footer() {
           href: '/legal',
           isRoute: true,
         },
+        { title: locale === 'fr' ? 'Conditions d’utilisation' : 'Terms of use', href: '/terms', isRoute: true },
+        { title: locale === 'fr' ? 'Supprimer mon compte' : 'Delete my account', href: '/delete-account', isRoute: true },
         {
-          title: 'Confidentialité / Privacy',
+          title: locale === 'fr' ? 'Confidentialité' : 'Privacy policy',
           href: '/privacy',
           isRoute: true,
         },
         {
-          title: 'Communauté / Community',
+          title: locale === 'fr' ? 'Règles de la communauté' : 'Community guidelines',
           href: '/community-guidelines',
           isRoute: true,
         },
       ],
     },
-  ], [t]);
+  ], [t, locale]);
 
   const handleContactClick = () => {
     setShowContact(!showContact);
@@ -187,6 +189,7 @@ export default function Footer() {
           <div className="footer-link-column">
             <h3 className="footer-column-title">{t.components.footer.categories.contact}</h3>
             <div className="footer-column-links">
+              <a className="footer-link" href="/support">{locale === 'fr' ? 'Aide et support' : 'Help and support'}</a>
               <button
                 onClick={handleContactClick}
                 className="footer-link footer-link-button">
@@ -196,7 +199,6 @@ export default function Footer() {
                 <div className="footer-contact-email">
                   <a 
                     href="mailto:team@pomocha.fr"
-                    onClick={copyToClipboard}
                     className="footer-email-link">
                     team@pomocha.fr
                   </a>

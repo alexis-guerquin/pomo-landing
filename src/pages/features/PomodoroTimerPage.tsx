@@ -1,3 +1,4 @@
+import { MacScreenshot } from '../../components/MacScreenshot/MacScreenshot';
 import { CTASection } from '../../components/CTASection';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
@@ -49,16 +50,7 @@ export default function PomodoroTimerPage() {
 
       <section className="page-layout__section">
         <div className="pomodoro-visual pomodoro-visual--single">
-          <picture>
-            <source media="(min-width: 768px)" srcSet="/visuals/expl/home-laptop.png" />
-            <img 
-              src="/visuals/expl/home-mobile.png" 
-              alt="Interface Pomodoro : timer, statistiques, projets et todolist"
-              className="pomodoro-visual__image"
-              width="390"
-              height="844"
-            />
-          </picture>
+          <MacScreenshot scene="01-focus" className="pomodoro-visual__image" />
         </div>
       </section>
 
@@ -75,20 +67,8 @@ export default function PomodoroTimerPage() {
         </ul>
         <p>{t.pages.pomodoroTimer.sections.sessionEnd.closing}</p>
         <div className="pomodoro-visual" style={{ marginBottom: '5em' }}>
-          <img 
-            src="/visuals/sessionend.png" 
-            alt="Récapitulatif de fin de session avec XP gagné, badges débloqués et suggestions de pause"
-            className="pomodoro-visual__image"
-            width="1920"
-            height="1080"
-          />
-          <img 
-            src="/visuals/break.jpg" 
-            alt="suggestions de pause"
-            className="pomodoro-visual__image"
-            width="1920"
-            height="1080"
-          />
+          <MacScreenshot scene="04-collection" className="pomodoro-visual__image" />
+          <MacScreenshot scene="03-streak" className="pomodoro-visual__image" />
         </div>
       </section>
 

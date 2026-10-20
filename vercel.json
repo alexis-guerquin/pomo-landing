@@ -115,6 +115,14 @@
     {
       "source": "/blog/meilleures-apps-pomodoro-2026",
       "destination": "/blog/meilleures-apps-pomodoro-2026/index.html"
+    },
+    {
+      "source": "/support",
+      "destination": "/support/index.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms/index.html"
     }
   ],
   "headers": [

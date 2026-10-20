@@ -10,7 +10,7 @@ export const MINI_FEATURES_CONFIG: MiniFeatureData[] = [
     id: 'mini-concept',
     title: 'Concept',
     description: 'Organisez votre travail avec la méthode Pomodoro. Adaptez vos séances de productivité en restant concentré tout du long grâce à ce système.',
-    visual: '/visuals/concept.png',
+    visual: '/assets/pocha/mac/build-4/fr/01-focus.webp',
     visualAlt: 'Interface du timer Pomodoro',
     features: [
       'Timer Pomodoro personnalisable avec sessions de travail et pauses',
@@ -28,7 +28,7 @@ export const MINI_FEATURES_CONFIG: MiniFeatureData[] = [
     id: 'mini-rewards',
     title: 'Récompenses',
     description: 'Utilisez ce système gamifié pour vous pousser à aller plus loin. Gagnez des badges et trophées pour rester motivé.',
-    visual: '/visuals/rec.png',
+    visual: '/assets/pocha/mac/build-4/fr/04-collection.webp',
     visualAlt: 'Badges et récompenses',
     features: [
       'Missions quotidiennes pour maintenir votre motivation',
@@ -46,7 +46,7 @@ export const MINI_FEATURES_CONFIG: MiniFeatureData[] = [
     id: 'mini-stats',
     title: 'Statistiques',
     description: 'Suivez votre progression avec des analytics détaillés. Découpez facilement vos sessions par projets, pour un usage professionnel ou personnel.',
-    visual: '/visuals/stats.png',
+    visual: '/assets/pocha/mac/build-4/fr/02-statistics.webp',
     visualAlt: 'Graphiques de statistiques',
     features: [
       'Graphiques détaillés de votre temps de travail',

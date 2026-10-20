@@ -29,12 +29,12 @@ export const FEATURES_CONFIG: Feature[] = [
     features: [
       {
         name: 'Timer Pomodoro intelligent',
-        icon: '/visuals/timer.png',
+        icon: '/assets/pocha/mac/build-4/fr/01-focus.webp',
         description: 'Lancez un timer personnalisable avec suivi du temps de la journée'
       },
       {
         name: 'Gestion de projets',
-        icon: '/visuals/topprojects.png',
+        icon: '/assets/pocha/mac/build-4/fr/02-statistics.webp',
         description: 'Organisez vos projets et reliez vos tâches pour un suivi optimal'
       },
       {
@@ -55,17 +55,17 @@ export const FEATURES_CONFIG: Feature[] = [
     features: [
       {
         name: 'Missions Quotidiennes',
-        icon: '/visuals/dailymissions.png',
+        icon: '/assets/pocha/mac/build-4/fr/03-streak.webp',
         description: 'Complétez des objectifs journaliers pour maintenir votre motivation'
       },
       {
         name: 'Avancée dans les trophées',
-        icon: '/visuals/trophies.png',
+        icon: '/assets/pocha/mac/build-4/fr/04-collection.webp',
         description: 'Progressez à travers différents niveaux de trophées'
       },
       {
         name: 'Badges',
-        icon: '/visuals/badges.png',
+        icon: '/assets/pocha/mac/build-4/fr/04-collection.webp',
         description: 'Débloquez des badges en accomplissant des défis spécifiques'
       },
       {
@@ -91,17 +91,17 @@ export const FEATURES_CONFIG: Feature[] = [
     features: [
       {
         name: 'Statistiques de temps de travail',
-        icon: '/visuals/graph.png',
+        icon: '/assets/pocha/mac/build-4/fr/02-statistics.webp',
         description: 'Analysez vos heures de travail avec des graphiques détaillés'
       },
       {
         name: 'Statistiques par projets',
-        icon: '/visuals/topprojects.png',
+        icon: '/assets/pocha/mac/build-4/fr/02-statistics.webp',
         description: 'Suivez le temps passé sur chaque projet pour un usage plus professionnel'
       },
       {
         name: 'Visualisation de la progression',
-        icon: '/visuals/grid.png',
+        icon: '/assets/pocha/mac/build-4/fr/03-streak.webp',
         description: 'Consultez votre évolution au fil du temps avec des graphiques interactifs'
       }
     ],

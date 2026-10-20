@@ -16,6 +16,8 @@ import AboutPage from './pages/about/AboutPage';
 import ConceptPage from './pages/concept/ConceptPage';
 import AppPage from './pages/app/AppPage';
 import ExtensionPage from './pages/extension/ExtensionPage';
+import SupportPage from './pages/support/SupportPage';
+import TermsPage from './pages/terms/TermsPage';
 import ContactPage from './pages/contact/ContactPage';
 import LegalPage from './pages/legal/LegalPage';
 import DeleteAccountPage from './pages/delete-account/DeleteAccountPage';
@@ -39,6 +41,8 @@ export default function AppSSR() {
         <Route path="/concept" element={<ConceptPage />} />
         <Route path="/app" element={<AppPage />} />
         <Route path="/extension" element={<ExtensionPage />} />
+        <Route path="/support" element={<SupportPage />} />
+        <Route path="/terms" element={<TermsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/legal" element={<LegalPage />} />
         <Route path="/delete-account" element={<DeleteAccountPage />} />

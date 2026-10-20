@@ -12,6 +12,10 @@ export default function LegalPage() {
       intro={t.pages.legal.intro}
     >
       <section className="page-layout__section">
+        <h2>{locale === 'fr' ? 'Informations sur l’application POCHA' : 'POCHA app information'}</h2>
+        <p><Link to="/support">{locale === 'fr' ? 'Aide et support' : 'Help and support'}</Link>{' · '}<Link to="/privacy">{locale === 'fr' ? 'Politique de confidentialité' : 'Privacy policy'}</Link>{' · '}<Link to="/terms">{locale === 'fr' ? 'Conditions d’utilisation et licence Apple' : 'Terms of use and Apple license'}</Link></p>
+      </section>
+      <section className="page-layout__section">
         <h2>{t.pages.legal.sections.editor.title}</h2>
         <p>{t.pages.legal.sections.editor.content}</p>
         <ul className="page-layout__list">
