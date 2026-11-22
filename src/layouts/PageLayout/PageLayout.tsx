@@ -1,5 +1,5 @@
 import { SiteFooter, SiteHeader } from '../../components/SiteChrome/SiteChrome';
-import PageSeo from '../../components/SEO/PageSeo';
+import PageMetadata from '../../components/SEO/PageMetadata';
 import './PageLayout.css';
 
 type PageLayoutProps = {
@@ -19,7 +19,7 @@ export function PageLayout({
 }: PageLayoutProps) {
   return (
     <div className="page-layout">
-      <PageSeo title={htmlTitle} description={metaDescription} />
+      <PageMetadata title={htmlTitle} description={metaDescription} />
       <SiteHeader />
 
       <main className="page-layout__main">

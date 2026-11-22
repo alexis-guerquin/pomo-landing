@@ -1,5 +1,5 @@
 import { SiteFooter, SiteHeader } from '../components/SiteChrome/SiteChrome';
-import PageSeo from '../components/SEO/PageSeo';
+import PageMetadata from '../components/SEO/PageMetadata';
 import { landingImages, landingMeta, landingSchema, platforms, siteUrl } from '../config/landing';
 import { localizedPath } from '../config/routes';
 import { useI18n } from '../contexts/I18nContext';
@@ -18,7 +18,7 @@ export default function LandingPage() {
 
   return (
     <>
-      <PageSeo {...meta} />
+      <PageMetadata {...meta} />
       <SiteHeader />
       <main className="pocha-home">
         <script type="application/ld+json">{JSON.stringify(schema)}</script>

@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { siteUrl, socialImage } from '../../config/landing';
 import { findPage, localizedPath } from '../../config/routes';
 
-export default function PageSeo({ title, description }: { title: string; description?: string }) {
+export default function PageMetadata({ title, description }: { title: string; description?: string }) {
   const { pathname } = useLocation();
   const page = findPage(pathname);
   if (!page) return <><title>{title}</title><meta name="robots" content="noindex" /></>;
