@@ -2,46 +2,44 @@ import { renderToPipeableStream } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { StrictMode } from 'react';
 import { Writable } from 'node:stream';
+import { findPage } from './config/routes';
 import { I18nProvider } from './contexts/I18nContext';
-import AppSSR from './AppSSR';
+import App from './App';
 
-/**
- * Prérendu d'une URL en HTML statique.
- * Utilise renderToPipeableStream pour supporter Suspense et les imports dynamiques.
- */
 export function render(url: string): Promise<string> {
   return new Promise((resolve, reject) => {
     const parts: string[] = [];
-
     const writable = new Writable({
-      write(chunk: unknown, _enc: string, cb: () => void) {
-        parts.push(String(chunk));
-        cb();
+      write(chunk: Buffer, _encoding, done) {
+        parts.push(chunk.toString());
+        done();
       },
-      final(cb: () => void) {
+      final(done) {
         resolve(parts.join(''));
-        cb();
+        done();
       },
     });
 
     const { pipe } = renderToPipeableStream(
-      <StrictMode>
-        <StaticRouter location={url}>
-          <I18nProvider>
-            <AppSSR />
-          </I18nProvider>
-        </StaticRouter>
-      </StrictMode>,
+      <html lang={findPage(url)?.locale ?? 'fr'}>
+        <head />
+        <body>
+          <div id="root">
+            <StrictMode>
+              <StaticRouter location={url}>
+                <I18nProvider><App /></I18nProvider>
+              </StaticRouter>
+            </StrictMode>
+          </div>
+        </body>
+      </html>,
       {
-        onAllReady() {
-          pipe(writable);
-        },
-        onError(err: unknown) {
-          reject(err);
-        },
-      }
+        onAllReady() { pipe(writable); },
+        onError: reject,
+      },
     );
   });
 }
 
-export { releaseMetadata } from './content/releases';
+export { siteUrl, landingImages } from './config/landing';
+export { pages } from './config/routes';

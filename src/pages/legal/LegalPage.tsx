@@ -1,3 +1,4 @@
+import { localizedPath } from '../../config/routes';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
 import { Link } from 'react-router-dom';
@@ -13,7 +14,7 @@ export default function LegalPage() {
     >
       <section className="page-layout__section">
         <h2>{locale === 'fr' ? 'Informations sur l’application POCHA' : 'POCHA app information'}</h2>
-        <p><Link to="/support">{locale === 'fr' ? 'Aide et support' : 'Help and support'}</Link>{' · '}<Link to="/privacy">{locale === 'fr' ? 'Politique de confidentialité' : 'Privacy policy'}</Link>{' · '}<Link to="/terms">{locale === 'fr' ? 'Conditions d’utilisation et licence Apple' : 'Terms of use and Apple license'}</Link></p>
+        <p><Link to={localizedPath('/support', locale)}>{locale === 'fr' ? 'Aide et support' : 'Help and support'}</Link>{' · '}<Link to={localizedPath('/privacy', locale)}>{locale === 'fr' ? 'Politique de confidentialité' : 'Privacy policy'}</Link>{' · '}<Link to={localizedPath('/terms', locale)}>{locale === 'fr' ? 'Conditions d’utilisation et licence Apple' : 'Terms of use and Apple license'}</Link></p>
       </section>
       <section className="page-layout__section">
         <h2>{t.pages.legal.sections.editor.title}</h2>
@@ -39,11 +40,11 @@ export default function LegalPage() {
         <h2>{t.pages.legal.sections.data.title}</h2>
         <p>{t.pages.legal.sections.data.content}</p>
         <p style={{ marginTop: 12 }}>
-          <Link to="/privacy">
+          <Link to={localizedPath('/privacy', locale)}>
             {locale === 'fr' ? 'Consulter la politique de confidentialité' : 'Read the privacy policy'}
           </Link>
           {' · '}
-          <Link to="/delete-account">
+          <Link to={localizedPath('/delete-account', locale)}>
             {locale === 'fr' ? 'Demander la suppression de votre compte et de vos données' : 'Request deletion of your account and data'}
           </Link>
         </p>
@@ -52,7 +53,7 @@ export default function LegalPage() {
       <section className="page-layout__section">
         <h2>{locale === 'fr' ? 'Communauté POCHA' : 'POCHA community'}</h2>
         <p>
-          <Link to="/community-guidelines">
+          <Link to={localizedPath('/community-guidelines', locale)}>
             {locale === 'fr' ? 'Consulter les règles de la communauté' : 'Read the community guidelines'}
           </Link>
         </p>

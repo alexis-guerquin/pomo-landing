@@ -1,4 +1,5 @@
 import { StrictMode } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
@@ -11,6 +12,7 @@ const app = (
     <BrowserRouter>
       <I18nProvider>
         <App />
+        <Analytics />
       </I18nProvider>
     </BrowserRouter>
   </StrictMode>

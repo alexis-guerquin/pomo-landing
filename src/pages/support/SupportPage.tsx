@@ -1,3 +1,4 @@
+import { localizedPath } from '../../config/routes';
 import { Link } from 'react-router-dom';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
@@ -53,7 +54,7 @@ export default function SupportPage() {
       <div className="support-faq">{copy.faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div>
     </section>
     <section className="page-layout__section"><h2>{copy.account}</h2><div className="support-resources">
-      <Link to="/privacy">{copy.privacy}</Link><Link to="/terms">{copy.terms}</Link><Link to="/delete-account">{copy.deletion}</Link>
+      <Link to={localizedPath('/privacy', locale)}>{copy.privacy}</Link><Link to={localizedPath('/terms', locale)}>{copy.terms}</Link><Link to={localizedPath('/delete-account', locale)}>{copy.deletion}</Link>
       <a href="https://apps.apple.com/account/subscriptions" target="_blank" rel="noopener noreferrer">{copy.subscriptions}</a>
     </div></section>
   </PageLayout>;

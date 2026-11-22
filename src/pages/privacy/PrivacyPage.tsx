@@ -1,3 +1,4 @@
+import { localizedPath } from '../../config/routes';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
 
@@ -50,7 +51,7 @@ export default function PrivacyPage() {
     <PageLayout htmlTitle={copy.title} metaDescription={copy.description} h1={copy.title} intro={copy.intro}>
       {copy.sections.map(([title, body]) => <section className="page-layout__section" key={title}><h2>{title}</h2><p>{body}</p></section>)}
       <section className="page-layout__section">
-        <p><a href="/delete-account">{copy.deletion}</a> · <a href={`mailto:${supportEmail}`}>{supportEmail}</a></p>
+        <p><a href={localizedPath('/delete-account', locale)}>{copy.deletion}</a> · <a href={`mailto:${supportEmail}`}>{supportEmail}</a></p>
       </section>
     </PageLayout>
   );

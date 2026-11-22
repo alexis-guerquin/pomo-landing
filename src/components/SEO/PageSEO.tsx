@@ -1,82 +1,36 @@
-import { usePageMeta } from '../../hooks/usePageMeta';
-import { useStructuredData } from '../../hooks/useStructuredData';
-import type { WebPageSchema, BreadcrumbSchema } from '../../hooks/useStructuredData';
-import { SEO_CONFIG } from '../../config/seo.config';
+import { useLocation } from 'react-router-dom';
+import { siteUrl, socialImage } from '../../config/landing';
+import { findPage, localizedPath } from '../../config/routes';
 
-interface PageSEOProps {
-  title: string;
-  description: string;
-  keywords?: string[];
-  path: string;
-  ogImage?: string;
-  breadcrumbs?: Array<{ name: string; url: string }>;
+export default function PageSeo({ title, description }: { title: string; description?: string }) {
+  const { pathname } = useLocation();
+  const page = findPage(pathname);
+  if (!page) return <><title>{title}</title><meta name="robots" content="noindex" /></>;
+
+  const canonical = `${siteUrl}${page.url}`;
+
+  return (
+    <>
+      <title>{title}</title>
+      {description && <meta name="description" content={description} />}
+      <link rel="canonical" href={canonical} />
+      <link rel="alternate" hrefLang="fr" href={`${siteUrl}${localizedPath(page.path, 'fr')}`} />
+      <link rel="alternate" hrefLang="en" href={`${siteUrl}${localizedPath(page.path, 'en')}`} />
+      <link rel="alternate" hrefLang="x-default" href={`${siteUrl}${localizedPath(page.path, 'fr')}`} />
+      <meta name="robots" content="index, follow, max-image-preview:large" />
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Pocha" />
+      <meta property="og:locale" content={page.locale === 'fr' ? 'fr_FR' : 'en_US'} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:title" content={title} />
+      {description && <meta property="og:description" content={description} />}
+      <meta property="og:image" content={socialImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={page.locale === 'fr'
+        ? 'Icône officielle de Pocha, le minuteur Pomodoro au capybara'
+        : 'Official Pocha app icon, a capybara for the Pomodoro timer'} />
+      <meta name="twitter:card" content="summary_large_image" />
+    </>
+  );
 }
-
-/**
- * Composant SEO réutilisable pour toutes les pages
- * Gère automatiquement les meta tags et les données structurées
- */
-export function PageSEO({
-  title,
-  description,
-  keywords = SEO_CONFIG.defaultKeywords,
-  path,
-  ogImage = SEO_CONFIG.defaultImage,
-  breadcrumbs = [],
-}: PageSEOProps) {
-  const fullUrl = `${SEO_CONFIG.baseUrl}${path}`;
-  const fullImageUrl = ogImage.startsWith('http') 
-    ? ogImage 
-    : `${SEO_CONFIG.baseUrl}${ogImage}`;
-
-  // Meta tags
-  usePageMeta({
-    title,
-    description,
-    keywords: keywords.join(', '),
-    canonicalUrl: fullUrl,
-    ogTitle: title,
-    ogDescription: description,
-    ogImage: fullImageUrl,
-    ogUrl: fullUrl,
-    ogType: 'website',
-    twitterCard: 'summary_large_image',
-    twitterTitle: title,
-    twitterDescription: description,
-    twitterImage: fullImageUrl,
-  });
-
-  // Données structurées
-  const webPageSchema: WebPageSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: title,
-    url: fullUrl,
-    description,
-    isPartOf: {
-      '@type': 'WebSite',
-      url: SEO_CONFIG.baseUrl,
-    },
-  };
-
-  // Ajouter le breadcrumb si fourni
-  if (breadcrumbs.length > 0) {
-    const breadcrumbSchema: BreadcrumbSchema = {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: breadcrumbs.map((crumb, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: crumb.name,
-        item: crumb.url,
-      })),
-    };
-    
-    webPageSchema.breadcrumb = breadcrumbSchema;
-  }
-
-  useStructuredData(webPageSchema);
-
-  return null;
-}
-
