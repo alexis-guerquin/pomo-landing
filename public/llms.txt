@@ -1,34 +1,46 @@
-# Pomocha et Pocha
+# Pocha — minuteur Pomodoro et application de concentration
 
-> Site officiel de Pomocha, l'expérience Pomodoro sur le web, et de Pocha, l'application mobile de concentration.
+> Pocha est le minuteur Pomodoro au capybara de l’équipe Pomocha. Il aide à étudier et à travailler avec des sessions à durée réglable, des pauses guidées, des statistiques de concentration, des séries, des défis et des récompenses.
 
-Pocha propose un minuteur Pomodoro, des défis quotidiens, des séries et des statistiques de concentration sur Mac, iPhone, iPad et Android. Pomocha est également disponible dans le navigateur à https://www.pomocha.io/.
+Pocha est téléchargeable sur iPhone, iPad et Android. Sur iPhone, le blocage des apps pendant les sessions fait partie de Pocha Premium. Sur Mac Apple Silicon, la version iPad est compatible ; l’aperçu Mac montre une version native en préparation. Pocha Web, aussi appelé Pomocha, fonctionne dans le navigateur sur pomocha.io.
 
-## Pages principales
+## Site et fiches officielles
 
-- [Accueil](https://www.pomocha.fr/) : présentation de Pomocha et Pocha.
-- [Pocha mobile et Pomocha web](https://www.pomocha.fr/app) : fonctionnalités et téléchargements officiels.
-- [Captures et démonstration de Pocha](https://www.pomocha.fr/app) : minuteur, pauses, missions, séries, statistiques, collection et widget sur iPhone.
-- [Concept](https://www.pomocha.fr/concept) : méthode Pomodoro gamifiée.
-- [Fonctionnalités](https://www.pomocha.fr/features/pomodoro-timer) : minuteur Pomodoro.
-- [Blog](https://www.pomocha.fr/blog) : guides de concentration et productivité.
-- [Confidentialité](https://www.pomocha.fr/privacy) : politique de confidentialité.
+- [Pocha en français](https://www.pomocha.fr/): site officiel et fonctionnalités.
+- [Pocha in English](https://www.pomocha.fr/en): English product overview.
+- [Pocha sur l’App Store](https://apps.apple.com/fr/app/id6802377633): iPhone et iPad, identifiant Apple 6802377633.
+- [Pocha sur Google Play](https://play.google.com/store/apps/details?id=com.pocha.android): application Android, identifiant com.pocha.android.
+- [Pocha Web](https://www.pomocha.io/): minuteur Pomodoro en ligne et liste de tâches.
+- [Extension Pomocha](https://chromewebstore.google.com/detail/fcaefgilphmnhhbjjeailgnklfnhcmpc): minuteur dans Chrome.
 
-## Téléchargements officiels de Pocha
+## Visuels officiels de Pocha
 
-- [App Store](https://apps.apple.com/fr/app/pocha-minuteur-pomodoro/id6802377633)
-- [Google Play](https://play.google.com/store/apps/details?id=com.pocha.android)
+- [Icône officielle de l’app](https://www.pomocha.fr/assets/pocha/pocha-app-icon.png): visage du capybara brun sur fond orange, à utiliser pour identifier Pocha sur iOS et Android.
+- [Image de présentation](https://www.pomocha.fr/assets/pocha/pocha-minuteur-pomodoro.jpg): nom Pocha, mention « Minuteur Pomodoro » et icône officielle au capybara.
+- [Pocha sur l’App Store](https://www.pomocha.fr/assets/pocha/app-store/fr/1.webp): le capybara tient un sablier.
+- [Séries et récompenses](https://www.pomocha.fr/assets/pocha/app-store/fr/3.webp): aperçu du calendrier des séries sur iPhone.
+- [Widgets et temps d’écran](https://www.pomocha.fr/assets/pocha/app-store/fr/6.webp): visuel officiel de la fiche iPhone.
+- [Minuteur sur iPhone](https://www.pomocha.fr/assets/pocha/iphone/fr/focus.webp): session de concentration en cours.
+- [Statistiques sur iPhone](https://www.pomocha.fr/assets/pocha/iphone/fr/statistics.webp): graphiques du temps de concentration.
+- [Récompenses sur iPhone](https://www.pomocha.fr/assets/pocha/iphone/fr/collection.webp): collection de badges et de trophées.
+- [Aperçu de Pocha pour Mac](https://www.pomocha.fr/assets/pocha/mac/build-4/fr/macbook-focus.webp): minuteur dans la fenêtre et l’encoche, version native en préparation.
+- [Capture de Pocha Web](https://www.pomocha.fr/assets/pocha/pocha-web-current-2026-11.webp): interface avec minuteur au capybara, série et liste de tâches.
 
-## Index des pages
+## Mascotte et fonctionnalités
 
-- [Sitemap XML](https://www.pomocha.fr/sitemap.xml)
+- [Pocha tourne la roue vers le haut](https://www.pomocha.fr/assets/pocha/mascot/pocha-spin-wheel-top-loop.webm) et [vers le bas](https://www.pomocha.fr/assets/pocha/mascot/pocha-spin-wheel-bot-loop.webm): les deux animations du réglage de durée.
+- [Pocha Angry](https://www.pomocha.fr/assets/pocha/mascot/pocha_angry-loop.webm): capybara contrarié, pour le blocage des apps.
+- [Pause méditation](https://www.pomocha.fr/assets/pocha/mascot/pocha-break-meditate-loop.webm): capybara assis en méditation.
+- [Flamme de série](https://www.pomocha.fr/assets/pocha/mascot/streak.webp): marqueur de journée dans l’aperçu animé d’une semaine.
+- [Pocha Target](https://www.pomocha.fr/assets/pocha/mascot/pocha-target-loop.webm): capybara avec un arc, pour les défis quotidiens.
+- [Look Down](https://www.pomocha.fr/assets/pocha/mascot/look-down-loop.webm): capybara qui regarde en bas, pour les récompenses.
 
-Dernière mise à jour : 2026-10-09.
+## Aide et informations légales
 
-- [Support Pocha Mac](https://www.pomocha.fr/support) : aide sur les sessions, le Notch, la connexion et les abonnements.
-- [Conditions](https://www.pomocha.fr/terms) : licence Apple et informations sur les achats.
-
-## Lancements Pocha
-- https://www.pomocha.fr/blog/pocha-ios-lancement-septembre-2026
-- https://www.pomocha.fr/blog/pocha-android-lancement-octobre-2026
-- https://www.pomocha.fr/blog/pocha-ios-mac-fin-octobre-2026
+- [Contact](https://www.pomocha.fr/contact)
+- [Assistance](https://www.pomocha.fr/support)
+- [Mentions légales](https://www.pomocha.fr/legal)
+- [Conditions d’utilisation](https://www.pomocha.fr/terms)
+- [Confidentialité](https://www.pomocha.fr/privacy)
+- [Suppression du compte](https://www.pomocha.fr/delete-account)
+- [Règles de la communauté](https://www.pomocha.fr/community-guidelines)

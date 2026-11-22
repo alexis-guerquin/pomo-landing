@@ -1,0 +1,105 @@
+@font-face {
+  font-family: Nunito;
+  src: url('/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+}
+
+:root {
+  --site-paper: #faf7ef;
+  --site-ink: #292018;
+  --site-muted: #5e5045;
+  --site-line: #e2d9cb;
+  --site-accent: #a63b14;
+}
+
+body {
+  background: var(--site-paper);
+  color: var(--site-ink);
+  font-family: Nunito, system-ui, sans-serif;
+}
+
+.site-header,
+.site-footer {
+  width: min(100% - 64px, 1184px);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.site-header {
+  padding-block: 19px;
+  border-bottom: 1px solid var(--site-line);
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--site-ink);
+  text-decoration: none;
+  font-size: 1.62rem;
+  font-weight: 950;
+  letter-spacing: -.04em;
+}
+
+.site-brand img { border-radius: 12px; }
+.site-brand span { margin-left: -9px; color: var(--site-accent); }
+
+.site-language {
+  text-decoration: none;
+  padding: 8px 15px;
+  min-height: 42px;
+  border: 1px solid var(--site-line);
+  border-radius: 100px;
+  color: var(--site-ink);
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
+.site-language:hover { background: #f1e9dc; }
+
+.site-footer {
+  padding-block: 24px;
+  border-top: 1px solid var(--site-line);
+  color: var(--site-muted);
+}
+
+.site-footer__brand {
+  color: var(--site-ink);
+  font-size: 1.1rem;
+  font-weight: 950;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+
+.site-footer a {
+  color: inherit;
+  font-size: .94rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.site-footer a:hover { text-decoration: underline; }
+
+:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 630px) {
+  .site-header,
+  .site-footer { width: calc(100% - 36px); }
+
+  .site-header { padding-block: 13px; }
+  .site-footer { align-items: flex-start; flex-direction: column; }
+}

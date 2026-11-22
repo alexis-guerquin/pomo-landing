@@ -1,38 +1,16 @@
-# Pomocha Landing Page
+# Pocha
 
-Ce site présente Pocha sur Mac, iPhone, iPad et Android, et [Pomocha sur le web](https://www.pomocha.io/).
+Site vitrine de Pocha, le minuteur Pomodoro au capybara. La version française est servie sur [pomocha.fr](https://www.pomocha.fr/) et la version anglaise sur [/en](https://www.pomocha.fr/en).
 
-🌐 **Déployé sur** : [www.pomocha.fr](https://www.pomocha.fr)
+```sh
+npm ci
+npm run dev
+npm run lint
+npm run build
+```
 
-📱 **Pocha mobile** : [App Store](https://apps.apple.com/fr/app/pocha-minuteur-pomodoro/id6802377633) · [Google Play](https://play.google.com/store/apps/details?id=com.pocha.android)
+Le build pré-rend les pages et leurs métadonnées en français et en anglais. Le sitemap généré dans `dist/sitemap.xml` utilise les URL du routeur et les captures décrites dans `src/config/landing.ts`. Le build vérifie les réécritures Vercel et la présence des images du sitemap.
 
-## Aperçu de Pomocha.io
+Les pages d’assistance, de contact, de confidentialité, de conditions, de mentions légales, de suppression de compte et les règles de la communauté gardent leurs URL françaises. Les pages équivalentes en anglais sont sous `/en`.
 
-![Pocha sur Mac](./public/assets/pocha/mac/build-4/fr/01-focus.webp)
-
-<p align="center">
-  <img src="./public/assets/pocha/mobile/daily-missions.webp" alt="Capture réelle de Pocha sur iPhone" width="240">
-</p>
-
-## Aperçus Mac
-
-| Focus et Notch | Statistiques | Série |
-| --- | --- | --- |
-| ![Focus](./public/assets/pocha/mac/build-4/fr/01-focus.webp) | ![Statistiques](./public/assets/pocha/mac/build-4/fr/02-statistics.webp) | ![Série](./public/assets/pocha/mac/build-4/fr/03-streak.webp) |
-
-## URLs pour App Store Connect
-
-Après déploiement :
-
-| Champ | URL |
-| --- | --- |
-| URL marketing macOS | https://www.pomocha.fr/app#mac |
-| URL d’assistance | https://www.pomocha.fr/support |
-| Politique de confidentialité | https://www.pomocha.fr/privacy |
-| Conditions et abonnements | https://www.pomocha.fr/terms |
-| Licence standard Apple (EULA) | https://www.apple.com/legal/internet-services/itunes/dev/stdeula/ |
-| Suppression du compte | https://www.pomocha.fr/delete-account |
-
-Les pages sont accessibles sans compte et pré-rendues en HTML. Le site propose le français et l’anglais ; l’app propose 14 langues. Les anciens liens `/legal` de l’app donnent accès aux pages confidentialité et conditions. La disponibilité publique du Mac reste indiquée « bientôt » tant que la version est en préparation sur App Store Connect.
-
-Sources Apple : [informations de version](https://developer.apple.com/help/app-store-connect/reference/app-information/platform-version-information), [confidentialité de l’app](https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-privacy). Ces pages accompagnent la fiche ; les déclarations de confidentialité et les informations de validation restent à renseigner dans App Store Connect selon le fonctionnement réel de l’app.
+L’icône officielle vient de la fiche Apple 6802377633. Les captures iPhone et Mac proviennent des interfaces Pocha, les images de présentation iPhone des fiches publiques App Store France et États-Unis, et l’aperçu web du dépôt portfolio. Les boucles de la mascotte proviennent du dépôt web `pomo`. Les liens et descriptions publics sont dans `public/llms.txt`.

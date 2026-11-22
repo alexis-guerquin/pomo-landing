@@ -1,57 +1,49 @@
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import { Analytics } from '@vercel/analytics/react';
+import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
-
-// Même arbre que le pré-rendu serveur : l'hydratation conserve la page affichée.
+import { pages, type PublicPath } from './config/routes';
+import { PageLayout } from './layouts/PageLayout/PageLayout';
 import LandingPage from './pages/LandingPage';
-import PomodoroTimerPage from './pages/features/PomodoroTimerPage';
-import MotivationRewardsPage from './pages/features/MotivationRewardsPage';
-import FocusStatisticsPage from './pages/features/FocusStatisticsPage';
-import StudentsPage from './pages/use-cases/StudentsPage';
-import FreelancersPage from './pages/use-cases/FreelancersPage';
-import AboutPage from './pages/about/AboutPage';
-import ConceptPage from './pages/concept/ConceptPage';
-import AppPage from './pages/app/AppPage';
-import ExtensionPage from './pages/extension/ExtensionPage';
-import SupportPage from './pages/support/SupportPage';
-import TermsPage from './pages/terms/TermsPage';
 import ContactPage from './pages/contact/ContactPage';
 import LegalPage from './pages/legal/LegalPage';
-import DeleteAccountPage from './pages/delete-account/DeleteAccountPage';
+import TermsPage from './pages/terms/TermsPage';
 import PrivacyPage from './pages/privacy/PrivacyPage';
+import SupportPage from './pages/support/SupportPage';
+import DeleteAccountPage from './pages/delete-account/DeleteAccountPage';
 import CommunityGuidelinesPage from './pages/community-guidelines/CommunityGuidelinesPage';
-import BlogPage from './pages/blog/BlogPage';
-import ArticlePage from './pages/blog/ArticlePage';
+
+const components: Record<PublicPath, React.ComponentType> = {
+  '/': LandingPage,
+  '/contact': ContactPage,
+  '/legal': LegalPage,
+  '/terms': TermsPage,
+  '/privacy': PrivacyPage,
+  '/support': SupportPage,
+  '/delete-account': DeleteAccountPage,
+  '/community-guidelines': CommunityGuidelinesPage,
+};
+
+function NotFound() {
+  return (
+    <PageLayout htmlTitle="Page introuvable | Pocha" h1="Page introuvable">
+      <p><Link to="/">Retour à l’accueil</Link></p>
+    </PageLayout>
+  );
+}
 
 export default function App() {
+  const { hash } = useLocation();
+
   return (
     <>
       <ScrollToTop />
       <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/features/pomodoro-timer" element={<PomodoroTimerPage />} />
-          <Route path="/features/rewards-system" element={<MotivationRewardsPage />} />
-          <Route path="/features/statistics" element={<FocusStatisticsPage />} />
-
-          <Route path="/use-cases/students" element={<StudentsPage />} />
-          <Route path="/use-cases/freelancers" element={<FreelancersPage />} />
-
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/concept" element={<ConceptPage />} />
-          <Route path="/app" element={<AppPage />} />
-          <Route path="/extension" element={<ExtensionPage />} />
-          <Route path="/support" element={<SupportPage />} />
-        <Route path="/terms" element={<TermsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-          <Route path="/legal" element={<LegalPage />} />
-          <Route path="/delete-account" element={<DeleteAccountPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/community-guidelines" element={<CommunityGuidelinesPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:slug" element={<ArticlePage />} />
+        {pages.map(({ url, path }) => {
+          const Page = components[path];
+          return <Route key={url} path={url} element={<Page />} />;
+        })}
+        <Route path="/app" element={<Navigate to={`/${hash}`} replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-      <Analytics />
     </>
   );
 }

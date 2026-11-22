@@ -1,38 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/features/pomodoro-timer",
-      "destination": "/features/pomodoro-timer/index.html"
-    },
-    {
-      "source": "/features/rewards-system",
-      "destination": "/features/rewards-system/index.html"
-    },
-    {
-      "source": "/features/statistics",
-      "destination": "/features/statistics/index.html"
-    },
-    {
-      "source": "/use-cases/students",
-      "destination": "/use-cases/students/index.html"
-    },
-    {
-      "source": "/use-cases/freelancers",
-      "destination": "/use-cases/freelancers/index.html"
-    },
-    {
-      "source": "/concept",
-      "destination": "/concept/index.html"
-    },
-    {
-      "source": "/app",
-      "destination": "/app/index.html"
-    },
-    {
-      "source": "/extension",
-      "destination": "/extension/index.html"
-    },
-    {
       "source": "/contact",
       "destination": "/contact/index.html"
     },
@@ -41,100 +9,56 @@
       "destination": "/legal/index.html"
     },
     {
-      "source": "/delete-account",
-      "destination": "/delete-account/index.html"
+      "source": "/terms",
+      "destination": "/terms/index.html"
     },
     {
       "source": "/privacy",
       "destination": "/privacy/index.html"
     },
     {
-      "source": "/community-guidelines",
-      "destination": "/community-guidelines/index.html"
-    },
-    {
-      "source": "/about",
-      "destination": "/about/index.html"
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog/index.html"
-    },
-    {
-      "source": "/blog/meilleur-pomodoro-en-ligne-2026",
-      "destination": "/blog/meilleur-pomodoro-en-ligne-2026/index.html"
-    },
-    {
-      "source": "/blog/technique-pomodoro-productivite",
-      "destination": "/blog/technique-pomodoro-productivite/index.html"
-    },
-    {
-      "source": "/blog/application-pomodoro-gamifiee",
-      "destination": "/blog/application-pomodoro-gamifiee/index.html"
-    },
-    {
-      "source": "/blog/pomodoro-etudiant-freelance",
-      "destination": "/blog/pomodoro-etudiant-freelance/index.html"
-    },
-    {
-      "source": "/blog/nouveautes-pomocha-mars-2026",
-      "destination": "/blog/nouveautes-pomocha-mars-2026/index.html"
-    },
-    {
-      "source": "/blog/extension-chrome-pomodoro-pomocha",
-      "destination": "/blog/extension-chrome-pomodoro-pomocha/index.html"
-    },
-    {
-      "source": "/blog/guide-complet-application-web-extension-productivite-france",
-      "destination": "/blog/guide-complet-application-web-extension-productivite-france/index.html"
-    },
-    {
-      "source": "/blog/productivite-side-project-france-tout-savoir-2025",
-      "destination": "/blog/productivite-side-project-france-tout-savoir-2025/index.html"
-    },
-    {
-      "source": "/blog/productivite-side-project-comparatif-solutions-application-web",
-      "destination": "/blog/productivite-side-project-comparatif-solutions-application-web/index.html"
-    },
-    {
-      "source": "/blog/guide-ultime-productivite",
-      "destination": "/blog/guide-ultime-productivite/index.html"
-    },
-    {
-      "source": "/blog/technique-pomodoro-guide-complet",
-      "destination": "/blog/technique-pomodoro-guide-complet/index.html"
-    },
-    {
-      "source": "/blog/idees-side-project-gagner-argent-2026",
-      "destination": "/blog/idees-side-project-gagner-argent-2026/index.html"
-    },
-    {
-      "source": "/blog/comment-rester-concentre-eliminer-distractions",
-      "destination": "/blog/comment-rester-concentre-eliminer-distractions/index.html"
-    },
-    {
-      "source": "/blog/meilleures-apps-pomodoro-2026",
-      "destination": "/blog/meilleures-apps-pomodoro-2026/index.html"
-    },
-    {
       "source": "/support",
       "destination": "/support/index.html"
     },
     {
-      "source": "/terms",
-      "destination": "/terms/index.html"
+      "source": "/delete-account",
+      "destination": "/delete-account/index.html"
     },
     {
-      "source": "/blog/pocha-ios-lancement-septembre-2026",
-      "destination": "/blog/pocha-ios-lancement-septembre-2026/index.html"
+      "source": "/community-guidelines",
+      "destination": "/community-guidelines/index.html"
     },
     {
-      "source": "/blog/pocha-android-lancement-octobre-2026",
-      "destination": "/blog/pocha-android-lancement-octobre-2026/index.html"
+      "source": "/en",
+      "destination": "/en/index.html"
     },
     {
-      "source": "/blog/pocha-ios-mac-fin-octobre-2026",
-      "destination": "/blog/pocha-ios-mac-fin-octobre-2026/index.html"
+      "source": "/en/contact",
+      "destination": "/en/contact/index.html"
+    },
+    {
+      "source": "/en/legal",
+      "destination": "/en/legal/index.html"
+    },
+    {
+      "source": "/en/terms",
+      "destination": "/en/terms/index.html"
+    },
+    {
+      "source": "/en/privacy",
+      "destination": "/en/privacy/index.html"
+    },
+    {
+      "source": "/en/support",
+      "destination": "/en/support/index.html"
+    },
+    {
+      "source": "/en/delete-account",
+      "destination": "/en/delete-account/index.html"
+    },
+    {
+      "source": "/en/community-guidelines",
+      "destination": "/en/community-guidelines/index.html"
     }
   ],
   "headers": [
@@ -157,42 +81,6 @@
       ]
     },
     {
-      "source": "/visuals/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/character/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/icons/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/blog/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=604800, stale-while-revalidate=86400"
-        }
-      ]
-    },
-    {
       "source": "/(.*).html",
       "headers": [
         {
@@ -200,7 +88,82 @@
           "value": "public, max-age=0, must-revalidate"
         }
       ]
+    },
+    {
+      "source": "/:file(sitemap.xml|robots.txt|llms.txt)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/:file(favicon.ico|pocha-favicon.png|apple-touch-icon.png)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
     }
   ],
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/app",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/extension",
+      "destination": "https://chromewebstore.google.com/detail/fcaefgilphmnhhbjjeailgnklfnhcmpc",
+      "permanent": true
+    },
+    {
+      "source": "/concept",
+      "destination": "/#methode",
+      "permanent": true
+    },
+    {
+      "source": "/features/pomodoro-timer",
+      "destination": "/#minuteur",
+      "permanent": true
+    },
+    {
+      "source": "/features/statistics",
+      "destination": "/#statistiques",
+      "permanent": true
+    },
+    {
+      "source": "/features/rewards-system",
+      "destination": "/#recompenses",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases/students",
+      "destination": "/#etudes",
+      "permanent": true
+    },
+    {
+      "source": "/blog/meilleur-pomodoro-en-ligne-2026",
+      "destination": "https://www.pomocha.io/",
+      "permanent": true
+    },
+    {
+      "source": "/pomocha-og.png",
+      "destination": "/assets/pocha/pocha-minuteur-pomodoro.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/break-ic.svg",
+      "destination": "/pocha-favicon.png",
+      "permanent": true
+    },
+    {
+      "source": "/assets/pocha/app-store/icon.webp",
+      "destination": "/pocha-favicon.png",
+      "permanent": true
+    }
+  ]
 }

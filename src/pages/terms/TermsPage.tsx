@@ -1,3 +1,4 @@
+import { localizedPath } from '../../config/routes';
 import { Link } from 'react-router-dom';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
@@ -38,6 +39,6 @@ export default function TermsPage() {
     <section className="page-layout__section"><h2>{copy.license}</h2><p>{copy.licenseText}</p><p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">{copy.licenseLink}</a></p></section>
     <section className="page-layout__section"><h2>{copy.premium}</h2><p>{copy.premiumText}</p></section>
     <section className="page-layout__section"><h2>{copy.manage}</h2><p>{copy.manageText}</p><p><a href="https://apps.apple.com/account/subscriptions">{copy.apple}</a> · <a href="https://play.google.com/store/account/subscriptions">{copy.google}</a></p></section>
-    <section className="page-layout__section"><h2>{copy.account}</h2><p>{copy.accountText}</p><p><Link to="/privacy">{copy.privacy}</Link> · <Link to="/community-guidelines">{copy.community}</Link> · <Link to="/delete-account">{copy.deletion}</Link> · <Link to="/support">{copy.help}</Link></p></section>
+    <section className="page-layout__section"><h2>{copy.account}</h2><p>{copy.accountText}</p><p><Link to={localizedPath('/privacy', locale)}>{copy.privacy}</Link> · <Link to={localizedPath('/community-guidelines', locale)}>{copy.community}</Link> · <Link to={localizedPath('/delete-account', locale)}>{copy.deletion}</Link> · <Link to={localizedPath('/support', locale)}>{copy.help}</Link></p></section>
   </PageLayout>;
 }

@@ -1,3 +1,4 @@
+import { localizedPath } from '../../config/routes';
 import { Link } from 'react-router-dom';
 import { PageLayout } from '../../layouts/PageLayout/PageLayout';
 import { useI18n } from '../../contexts/I18nContext';
@@ -11,7 +12,7 @@ export default function ContactPage() {
       h1={t.pages.contact.h1}
       intro={t.pages.contact.intro}
     >
-      <section className="page-layout__section"><p><Link to="/support">{locale === 'fr' ? 'Besoin d’aide avec Pocha sur Mac ? Consulter le centre d’aide.' : 'Need help with Pocha for Mac? Visit the help center.'}</Link></p></section>
+      <section className="page-layout__section"><p><Link to={localizedPath('/support', locale)}>{locale === 'fr' ? 'Besoin d’aide avec Pocha sur Mac ? Consulter le centre d’aide.' : 'Need help with Pocha for Mac? Visit the help center.'}</Link></p></section>
       <section className="page-layout__section">
         <h2>{t.pages.contact.sections.email.title}</h2>
         <p>{t.pages.contact.sections.email.content}</p>

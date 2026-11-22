@@ -1,206 +1,133 @@
-import { macMedia } from '../config/mac-media';
-import { useSmoothScroll } from '../hooks/useSmoothScroll';
-import HeroSection from '../components/HeroSection';
-import { MiniFeatureSection } from '../components/MiniFeature';
-import { ScratchToReveal } from '../components/ui/ScratchToReveal';
-import { CTASection } from '../components/CTASection';
-import { MacPromo } from '../components/MacPromo/MacPromo';
-import { Footer } from '../components/Footer';
-import Navbar from '../components/Navbar/Navbar';
-import { LandingPageSEO } from '../components/SEO/LandingPageSEO';
+import { SiteFooter, SiteHeader } from '../components/SiteChrome/SiteChrome';
+import PageSeo from '../components/SEO/PageSeo';
+import { landingImages, landingMeta, landingSchema, platforms, siteUrl } from '../config/landing';
+import { localizedPath } from '../config/routes';
 import { useI18n } from '../contexts/I18nContext';
-import { useEffect, useState, useMemo } from 'react';
-import type { MiniFeatureData } from '../components/MiniFeature';
+import PochaAnswers from './PochaAnswers';
+import PochaFeatures from './PochaFeatures';
+import './LandingPage.css';
 
-const CHARACTER_IMAGES = [
-  '/character/topProject.svg',
-  '/character/default.svg',
-  '/character/recaps.svg',
-  '/character/stretching.svg',
-  '/character/meditation.svg',
-  '/character/free.svg',
-  '/character/drink.svg',
-];
-
+const appleFrance = platforms.ios.fr;
 export default function LandingPage() {
-  const { t, locale } = useI18n();
-  useSmoothScroll();
-
-  const miniFeaturesConfig = useMemo<MiniFeatureData[]>(() => [
-    {
-      id: 'mini-concept',
-      title: t.miniFeatures.concept.title,
-      description: t.miniFeatures.concept.description,
-      visual: macMedia(locale, '01-focus'),
-      phoneScene: 'focus',
-      visualAlt: t.miniFeatures.concept.visualAlt,
-      features: t.miniFeatures.concept.items,
-      cta: {
-        text: t.miniFeatures.concept.cta,
-        link: '/app#mac'
-      },
-      moreInfoLink: '/features/pomodoro-timer'
-    },
-    {
-      id: 'mini-rewards',
-      title: t.miniFeatures.rewards.title,
-      description: t.miniFeatures.rewards.description,
-      visual: macMedia(locale, '04-collection'),
-      phoneScene: 'collection',
-      visualAlt: t.miniFeatures.rewards.visualAlt,
-      features: t.miniFeatures.rewards.items,
-      cta: {
-        text: t.miniFeatures.rewards.cta,
-        link: '/app#mac'
-      },
-      moreInfoLink: '/features/rewards-system'
-    },
-    {
-      id: 'mini-stats',
-      title: t.miniFeatures.statistics.title,
-      description: t.miniFeatures.statistics.description,
-      visual: macMedia(locale, '02-statistics'),
-      phoneScene: 'statistics',
-      visualAlt: t.miniFeatures.statistics.visualAlt,
-      features: t.miniFeatures.statistics.items,
-      cta: {
-        text: t.miniFeatures.statistics.cta,
-        link: '/app#mac'
-      },
-      moreInfoLink: '/features/statistics'
-    },
-    {
-      id: 'mini-more',
-      title: t.miniFeatures.more.title,
-      description: t.miniFeatures.more.description,
-      visual: macMedia(locale, '05-community'),
-      visualAlt: locale === 'fr' ? 'La communauté Pocha sur Mac' : 'Pocha community on Mac',
-      phoneScene: 'community',
-      features: t.miniFeatures.more.items,
-      cta: {
-        text: t.miniFeatures.more.cta,
-        link: '/app#mac'
-      }
-    }
-  ], [t, locale]);
-
-  // Identique côté serveur et navigateur pour éviter un remplacement du DOM à l'hydratation.
-  const [currentCharacter] = useState<string>(CHARACTER_IMAGES[1]);
-
-  const [imageDimensions, setImageDimensions] = useState({ width: 300, height: 300 });
-  const [key] = useState(0);
-  const [showHint, setShowHint] = useState(true);
-
-  useEffect(() => {
-    if (!currentCharacter) return;
-
-    const img = new Image();
-    img.onload = () => {
-      const maxHeight = 400;
-      const aspectRatio = img.width / img.height;
-
-      let newWidth = maxHeight * aspectRatio;
-      let newHeight = maxHeight;
-
-      if (newWidth > 400) {
-        newWidth = 400;
-        newHeight = 400 / aspectRatio;
-      }
-
-      setImageDimensions({ width: Math.round(newWidth), height: Math.round(newHeight) });
-    };
-    img.src = currentCharacter;
-  }, [currentCharacter]);
-
-  const handleComplete = () => {
-    setShowHint(false);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const { locale } = useI18n();
+  const fr = locale === 'fr';
+  const meta = landingMeta[locale];
+  const canonical = `${siteUrl}${localizedPath('/', locale)}`;
+  const media = landingImages(locale);
+  const schema = landingSchema(locale, canonical);
 
   return (
-    <div className="app">
-      <LandingPageSEO />
-      <div className="footer-character-container">
-        <button
-          onClick={scrollToTop}
-          className="footer-scroll-top"
-          aria-label={t.components.landingPage.scrollToTop}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round">
-            <path d="M12 19V5M5 12l7-7 7 7" />
-          </svg>
-        </button>
-        <img
-          src="/character/stretching.svg"
-          alt={t.components.landingPage.characterAlt}
-          className="footer-character"
-          width="200"
-          height="200"
-        />
-      </div>
-
-      <Navbar />
-      
-      {/* Section Hero - Point d'entrée principal */}
-      <section id="home" aria-label={t.components.landingPage.ariaLabels.home}>
-        <HeroSection />
-      </section>
-
-      {/* Section À propos - Découverte de Pomocha */}
-      <section id="about" className="scratch-card-container" aria-label={t.components.landingPage.ariaLabels.about}>
-        {showHint && (
-          <div className="scratch-card-hint">
-            <span>{t.components.landingPage.scratchHint}</span>
+    <>
+      <PageSeo {...meta} />
+      <SiteHeader />
+      <main className="pocha-home">
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        <section className="pocha-hero" aria-labelledby="pocha-title">
+          <div className="pocha-hero__copy">
+            <h1 id="pocha-title">
+              {fr ? 'Minuteur Pomodoro' : 'Pomodoro timer'}
+              <br />
+              <span>{fr ? 'avec Pocha.' : 'with Pocha.'}</span>
+            </h1>
+            <p className="pocha-hero__intro">
+              {fr
+                ? 'Pocha est une application de concentration pour étudier et travailler. Lance une session avec ton capybara, suis tes progrès et débloque des récompenses.'
+                : 'Pocha is a focus app for study and work. Start a session with your capybara, track your progress, and unlock rewards.'}
+            </p>
+            <div className="pocha-hero__actions">
+              <a className="pocha-button pocha-button--primary" href="#telecharger">
+                {fr ? 'Télécharger Pocha' : 'Get Pocha'} <span aria-hidden="true">↓</span>
+              </a>
+              <a className="pocha-button pocha-button--secondary" href={platforms.web}>
+                {fr ? 'Essayer le minuteur en ligne' : 'Try the online timer'} <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <ul className="pocha-stats" aria-label={fr ? 'Pocha en chiffres' : 'Pocha in numbers'}>
+              <li>
+                <a href={platforms.android}>
+                  <strong>10+</strong>
+                  <span>{fr ? 'téléchargements Google Play' : 'Google Play downloads'}</span>
+                </a>
+              </li>
+              <li>
+                <a href={appleFrance}>
+                  <strong>{fr ? '4,5/5' : '4.5/5'} <span aria-hidden="true">★</span></strong>
+                  <span>{fr ? 'App Store France · 2 notes' : 'French App Store · 2 ratings'}</span>
+                </a>
+              </li>
+            </ul>
           </div>
-        )}
-        <ScratchToReveal
-          key={key}
-          width={imageDimensions.width}
-          height={imageDimensions.height}
-          minScratchPercentage={85}
-          className="scratch-card-wrapper"
-          onComplete={handleComplete}
-          gradientColors={["#403028"]}
-          maskImage={currentCharacter}>
-          {currentCharacter && (
-            <img
-              src={currentCharacter}
-              alt={t.components.landingPage.characterAlt}
-              className="scratch-card-character"
-              width={imageDimensions.width}
-              height={imageDimensions.height}
-            />
-          )}
-        </ScratchToReveal>
-      </section>
+          <div className="pocha-hero__visual">
+            {media.store.map(({ id, ...image }) => (
+              <img
+                key={id}
+                className="pocha-store-shot"
+                {...image}
+                fetchPriority={id === 1 ? 'high' : undefined}
+              />
+            ))}
+          </div>
+        </section>
 
-      {/* Section Fonctionnalités - Toutes les features de Pomocha */}
-      <section id="features" aria-label={t.components.landingPage.ariaLabels.features}>
-        <MiniFeatureSection
-          features={miniFeaturesConfig}
-          layouts={['vertical', 'left', 'right', 'vertical']}
-        />
-      </section>
+        <PochaFeatures />
 
-      <MacPromo />
+        <section id="telecharger" className="pocha-platforms" aria-labelledby="pocha-platforms-title">
+          <h2 id="pocha-platforms-title">{fr ? 'Où veux-tu te concentrer ?' : 'Where do you want to focus?'}</h2>
+          <div className="pocha-platforms__grid">
+            <article className="pocha-platform">
+              <h3>{fr ? 'Sur mobile' : 'On mobile'}</h3>
+              <p>iPhone, iPad &amp; Android</p>
+              <StoreLink href={platforms.ios[locale]}>App Store</StoreLink>
+              <StoreLink href={platforms.android}>Google Play</StoreLink>
+              <div className="pocha-platform__preview pocha-platform__preview--mobile">
+                {media.mobile.map((image) => (
+                  <img key={image.src} {...image} loading="lazy" decoding="async" />
+                ))}
+              </div>
+            </article>
+            <article id="mac" className="pocha-platform">
+              <h3>{fr ? 'Sur Mac' : 'On Mac'}</h3>
+              <p>{fr ? 'Version iPad compatible Mac Apple Silicon' : 'iPad app for Apple silicon Macs'}</p>
+              <StoreLink href={platforms.mac[locale]}>{fr ? 'App Store sur Mac' : 'App Store on Mac'}</StoreLink>
+              <small>{fr ? 'Version native en préparation' : 'Native Mac app in development'}</small>
+              <PlatformPreview {...media.mac} />
+            </article>
+            <article className="pocha-platform">
+              <h3>{fr ? 'Dans le navigateur' : 'In your browser'}</h3>
+              <p>{fr ? 'Pomocha Web et extension Chrome' : 'Pomocha Web and Chrome extension'}</p>
+              <StoreLink href={platforms.web}>{fr ? 'Ouvrir Pomocha' : 'Open Pomocha'}</StoreLink>
+              <StoreLink href={platforms.chrome}>{fr ? 'Extension Chrome' : 'Chrome extension'}</StoreLink>
+              <PlatformPreview {...media.web} />
+            </article>
+          </div>
+        </section>
+        <PochaAnswers />
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
 
-      {/* Section Call-to-Action */}
-      <section id="cta" aria-label={t.components.landingPage.ariaLabels.cta}>
-        <CTASection />
-      </section>
-
-      <Footer />
+function PlatformPreview({ src, alt, width, height }: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}) {
+  return (
+    <div className="pocha-platform__preview">
+      <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
     </div>
+  );
+}
+
+function StoreLink({ href, children }: {
+  href: string;
+  children: string;
+}) {
+  return (
+    <a className="pocha-platform__link" href={href}>
+      {children} <span aria-hidden="true">↗</span>
+    </a>
   );
 }
